@@ -1,0 +1,52 @@
+# Python
+*.py[cod]
+*$py.class
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.Python
+
+# virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# data files 
+# data/raw/*.csv
+# data/processed/*.csv
+
+# model files 
+# models/*.pkl
+# models/*.joblib
+
+# results (keep structure but ignore generated files)
+results/figures/*.png
+results/figures/*.jpg
+results/tables/*.csv
+
+# environment variables
+.env
+
+# temporary files
+*.tmp
+*.log
+temp/
+tmp/
