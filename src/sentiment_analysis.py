@@ -3,6 +3,7 @@
 import argparse
 import json
 import logging
+import re
 import time
 from abc import ABC, abstractmethod
 from datetime import datetime, timedelta
@@ -158,6 +159,117 @@ class GDELTClient(BaseNewsClient):
             return []
 
 
+class GuardianClient(BaseNewsClient):
+    """client for guardian api."""
+    
+    base_url = "https://content.guardianapis.com/search"
+    api_key = "c1bb1584-e60d-4d7a-b019-276f96dd0a53"
+    
+    # corruption keywords for relevance filtering
+    corruption_keywords = [
+        "corruption", "bribery", "fraud", "scandal", 
+        "embezzlement", "money laundering", "laundering"
+    ]
+    
+    def fetch_articles(
+        self,
+        country: str,
+        query: str,
+        start_date: datetime,
+        end_date: datetime,
+        max_records: int = 250
+    ) -> List[Dict[str, Any]]:
+        """fetch articles from guardian api with relevance filtering."""
+        
+        # guardian only supports dates up to 2016 reliably
+        if start_date.year > 2016:
+            logger.warning(f"guardian api works best for 2016 and earlier, skipping {country} {start_date.year}")
+            return []
+        
+        # format dates for guardian api (YYYY-MM-DD)
+        start_str = start_date.strftime("%Y-%m-%d")
+        end_str = end_date.strftime("%Y-%m-%d")
+        
+        # build broader query (country + general corruption terms)
+        # we'll filter for relevance client-side
+        search_query = f"{country} AND (corruption OR bribery OR fraud OR scandal)"
+        
+        all_articles = []
+        page = 1
+        max_pages = 20  # guardian returns max 50 per page, so 20 pages = 1000 articles to filter
+        
+        while len(all_articles) < max_records and page <= max_pages:
+            params = {
+                "api-key": self.api_key,
+                "q": search_query,
+                "from-date": start_str,
+                "to-date": end_str,
+                "page-size": 50,  # max allowed
+                "page": page,
+                "show-fields": "trailText,headline",
+                "order-by": "relevance"
+            }
+            
+            try:
+                logger.info(f"fetching guardian page {page} for {country} ({start_date.date()} to {end_date.date()})")
+                response = requests.get(self.base_url, params=params, timeout=30)
+                response.raise_for_status()
+                
+                data = response.json()
+                
+                # guardian returns articles in response.results
+                results = data.get("response", {}).get("results", [])
+                
+                if not results:
+                    break  # no more articles
+                
+                # filter for relevance: since guardian api already filters by country + corruption terms,
+                # we just verify that a corruption keyword appears in the text
+                # (the api already ensured the country is mentioned, so we trust that)
+                for article in results:
+                    headline = article.get("webTitle", "").lower()
+                    snippet_raw = article.get("fields", {}).get("trailText", "")
+                    # remove html tags from snippet for better matching
+                    snippet = re.sub(r'<[^>]+>', '', snippet_raw).lower() if snippet_raw else ""
+                    combined_text = headline + " " + snippet
+                    
+                    # check if at least one corruption keyword appears
+                    # (guardian api already filtered by country, so we trust that)
+                    if not any(keyword in combined_text for keyword in self.corruption_keywords):
+                        continue
+                    
+                    # article is relevant
+                    all_articles.append({
+                        "country": country,
+                        "headline": article.get("webTitle", ""),
+                        "url": article.get("webUrl", ""),
+                        "date": article.get("webPublicationDate", ""),
+                        "snippet": article.get("fields", {}).get("trailText", "")
+                    })
+                    
+                    if len(all_articles) >= max_records:
+                        break
+                
+                # check if we've reached the last page
+                if page >= data.get("response", {}).get("pages", 1):
+                    break
+                
+                page += 1
+                
+                # respect rate limit: 1 request per second
+                time.sleep(1.1)
+                
+            except requests.exceptions.RequestException as e:
+                logger.error(f"error fetching guardian articles for {country}: {e}")
+                break
+            except (KeyError, ValueError) as e:
+                logger.error(f"error parsing guardian response for {country}: {e}")
+                break
+        
+        logger.info(f"fetched {len(all_articles)} relevant articles for {country} after filtering")
+        return all_articles
+
+
 def build_query(keywords: Sequence[str]) -> str:
     """build or query from keywords."""
     return " OR ".join(keywords)
@@ -234,9 +346,15 @@ def fetch_news_articles(
     chunk_months: int,
     pause_seconds: float,
     max_records: int,
-    overwrite: bool = False
+    overwrite: bool = False,
+    auto_provider: bool = True
 ) -> pd.DataFrame:
-    """fetch news articles for each country/year window."""
+    """fetch news articles for each country/year window.
+    
+    if auto_provider is true, automatically selects:
+    - guardian for years 2010-2016
+    - gdelt for years 2017-2023
+    """
     
     records: List[Dict[str, Any]] = []
     completed = load_checkpoint() if not overwrite else set()
@@ -250,8 +368,22 @@ def fetch_news_articles(
                 logger.info(f"skipping {country} {year} (already fetched)")
                 continue
             
+            # auto-select provider based on year
+            if auto_provider:
+                if year <= 2016:
+                    # use guardian for historical data
+                    year_client = GuardianClient()
+                    logger.info(f"using guardian api for {country} {year}")
+                else:
+                    # use gdelt for modern data
+                    year_client = GDELTClient()
+                    logger.info(f"using gdelt api for {country} {year}")
+            else:
+                # use provided client
+                year_client = client
+            
             for start_date, end_date in chunk_year_into_ranges(year, chunk_months):
-                articles = client.fetch_articles(
+                articles = year_client.fetch_articles(
                     country=country,
                     query=query,
                     start_date=start_date,
@@ -377,9 +509,9 @@ def main():
     parser.add_argument(
         "--provider",
         type=str,
-        default="gdelt",
-        choices=["gdelt"],
-        help="news provider (currently only gdelt supported)"
+        default="auto",
+        choices=["gdelt", "guardian", "auto"],
+        help="news provider: 'gdelt', 'guardian', or 'auto' (selects based on year)"
     )
     
     parser.add_argument(
@@ -445,6 +577,12 @@ def main():
         help="overwrite existing data and checkpoint"
     )
     
+    parser.add_argument(
+        "--no-auto-provider",
+        action="store_true",
+        help="disable auto-provider selection (use --provider instead)"
+    )
+    
     args = parser.parse_args()
     
     # determine countries to process
@@ -457,9 +595,16 @@ def main():
     logger.info(f"year range: {args.start_year} to {args.end_year}")
     logger.info(f"keywords: {args.keywords}")
     
-    # initialize client
+    # initialize client (only used if auto_provider is False)
+    auto_provider = not args.no_auto_provider and args.provider == "auto"
+    
     if args.provider == "gdelt":
         client = GDELTClient()
+    elif args.provider == "guardian":
+        client = GuardianClient()
+    elif args.provider == "auto":
+        # client will be selected per-year in fetch_news_articles
+        client = GDELTClient()  # placeholder, won't be used if auto_provider=True
     else:
         raise ValueError(f"unsupported provider: {args.provider}")
     
@@ -486,7 +631,8 @@ def main():
             chunk_months=args.chunk_months,
             pause_seconds=args.pause,
             max_records=args.gdelt_max_records,
-            overwrite=args.overwrite
+            overwrite=args.overwrite,
+            auto_provider=auto_provider
         )
         
         if articles_df.empty:
