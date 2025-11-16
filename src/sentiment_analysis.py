@@ -28,6 +28,7 @@ DATA_DIR = PROJECT_ROOT / "data"
 SENTIMENT_DIR = DATA_DIR / "sentiment"
 PROCESSED_DIR = DATA_DIR / "processed"
 CHECKPOINT_FILE = SENTIMENT_DIR / "fetch_progress.json"
+API_USAGE_FILE = SENTIMENT_DIR / "guardian_api_usage.json"
 
 # ensure directories exist
 SENTIMENT_DIR.mkdir(parents=True, exist_ok=True)
@@ -118,58 +119,166 @@ class GDELTClient(BaseNewsClient):
             "sort": "date"
         }
         
-        try:
-            logger.info(f"fetching articles for {country} ({start_date.date()} to {end_date.date()})")
-            response = requests.get(self.base_url, params=params, timeout=30)
-            response.raise_for_status()
-            
-            # check if response is valid json
+        # retry logic for ssl/timeout errors
+        max_retries = 3
+        retry_delay = 5  # seconds
+        
+        for attempt in range(max_retries):
             try:
-                data = response.json()
-            except ValueError:
-                # response might be an error message
-                error_text = response.text.strip()
-                if "Invalid query" in error_text or "error" in error_text.lower():
-                    logger.warning(f"api error for {country} {start_date.year}: {error_text[:100]}")
+                logger.info(f"fetching articles for {country} ({start_date.date()} to {end_date.date()}) [attempt {attempt + 1}/{max_retries}]")
+                
+                # increase timeout for later attempts
+                timeout = 30 + (attempt * 30)
+                response = requests.get(self.base_url, params=params, timeout=timeout, verify=True)
+                response.raise_for_status()
+                
+                # check if response is valid json
+                try:
+                    data = response.json()
+                except ValueError:
+                    # response might be an error message
+                    error_text = response.text.strip()
+                    if "Invalid query" in error_text or "error" in error_text.lower():
+                        logger.warning(f"api error for {country} {start_date.year}: {error_text[:100]}")
+                        return []
+                    raise
+                
+                # gdelt returns articles in 'articles' key
+                articles = data.get("articles", [])
+                
+                # extract relevant fields
+                results = []
+                for article in articles:
+                    results.append({
+                        "country": country,
+                        "headline": article.get("title", ""),
+                        "url": article.get("url", ""),
+                        "date": article.get("seendate", ""),
+                        "snippet": article.get("snippet", "")
+                    })
+                
+                logger.info(f"fetched {len(results)} articles for {country}")
+                return results
+                
+            except requests.exceptions.SSLError as e:
+                if attempt < max_retries - 1:
+                    logger.warning(f"ssl error for {country} (attempt {attempt + 1}), retrying in {retry_delay}s...")
+                    time.sleep(retry_delay)
+                    retry_delay *= 2  # exponential backoff
+                else:
+                    logger.error(f"ssl error for {country} after {max_retries} attempts: {e}")
                     return []
-                raise
-            
-            # gdelt returns articles in 'articles' key
-            articles = data.get("articles", [])
-            
-            # extract relevant fields
-            results = []
-            for article in articles:
-                results.append({
-                    "country": country,
-                    "headline": article.get("title", ""),
-                    "url": article.get("url", ""),
-                    "date": article.get("seendate", ""),
-                    "snippet": article.get("snippet", "")
-                })
-            
-            logger.info(f"fetched {len(results)} articles for {country}")
-            return results
-            
-        except requests.exceptions.RequestException as e:
-            logger.error(f"error fetching articles for {country}: {e}")
-            return []
-        except (KeyError, ValueError) as e:
-            logger.error(f"error parsing response for {country}: {e}")
-            return []
+            except requests.exceptions.Timeout as e:
+                if attempt < max_retries - 1:
+                    logger.warning(f"timeout for {country} (attempt {attempt + 1}), retrying in {retry_delay}s...")
+                    time.sleep(retry_delay)
+                    retry_delay *= 2  # exponential backoff
+                else:
+                    logger.error(f"timeout for {country} after {max_retries} attempts: {e}")
+                    return []
+            except requests.exceptions.RequestException as e:
+                logger.error(f"error fetching articles for {country}: {e}")
+                return []
+            except (KeyError, ValueError) as e:
+                logger.error(f"error parsing response for {country}: {e}")
+                return []
+        
+        # should not reach here, but just in case
+        return []
+
+
+def load_api_usage() -> Dict[str, Dict[str, Any]]:
+    """load api key usage tracking."""
+    if API_USAGE_FILE.exists():
+        try:
+            with open(API_USAGE_FILE, 'r') as f:
+                return json.load(f)
+        except (json.JSONDecodeError, ValueError) as e:
+            logger.warning(f"error loading api usage: {e}, starting fresh")
+            return {}
+    return {}
+
+
+def save_api_usage(usage: Dict[str, Dict[str, Any]]) -> None:
+    """save api key usage tracking."""
+    with open(API_USAGE_FILE, 'w') as f:
+        json.dump(usage, f, indent=2)
+
+
+def get_available_api_key(api_keys: List[str], max_requests_per_key: int = 500) -> Optional[str]:
+    """get next available api key, rotating when limit is reached."""
+    usage = load_api_usage()
+    today = datetime.now().strftime("%Y-%m-%d")
+    
+    for api_key in api_keys:
+        key_id = api_key[:8]  # use first 8 chars as identifier
+        if key_id not in usage:
+            usage[key_id] = {"api_key": api_key, "requests": {}, "total_requests": 0}
+        
+        # check today's usage
+        today_requests = usage[key_id]["requests"].get(today, 0)
+        
+        if today_requests < max_requests_per_key:
+            return api_key
+    
+    # all keys exhausted
+    logger.error(f"all api keys have reached daily limit ({max_requests_per_key} requests)")
+    return None
+
+
+def increment_api_usage(api_key: str) -> None:
+    """increment usage counter for an api key."""
+    usage = load_api_usage()
+    today = datetime.now().strftime("%Y-%m-%d")
+    key_id = api_key[:8]
+    
+    if key_id not in usage:
+        usage[key_id] = {"api_key": api_key, "requests": {}, "total_requests": 0}
+    
+    usage[key_id]["requests"][today] = usage[key_id]["requests"].get(today, 0) + 1
+    usage[key_id]["total_requests"] = usage[key_id].get("total_requests", 0) + 1
+    
+    save_api_usage(usage)
+    
+    # log usage
+    today_requests = usage[key_id]["requests"][today]
+    logger.debug(f"api key {key_id}...: {today_requests} requests today")
 
 
 class GuardianClient(BaseNewsClient):
-    """client for guardian api."""
+    """client for guardian api with multi-key support."""
 
     base_url = "https://content.guardianapis.com/search"
-    api_key = "93c1ada7-8c9d-4b38-aa03-20b53f43a1cb"
+    default_api_keys = [
+        "93c1ada7-8c9d-4b38-aa03-20b53f43a1cb",  # primary key
+        "c1bb1584-e60d-4d7a-b019-276f96dd0a53",  # backup key from plan
+    ]
     
     # corruption keywords for relevance filtering
     corruption_keywords = [
         "corruption", "bribery", "fraud", "scandal", 
         "embezzlement", "money laundering", "laundering"
     ]
+    
+    def __init__(self, api_keys: Optional[List[str]] = None, max_requests_per_key: int = 500):
+        """initialize guardian client with optional api keys.
+        
+        args:
+            api_keys: list of api keys to use (rotates automatically)
+            max_requests_per_key: max requests per key per day (default 500)
+        """
+        self.api_keys = api_keys or self.default_api_keys
+        self.max_requests_per_key = max_requests_per_key
+        self.current_api_key = None
+    
+    def _get_api_key(self) -> Optional[str]:
+        """get available api key, rotating if needed."""
+        api_key = get_available_api_key(self.api_keys, self.max_requests_per_key)
+        if api_key and api_key != self.current_api_key:
+            key_id = api_key[:8]
+            logger.info(f"using guardian api key: {key_id}...")
+            self.current_api_key = api_key
+        return api_key
     
     def fetch_articles(
         self,
@@ -199,8 +308,14 @@ class GuardianClient(BaseNewsClient):
         max_pages = 20  # guardian returns max 50 per page, so 20 pages = 1000 articles to filter
         
         while len(all_articles) < max_records and page <= max_pages:
+            # get available api key (rotates automatically)
+            api_key = self._get_api_key()
+            if not api_key:
+                logger.error(f"no available api keys, stopping collection for {country}")
+                break
+            
             params = {
-                "api-key": self.api_key,
+                "api-key": api_key,
                 "q": search_query,
                 "from-date": start_str,
                 "to-date": end_str,
@@ -214,6 +329,9 @@ class GuardianClient(BaseNewsClient):
                 logger.info(f"fetching guardian page {page} for {country} ({start_date.date()} to {end_date.date()})")
                 response = requests.get(self.base_url, params=params, timeout=30)
                 response.raise_for_status()
+                
+                # increment usage counter after successful request
+                increment_api_usage(api_key)
                 
                 data = response.json()
                 
@@ -259,6 +377,26 @@ class GuardianClient(BaseNewsClient):
                 # respect rate limit: 1 request per second
                 time.sleep(1.1)
                 
+            except requests.exceptions.HTTPError as e:
+                # check for rate limit errors (429) or auth errors (401, 403)
+                if e.response.status_code == 429:
+                    logger.warning(f"rate limit hit for api key {api_key[:8]}..., rotating to next key")
+                    # mark this key as exhausted for today
+                    usage = load_api_usage()
+                    today = datetime.now().strftime("%Y-%m-%d")
+                    key_id = api_key[:8]
+                    if key_id in usage:
+                        usage[key_id]["requests"][today] = self.max_requests_per_key
+                        save_api_usage(usage)
+                    # try next key
+                    continue
+                elif e.response.status_code in [401, 403]:
+                    logger.error(f"authentication error for api key {api_key[:8]}...: {e}")
+                    # skip this key and try next
+                    continue
+                else:
+                    logger.error(f"http error fetching guardian articles for {country}: {e}")
+                    break
             except requests.exceptions.RequestException as e:
                 logger.error(f"error fetching guardian articles for {country}: {e}")
                 break
@@ -372,6 +510,7 @@ def fetch_news_articles(
             if auto_provider:
                 if year <= 2016:
                     # use guardian for historical data
+                    # use default api keys (may have been updated in main())
                     year_client = GuardianClient()
                     logger.info(f"using guardian api for {country} {year}")
                 else:
@@ -403,10 +542,15 @@ def fetch_news_articles(
                 if pause_seconds > 0:
                     time.sleep(pause_seconds)
             
-            # mark this country-year as complete
-            completed.add((country, year))
-            save_checkpoint(completed)
-            logger.info(f"✓ completed {country} {year}")
+            # only mark as complete if we got some articles (or if it's a known empty year)
+            # this prevents marking failed requests as complete
+            articles_for_year = [a for a in records if a.get("year") == year]
+            if len(articles_for_year) > 0 or year < 2017:  # guardian years might be legitimately empty
+                completed.add((country, year))
+                save_checkpoint(completed)
+                logger.info(f"✓ completed {country} {year} ({len(articles_for_year)} articles)")
+            else:
+                logger.warning(f"⚠ no articles fetched for {country} {year}, not marking as complete (will retry)")
     
     return pd.DataFrame(records)
 
@@ -583,6 +727,21 @@ def main():
         help="disable auto-provider selection (use --provider instead)"
     )
     
+    parser.add_argument(
+        "--guardian-api-keys",
+        type=str,
+        nargs="+",
+        default=None,
+        help="additional guardian api keys to use (rotates automatically when limit reached)"
+    )
+    
+    parser.add_argument(
+        "--guardian-max-requests",
+        type=int,
+        default=500,
+        help="max requests per guardian api key per day (default 500)"
+    )
+    
     args = parser.parse_args()
     
     # determine countries to process
@@ -598,12 +757,26 @@ def main():
     # initialize client (only used if auto_provider is False)
     auto_provider = not args.no_auto_provider and args.provider == "auto"
     
+    # prepare guardian api keys if provided
+    guardian_api_keys = None
+    if args.guardian_api_keys:
+        guardian_api_keys = args.guardian_api_keys
+        logger.info(f"using {len(guardian_api_keys)} guardian api key(s) with rotation")
+    
     if args.provider == "gdelt":
         client = GDELTClient()
     elif args.provider == "guardian":
-        client = GuardianClient()
+        client = GuardianClient(
+            api_keys=guardian_api_keys,
+            max_requests_per_key=args.guardian_max_requests
+        )
     elif args.provider == "auto":
         # client will be selected per-year in fetch_news_articles
+        # but we need to update GuardianClient instances to use the api keys
+        # we'll do this by modifying the class default or passing through a global
+        if guardian_api_keys:
+            # update default api keys for all GuardianClient instances
+            GuardianClient.default_api_keys = guardian_api_keys
         client = GDELTClient()  # placeholder, won't be used if auto_provider=True
     else:
         raise ValueError(f"unsupported provider: {args.provider}")
