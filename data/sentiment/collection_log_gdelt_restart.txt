@@ -1,0 +1,20 @@
+/Users/snitil/Library/CloudStorage/OneDrive-McGillUniversity/McGill/U3/F2025/ECON302/innovationshowcase/src/sentiment_analysis.py:13: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+2025-11-16 13:14:05,799 - INFO - processing 19 countries: ['Angola', 'Australia', 'Brazil', 'Canada', 'Denmark', 'Germany', 'India', 'Iraq', 'Malaysia', 'Mozambique', 'New Zealand', 'Norway', 'Philippines', 'Singapore', 'South Africa', 'Switzerland', 'Ukraine', 'Venezuela', 'Zimbabwe']
+2025-11-16 13:14:05,800 - INFO - year range: 2017 to 2023
+2025-11-16 13:14:05,800 - INFO - keywords: ['corruption', 'bribery', '"money laundering"', 'fraud', 'embezzlement', 'scandal']
+2025-11-16 13:14:05,800 - INFO - fetching news articles...
+2025-11-16 13:14:05,800 - INFO - using gdelt api for Angola 2017
+2025-11-16 13:14:05,801 - INFO - fetching articles for Angola (2017-01-01 to 2017-03-31) [attempt 1/3]
+2025-11-16 13:14:09,746 - INFO - fetched 100 articles for Angola
+2025-11-16 13:14:12,753 - INFO - fetching articles for Angola (2017-04-01 to 2017-06-30) [attempt 1/3]
+2025-11-16 13:14:13,445 - INFO - fetched 100 articles for Angola
+2025-11-16 13:14:16,448 - INFO - fetching articles for Angola (2017-07-01 to 2017-09-30) [attempt 1/3]
+2025-11-16 13:14:17,131 - INFO - fetched 100 articles for Angola
+2025-11-16 13:14:20,137 - INFO - fetching articles for Angola (2017-10-01 to 2017-12-31) [attempt 1/3]

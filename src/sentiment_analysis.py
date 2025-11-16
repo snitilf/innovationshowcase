@@ -251,7 +251,10 @@ class GuardianClient(BaseNewsClient):
     base_url = "https://content.guardianapis.com/search"
     default_api_keys = [
         "93c1ada7-8c9d-4b38-aa03-20b53f43a1cb",  # primary key
-        "c1bb1584-e60d-4d7a-b019-276f96dd0a53",  # backup key from plan
+        "c1bb1584-e60d-4d7a-b019-276f96dd0a53",  # key 2
+        "ea1edef5-f57f-4f1d-80fe-92b9a81b4db4",  # key 3
+        "54917b96-22e5-4b8c-8c5b-faae17840526",  # key 4
+        "7f5c4bbf-6d72-445a-85f4-399aef09861d",  # key 5
     ]
     
     # corruption keywords for relevance filtering
