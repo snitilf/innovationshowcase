@@ -1,0 +1,58 @@
+/home/user/innovationshowcase/src/sentiment_analysis.py:13: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+2025-11-16 16:11:53,908 - INFO - processing 19 countries: ['Angola', 'Australia', 'Brazil', 'Canada', 'Denmark', 'Germany', 'India', 'Iraq', 'Malaysia', 'Mozambique', 'New Zealand', 'Norway', 'Philippines', 'Singapore', 'South Africa', 'Switzerland', 'Ukraine', 'Venezuela', 'Zimbabwe']
+2025-11-16 16:11:53,908 - INFO - year range: 2010 to 2023
+2025-11-16 16:11:53,909 - INFO - keywords: ['corruption', 'bribery', '"money laundering"', 'fraud', 'embezzlement', 'scandal']
+2025-11-16 16:11:53,909 - INFO - fetching news articles...
+2025-11-16 16:11:53,909 - INFO - using guardian api for Angola 2010
+2025-11-16 16:11:53,909 - INFO - fetching guardian page 1 for Angola (2010-01-01 to 2010-03-31)
+2025-11-16 16:11:54,084 - ERROR - error fetching guardian articles for Angola: 403 Client Error: Forbidden for url: https://content.guardianapis.com/search?api-key=93c1ada7-8c9d-4b38-aa03-20b53f43a1cb&q=Angola+AND+%28corruption+OR+bribery+OR+fraud+OR+scandal%29&from-date=2010-01-01&to-date=2010-03-31&page-size=50&page=1&show-fields=trailText%2Cheadline&order-by=relevance
+2025-11-16 16:11:54,085 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 16:11:55,187 - INFO - fetching guardian page 1 for Angola (2010-04-01 to 2010-06-30)
+2025-11-16 16:11:55,380 - ERROR - error fetching guardian articles for Angola: 403 Client Error: Forbidden for url: https://content.guardianapis.com/search?api-key=93c1ada7-8c9d-4b38-aa03-20b53f43a1cb&q=Angola+AND+%28corruption+OR+bribery+OR+fraud+OR+scandal%29&from-date=2010-04-01&to-date=2010-06-30&page-size=50&page=1&show-fields=trailText%2Cheadline&order-by=relevance
+2025-11-16 16:11:55,380 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 16:11:56,483 - INFO - fetching guardian page 1 for Angola (2010-07-01 to 2010-09-30)
+2025-11-16 16:11:56,568 - ERROR - error fetching guardian articles for Angola: 403 Client Error: Forbidden for url: https://content.guardianapis.com/search?api-key=93c1ada7-8c9d-4b38-aa03-20b53f43a1cb&q=Angola+AND+%28corruption+OR+bribery+OR+fraud+OR+scandal%29&from-date=2010-07-01&to-date=2010-09-30&page-size=50&page=1&show-fields=trailText%2Cheadline&order-by=relevance
+2025-11-16 16:11:56,568 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 16:11:57,671 - INFO - fetching guardian page 1 for Angola (2010-10-01 to 2010-12-31)
+2025-11-16 16:11:57,754 - ERROR - error fetching guardian articles for Angola: 403 Client Error: Forbidden for url: https://content.guardianapis.com/search?api-key=93c1ada7-8c9d-4b38-aa03-20b53f43a1cb&q=Angola+AND+%28corruption+OR+bribery+OR+fraud+OR+scandal%29&from-date=2010-10-01&to-date=2010-12-31&page-size=50&page=1&show-fields=trailText%2Cheadline&order-by=relevance
+2025-11-16 16:11:57,754 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 16:11:58,857 - INFO - ✓ completed Angola 2010
+2025-11-16 16:11:58,857 - INFO - using guardian api for Angola 2011
+2025-11-16 16:11:58,858 - INFO - fetching guardian page 1 for Angola (2011-01-01 to 2011-03-31)
+2025-11-16 16:11:58,940 - ERROR - error fetching guardian articles for Angola: 403 Client Error: Forbidden for url: https://content.guardianapis.com/search?api-key=93c1ada7-8c9d-4b38-aa03-20b53f43a1cb&q=Angola+AND+%28corruption+OR+bribery+OR+fraud+OR+scandal%29&from-date=2011-01-01&to-date=2011-03-31&page-size=50&page=1&show-fields=trailText%2Cheadline&order-by=relevance
+2025-11-16 16:11:58,940 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 16:12:00,042 - INFO - fetching guardian page 1 for Angola (2011-04-01 to 2011-06-30)
+2025-11-16 16:12:00,125 - ERROR - error fetching guardian articles for Angola: 403 Client Error: Forbidden for url: https://content.guardianapis.com/search?api-key=93c1ada7-8c9d-4b38-aa03-20b53f43a1cb&q=Angola+AND+%28corruption+OR+bribery+OR+fraud+OR+scandal%29&from-date=2011-04-01&to-date=2011-06-30&page-size=50&page=1&show-fields=trailText%2Cheadline&order-by=relevance
+2025-11-16 16:12:00,125 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 16:12:01,227 - INFO - fetching guardian page 1 for Angola (2011-07-01 to 2011-09-30)
+2025-11-16 16:12:01,315 - ERROR - error fetching guardian articles for Angola: 403 Client Error: Forbidden for url: https://content.guardianapis.com/search?api-key=93c1ada7-8c9d-4b38-aa03-20b53f43a1cb&q=Angola+AND+%28corruption+OR+bribery+OR+fraud+OR+scandal%29&from-date=2011-07-01&to-date=2011-09-30&page-size=50&page=1&show-fields=trailText%2Cheadline&order-by=relevance
+2025-11-16 16:12:01,315 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 16:12:02,419 - INFO - fetching guardian page 1 for Angola (2011-10-01 to 2011-12-31)
+2025-11-16 16:12:02,506 - ERROR - error fetching guardian articles for Angola: 403 Client Error: Forbidden for url: https://content.guardianapis.com/search?api-key=93c1ada7-8c9d-4b38-aa03-20b53f43a1cb&q=Angola+AND+%28corruption+OR+bribery+OR+fraud+OR+scandal%29&from-date=2011-10-01&to-date=2011-12-31&page-size=50&page=1&show-fields=trailText%2Cheadline&order-by=relevance
+2025-11-16 16:12:02,506 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 16:12:03,610 - INFO - ✓ completed Angola 2011
+2025-11-16 16:12:03,611 - INFO - using guardian api for Angola 2012
+2025-11-16 16:12:03,611 - INFO - fetching guardian page 1 for Angola (2012-01-01 to 2012-03-31)
+2025-11-16 16:12:03,698 - ERROR - error fetching guardian articles for Angola: 403 Client Error: Forbidden for url: https://content.guardianapis.com/search?api-key=93c1ada7-8c9d-4b38-aa03-20b53f43a1cb&q=Angola+AND+%28corruption+OR+bribery+OR+fraud+OR+scandal%29&from-date=2012-01-01&to-date=2012-03-31&page-size=50&page=1&show-fields=trailText%2Cheadline&order-by=relevance
+2025-11-16 16:12:03,699 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 16:12:04,801 - INFO - fetching guardian page 1 for Angola (2012-04-01 to 2012-06-30)
+2025-11-16 16:12:04,882 - ERROR - error fetching guardian articles for Angola: 403 Client Error: Forbidden for url: https://content.guardianapis.com/search?api-key=93c1ada7-8c9d-4b38-aa03-20b53f43a1cb&q=Angola+AND+%28corruption+OR+bribery+OR+fraud+OR+scandal%29&from-date=2012-04-01&to-date=2012-06-30&page-size=50&page=1&show-fields=trailText%2Cheadline&order-by=relevance
+2025-11-16 16:12:04,882 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 16:12:05,984 - INFO - fetching guardian page 1 for Angola (2012-07-01 to 2012-09-30)
+2025-11-16 16:12:06,064 - ERROR - error fetching guardian articles for Angola: 403 Client Error: Forbidden for url: https://content.guardianapis.com/search?api-key=93c1ada7-8c9d-4b38-aa03-20b53f43a1cb&q=Angola+AND+%28corruption+OR+bribery+OR+fraud+OR+scandal%29&from-date=2012-07-01&to-date=2012-09-30&page-size=50&page=1&show-fields=trailText%2Cheadline&order-by=relevance
+2025-11-16 16:12:06,064 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 16:12:07,166 - INFO - fetching guardian page 1 for Angola (2012-10-01 to 2012-12-31)
+2025-11-16 16:12:07,247 - ERROR - error fetching guardian articles for Angola: 403 Client Error: Forbidden for url: https://content.guardianapis.com/search?api-key=93c1ada7-8c9d-4b38-aa03-20b53f43a1cb&q=Angola+AND+%28corruption+OR+bribery+OR+fraud+OR+scandal%29&from-date=2012-10-01&to-date=2012-12-31&page-size=50&page=1&show-fields=trailText%2Cheadline&order-by=relevance
+2025-11-16 16:12:07,247 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 16:12:08,350 - INFO - ✓ completed Angola 2012
+2025-11-16 16:12:08,350 - INFO - using guardian api for Angola 2013
+2025-11-16 16:12:08,350 - INFO - fetching guardian page 1 for Angola (2013-01-01 to 2013-03-31)
+2025-11-16 16:12:08,430 - ERROR - error fetching guardian articles for Angola: 403 Client Error: Forbidden for url: https://content.guardianapis.com/search?api-key=93c1ada7-8c9d-4b38-aa03-20b53f43a1cb&q=Angola+AND+%28corruption+OR+bribery+OR+fraud+OR+scandal%29&from-date=2013-01-01&to-date=2013-03-31&page-size=50&page=1&show-fields=trailText%2Cheadline&order-by=relevance
+2025-11-16 16:12:08,430 - INFO - fetched 0 relevant articles for Angola after filtering

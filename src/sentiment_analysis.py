@@ -161,9 +161,9 @@ class GDELTClient(BaseNewsClient):
 
 class GuardianClient(BaseNewsClient):
     """client for guardian api."""
-    
+
     base_url = "https://content.guardianapis.com/search"
-    api_key = "c1bb1584-e60d-4d7a-b019-276f96dd0a53"
+    api_key = "93c1ada7-8c9d-4b38-aa03-20b53f43a1cb"
     
     # corruption keywords for relevance filtering
     corruption_keywords = [
