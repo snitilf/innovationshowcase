@@ -45,6 +45,17 @@ DEFAULT_KEYWORDS = [
 # initialize sentiment analyzers
 vader_analyzer = SentimentIntensityAnalyzer()
 
+# country name mapping for gdelt api (some short names are rejected)
+# maps original country name to api-compatible search term
+COUNTRY_API_MAPPING = {
+    "Iraq": "Iraqi"  # gdelt api requires phrases > 4 characters
+}
+
+
+def get_api_country_name(country: str) -> str:
+    """get api-compatible country name for gdelt queries."""
+    return COUNTRY_API_MAPPING.get(country, country)
+
 
 class BaseNewsClient(ABC):
     """abstract base class for news article clients."""
@@ -90,8 +101,11 @@ class GDELTClient(BaseNewsClient):
         start_str = start_date.strftime("%Y%m%d%H%M%S")
         end_str = end_date.strftime("%Y%m%d%H%M%S")
         
+        # use api-compatible country name for query
+        api_country = get_api_country_name(country)
+        
         # build query with country and keywords
-        full_query = f'({query}) AND "{country}"'
+        full_query = f'({query}) AND "{api_country}"'
         
         params = {
             "query": full_query,
