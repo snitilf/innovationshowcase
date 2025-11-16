@@ -2,6 +2,23 @@
 test all required package imports for the project
 """
 
+import os
+import sys
+
+# get project root directory (parent of tests/)
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# automatically add venv to python path if it exists
+venv_lib = os.path.join(project_root, 'venv', 'lib')
+if os.path.exists(venv_lib):
+    # find python version directory in venv
+    for item in os.listdir(venv_lib):
+        if item.startswith('python'):
+            venv_site_packages = os.path.join(venv_lib, item, 'site-packages')
+            if os.path.exists(venv_site_packages):
+                sys.path.insert(0, venv_site_packages)
+                break
+
 def test_import(package_name, import_statement):
     """test if a package can be imported"""
     try:

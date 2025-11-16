@@ -4,11 +4,24 @@ test script for expanded dataset notebook
 run from project root: python3 tests/test_notebook03.py
 """
 
-import pandas as pd
 import os
+import sys
 
 # get project root directory (parent of tests/)
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# automatically add venv to python path if it exists
+venv_lib = os.path.join(project_root, 'venv', 'lib')
+if os.path.exists(venv_lib):
+    # find python version directory in venv
+    for item in os.listdir(venv_lib):
+        if item.startswith('python'):
+            venv_site_packages = os.path.join(venv_lib, item, 'site-packages')
+            if os.path.exists(venv_site_packages):
+                sys.path.insert(0, venv_site_packages)
+                break
+
+import pandas as pd
 
 print("=== Testing Expanded Dataset notebook ===\n")
 
