@@ -1,0 +1,179 @@
+The Global Trust Engine: The Creation of a ML4DI (Machine Learning for Development
+Integrity) Model Capable of Detecting and Combatting Fraud in the Development Arena
+Theoretical Framework
+Defining Corruption
+The United Nations Development Programme (UNDP) defines corruption as the “misuse of
+entrusted power for private gain” (UNDP, 2008, pg. 7). Corruption operates across both private
+and public sectors, taking forms such as bribery, fraud, and extortion (UNDP, 2008, pg. 7). In the
+context of foreign aid and development, corruption is undertaken by bureaucratic officials who
+exploit their power in order to “further their own interests”, often diverting funds intended for
+social programs, infrastructure projects, or economic development into their political and
+personal pockets (Blackburn et al., 2006, pg. 2448). Former United Nations Secretary-General
+Ban Ki-Moon explained that roughly 30% of development funds or foreign aid is “devour[ed]”
+by corruption before reaching the recipient country (Quibiria, 2017, pg. 10). Thus, corruption is
+not just a financial crime; it is fundamentally a governance issue rooted in structural weaknesses.
+Causes of Corruption
+The UNDP outlines several factors that contribute to widespread corruption, indicating that
+corruption “thrives” in environments with limited accountability, powerful monopolies, and poor
+government transparency (UNDP, 2008, pg. 5). Furthermore, the UNDP points to underlying
+systemic causes such as low public-sector wages, weak enforcement systems, as well as
+“institutional weaknesses in the legislative and judicial systems” (UNDP, 2008, pg. 10). These
+structural conditions, combined with low corruption detection rates, foster an environment where
+the rewards of corruption outweigh the risks, enabling recipient countries to become “effective
+breeding grounds” for corrupt practices (UNDP, 2008, pg. 10).
+Money Laundering
+One of the main mechanisms by which corruption occurs is through money-laundering.
+Money-laundering is the process by which “the proceeds of crime are run through the financial
+system to disguise their illegal origins and make them appear to be legitimate funds” (Scott,
+1995, pg. 1). To conceal the illicit nature of these funds, launderers will “merge their illegal
+cash” into legitimate financial channels such as a “legal business, bank, or real estate” (UNODC,
+n.d.). Money-laundering occurs in three distinct stages, each designed to further obscure the
+origin of the illegal funds. First is the placement stage, which involves severing the money from
+its “direct association with the crime” (UNODC, n.d.). Next is the layering stage, in which the
+trail of the funds is “disguis[ed]” (UNODC, n.d.). Last is the integration stage, where the money
+becomes available to the criminal from the seemingly legitimate sources (UNODC, n.d.).
+Effects of Corruption
+The effects of corruption are detrimental to the already unstable countries which are most
+impacted. Perhaps the most visible consequences of corruption are economic: corruption diverts
+valuable funds and resources away from “growth-promoting areas” such as health, education,
+and infrastructure investment; these funds are instead put towards the personal interests of those
+in power (Blackburn et al., pg. 2449). As a result, corruption makes these countries less
+appealing destinations for private investment, further weakening markets and limiting job
+opportunities (Diagana & Diagne, 2023). In addition, corruption produces significant social and
+political consequences: the UNDP explains that corruption “undermines the rule of law” leading
+to the “violation of human rights” and the establishment of “an anti-democratic environment”
+(UNDP, 2008, pg. 6). By diverting development funds, corruption “undermin[es] a government’s
+ability to provide basic services”, therefore perpetuating inequalities and injustices (UNDP, 2008,
+pg. 5).
+The Vicious Cycle of Corruption
+The persistence of corruption can be understood as cyclical: corruption both causes and results
+from weak institutions, poverty, and inequality; this creates a self-reinforcing vicious cycle that
+is difficult to break. In countries with limited governance, high inequality, widespread poverty,
+and “perverse economic incentives”, individuals may turn to corruption in order to feed their
+families (UNDP, 2015, pg. 16). Consequently, the country’s institutions and government are
+undermined through the diversion of resources away from infrastructure and social services.
+With already weak oversight and limited accountability, corrupt practices become normalized
+(Blackburn et al., 2006, pg. 2449). As corruption continues, inequality worsens, economic
+growth slows, and citizens may feel compelled to engage in corrupt practices to survive, thus
+feeding back into the system.
+Economic Necessity
+The use of Machine Learning is urgent and necessary for the intervention of fraudulent activity
+and corruption (Odufisan, Abhulimen, & Ogunti, 2025).Traditional methods have become
+inefficient and inadequate; they struggle with complexity, behavioral factors, large scale real time
+data and rely on historical data (Zhang, Lecture 2025). These systems empower and train
+machines to learn large and complex data sets, analyze algorithms and recognize patterns.
+Machine learning models perform in universal ways in different sectors of the economy. For
+example, banking and finance through analyzing customer behaviour and spending patterns,
+money laundering schemes (Hassan et al., 2023), e-commerce through analyzing purchase
+histories, detecting IP addresses and fraudulent merchants (Paul and Nikolaev, 2021), healthcare
+through flagging identity theft, medical and billing data, patient records (Kasaraneni, 2024),
+education through academic integrity, plagiarism, cheating, admission fraud (Odufisan,
+Abhulimen, & Ogunti, 2025). Machine learning models have the power to work in real-time,
+monitoring trades, transfers and financial flows while analyzing datasets to flag any suspicious
+activity before they can cause serious harm. These systems are able to create risk assessment
+models by being trained per piece of data to alert of any sign of suspicion. Machine learning
+models work on improving performance beyond what traditional models can handle in order to
+create secure, accurate and effective financial environments.
+Relevance
+This approach has become extremely relevant within the world we live in today. E-Finance and
+AI are the future as financial development is becoming more and more digitalized. As a society,
+we must adapt and innovate to maintain secure, accurate and effective environments (Zhang,
+Lecture 2025). Human oversight alone cannot process millions of transactions per second;
+consequently, billions of dollars are lost annually to corruption, fraud, and embezzlement across
+sectors. As financial markets, digital currencies, and electronic payment systems expand
+globally, the potential for misuse increases (Zhang, Lecture 2025). Our Global Trust Engine’s
+mission is to address this issue at hand by using a data-driven mechanism to assess risk in real
+time, specifically for developing economies where fraudulent activity and corruption are able to
+destabilize the economy at a large scale. As technology evolves, there is an urgency for stricter
+regulations and the tightening of traditional mechanisms, where these systems can support our
+primary institutions. Machine Learning can prevent large-scale financial losses and prioritize
+security of all parties involved. Risk assessment is crucial as more and more sectors are
+becoming vulnerable to manipulation. Machine Learning promotes financial integrity and
+strengthens the credibility and transparency of both domestic and international institutions, so
+nothing can be done under the radar without being flagged.
+Policy Implications
+Machine Learning Systems are always learning and therefore always improving to perform
+real-time analysis, reduce inaccuracies and false positives and identify immediate anomalies in
+data that humans may miss (Bansal et al., 2024). The innovation of these models create a secure
+and more trustworthy digital environment, improve the accuracy of predictions, advance
+sustainable economic growth and promote financial stability within institutions (Desai, 2023).
+Additionally, machine learning models empower the use of digitalization (Odufisan, Abhulimen,
+& Ogunti, 2025). The Global Trust Engine reinforces the credibility of machine learning
+mechanisms for risk assessment and financial transparency. The findings confirm that
+measurable governance indicators can reliably signal early signs of financial and political
+vulnerability, underscoring the model’s potential as a proactive policy tool. Moving forward,
+institutions can adopt these measures to identify high risk environments and develop proper
+safeguards to combat corruption accurately through anomaly detection, risk analysis and text
+analysis. However, we acknowledge that our model cannot capture some of the non-quantifiable
+factors that play a role in reducing governance like historical data and legacies that shape
+corruption and fraudulent patterns.
+Case Study Analysis: Quantitative and Qualitative Instruments
+Mozambique
+The Hidden Debt Crisis in Mozambique was a product of the illicit use of $2 billion USD
+in loans on behalf of Mozambican officials. The initial flows of these funds are described by the
+transfer of $2 billion USD to three state-owned companies in Mozambique from a Russian and
+Swiss Bank (CHR Michelsen Institute, 2021, 16). The loans were offered to Mozambican
+enterprises for the sake of developing maritime security and empowering the fishing industry, a
+goal ultimately poisoned by the diversion of these funds to corrupt government officials who
+stole them for their own benefit and private investment. The primary organizer of the scheme,
+former Mozambican Finance Minister, Manuel Chang, received an additional $7 million USD in
+bribes to help facilitate the relocation of the funds (U.S. Department of Justice, 2024). These
+funds were laundered upon their integration into the formal economy, as they were funneled
+through sales to defrauded foreign investors from the United States. He illegally diverted more
+than $200 million USD of the development funds into private pockets for personal benefit,
+ultimately leading to his conviction in the United States in 2024 (U.S. Department of Justice,
+2024). The laundering scheme and procedure for theft collapsed as state-owned companies
+defaulted on over $700 million USD in loans. From the case of Mozambique, we observe a series
+of quantitative and qualitative patterns that are listed in Table 1 which serve the capacity to train
+a Machine Learning model to detect and prevent such corruption in the future.
+Malaysia
+The 1MDb development bank in Malaysia was initially a state fund chaired by former
+Prime Minister Najib Razak. The fund served the purpose of empowering Malaysia’s economic
+growth through foreign direct investment (FDI) and global partnerships. These goals remained
+unmaterialized due to the theft of $4.5 billion USD, orchestrated by several Malaysian
+government officials, most notably the former Prime Minister Razak (The Guardian, 2020). The
+funds were diverted toward a series of extravagant investments including luxury homes and
+properties in Beverly Hills, New York, and London, alongside a superyacht and fine art by
+Monet and Van Gogh (US Department of Justice, 2024)). With complicity from a series of global
+banks, Razak was able to siphon stolen funds through accounts internationally and conceal the
+illegal procedures through which he illegally obtained the funds. The magnitude of this
+corruption can be observed through Malaysia’s relatively low scores on governance indicators
+and measures of corruption as listed in Table 1. Similarly to Mozambique, these instruments for
+measuring corruption allow us to develop a Machine Learning model capable of detecting
+quantitative and qualitative patterns that commonly arise among cases of corruption, allowing us
+to prevent a future catastrophe that may similarly exploit the development of marginalized
+population for the expansion of the wealth of economic elite like Razak
+
+
+8
+
+90%
+Figure 7: Distribution of Countries by Risk Category. This pie chart shows the composition of our 19-country dataset by
+descriptive risk category: 42.1% Low-Risk (8 countries), 36.8% High-Risk (7 countries), and 21.1% Medium-Risk (4 countries).
+This balanced distribution provides adequate representation for model training.
+Figure 8: Corruption Risk Labels by Country and Year (All 19 Countries). This heatmap is the primary result, showing the
+binary corruption_risk labels for all 266 country-year observations. Red cells (1) indicate High Risk (4+ flags), while green cells
+(0) indicate Low Risk (<4 flags). Countries are sorted by risk, showing 11 nations with consistent high-risk patterns (red) and 8
+with low-risk status (green). These labels serve as the final training data for our model.
+Next Step: Model Training and Deployment
+A crucial next step involves incorporating qualitative data to enrich the model's
+predictive power. As outlined in the proposal, we will perform sentiment analysis on
+corruption-related news headlines for the countries in our dataset. Utilizing Natural Language
+Processing (NLP) tools such as TextBlob or VADER, sentiment scores will be extracted and
+integrated as an additional predictive feature. This will test the hypothesis that shifts in public
+sentiment, as reflected in media coverage, can serve as an early qualitative warning sign
+alongside quantitative governance indicators.
+The expanded and labeled corruption_data_expanded_labeled.csv dataset will be systematically
+divided into training and testing sets. A Decision Tree Classifier, chosen for its interpretability
+and robust performance on structured data, will be trained on the combined set of governance
+and economic indicators (and subsequently, sentiment scores). The model's performance will
+then be rigorously evaluated using key metrics such as accuracy, precision, and recall to ensure
+its reliability in identifying high-risk environments.
+A core deliverable for this phase will be the visualization of the trained Decision Tree. This
+graphical representation will provide a clear, intuitive flowchart of the model's decision-making
+process, illustrating precisely how different indicator thresholds lead to a "corruption risk"
+classification. Such transparency is vital for stakeholder understanding and trust in an early
+warning system designed for development integrity.
+The successful completion of these remaining steps will bring the Global Trust Engine to
+fruition, providing a powerful, data-driven tool to proactively combat corruption and safeguard
+international development efforts.

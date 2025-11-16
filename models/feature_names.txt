@@ -1,0 +1,12 @@
+Voice_Accountability
+Political_Stability
+Government_Effectiveness
+Regulatory_Quality
+Rule_of_Law
+Control_of_Corruption
+GDP_Growth_annual_perc
+External_Debt_perc_GNI
+Govt_Expenditure_perc_GDP
+FDI_Inflows_perc_GDP
+Poverty_Headcount_Ratio
+sentiment_score
