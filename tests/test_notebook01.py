@@ -10,16 +10,11 @@ import sys
 # get project root directory (parent of tests/)
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# automatically add venv to python path if it exists
-venv_lib = os.path.join(project_root, 'venv', 'lib')
-if os.path.exists(venv_lib):
-    # find python version directory in venv
-    for item in os.listdir(venv_lib):
-        if item.startswith('python'):
-            venv_site_packages = os.path.join(venv_lib, item, 'site-packages')
-            if os.path.exists(venv_site_packages):
-                sys.path.insert(0, venv_site_packages)
-                break
+# automatically use venv python if it exists and we're not already using it
+venv_python = os.path.join(project_root, 'venv', 'bin', 'python3')
+if os.path.exists(venv_python) and not sys.executable.startswith(os.path.join(project_root, 'venv')):
+    # re-execute this script with venv python
+    os.execv(venv_python, [venv_python] + sys.argv)
 
 import wbdata
 import pandas as pd
