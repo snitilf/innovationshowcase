@@ -133,8 +133,14 @@ if raw_file.exists():
         gdelt_by_cy = gdelt_articles.groupby(['country', 'year']).size()
         
         print(f"\nArticles per country-year:")
-        print(f"  Guardian: min={guardian_by_cy.min()}, max={guardian_by_cy.max()}, mean={guardian_by_cy.mean():.1f}")
-        print(f"  GDELT:    min={gdelt_by_cy.min() if len(gdelt_by_cy) > 0 else 0}, max={gdelt_by_cy.max() if len(gdelt_by_cy) > 0 else 0}, mean={gdelt_by_cy.mean():.1f if len(gdelt_by_cy) > 0 else 0:.1f}")
+        if len(guardian_by_cy) > 0:
+            print(f"  Guardian: min={guardian_by_cy.min()}, max={guardian_by_cy.max()}, mean={guardian_by_cy.mean():.1f}")
+        else:
+            print(f"  Guardian: no articles")
+        if len(gdelt_by_cy) > 0:
+            print(f"  GDELT:    min={gdelt_by_cy.min()}, max={gdelt_by_cy.max()}, mean={gdelt_by_cy.mean():.1f}")
+        else:
+            print(f"  GDELT:    no articles")
 else:
     print(f"\n⚠ Raw articles file not found")
 
