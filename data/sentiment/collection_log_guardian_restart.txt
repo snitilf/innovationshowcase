@@ -847,3 +847,301 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 2025-11-16 13:28:45,627 - INFO - fetching guardian page 1 for Iraq (2012-07-01 to 2012-09-30)
 2025-11-16 13:28:46,147 - INFO - fetched 7 relevant articles for Iraq after filtering
 2025-11-16 13:28:47,252 - INFO - fetching guardian page 1 for Iraq (2012-10-01 to 2012-12-31)
+2025-11-16 13:28:49,006 - INFO - fetching guardian page 2 for Iraq (2012-10-01 to 2012-12-31)
+2025-11-16 13:28:49,506 - INFO - fetched 8 relevant articles for Iraq after filtering
+2025-11-16 13:28:50,613 - INFO - ✓ completed Iraq 2012 (160 articles)
+2025-11-16 13:28:50,613 - INFO - using guardian api for Iraq 2013
+2025-11-16 13:28:50,614 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:28:50,614 - INFO - fetching guardian page 1 for Iraq (2013-01-01 to 2013-03-31)
+2025-11-16 13:28:52,294 - INFO - fetching guardian page 2 for Iraq (2013-01-01 to 2013-03-31)
+2025-11-16 13:28:52,959 - INFO - fetched 11 relevant articles for Iraq after filtering
+2025-11-16 13:28:54,065 - INFO - fetching guardian page 1 for Iraq (2013-04-01 to 2013-06-30)
+2025-11-16 13:28:55,759 - INFO - fetching guardian page 2 for Iraq (2013-04-01 to 2013-06-30)
+2025-11-16 13:28:56,329 - INFO - fetched 8 relevant articles for Iraq after filtering
+2025-11-16 13:28:57,435 - INFO - fetching guardian page 1 for Iraq (2013-07-01 to 2013-09-30)
+2025-11-16 13:28:59,240 - INFO - fetching guardian page 2 for Iraq (2013-07-01 to 2013-09-30)
+2025-11-16 13:28:59,747 - INFO - fetched 4 relevant articles for Iraq after filtering
+2025-11-16 13:29:00,854 - INFO - fetching guardian page 1 for Iraq (2013-10-01 to 2013-12-31)
+2025-11-16 13:29:01,394 - INFO - fetched 7 relevant articles for Iraq after filtering
+2025-11-16 13:29:02,499 - INFO - ✓ completed Iraq 2013 (234 articles)
+2025-11-16 13:29:02,499 - INFO - using guardian api for Iraq 2014
+2025-11-16 13:29:02,499 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:29:02,499 - INFO - fetching guardian page 1 for Iraq (2014-01-01 to 2014-03-31)
+2025-11-16 13:29:03,444 - INFO - fetched 6 relevant articles for Iraq after filtering
+2025-11-16 13:29:04,551 - INFO - fetching guardian page 1 for Iraq (2014-04-01 to 2014-06-30)
+2025-11-16 13:29:06,264 - INFO - fetching guardian page 2 for Iraq (2014-04-01 to 2014-06-30)
+2025-11-16 13:29:06,888 - INFO - fetched 18 relevant articles for Iraq after filtering
+2025-11-16 13:29:07,994 - INFO - fetching guardian page 1 for Iraq (2014-07-01 to 2014-09-30)
+2025-11-16 13:29:09,727 - INFO - fetching guardian page 2 for Iraq (2014-07-01 to 2014-09-30)
+2025-11-16 13:29:10,409 - INFO - fetched 9 relevant articles for Iraq after filtering
+2025-11-16 13:29:11,515 - INFO - fetching guardian page 1 for Iraq (2014-10-01 to 2014-12-31)
+2025-11-16 13:29:13,276 - INFO - fetching guardian page 2 for Iraq (2014-10-01 to 2014-12-31)
+2025-11-16 13:29:13,870 - INFO - fetched 6 relevant articles for Iraq after filtering
+2025-11-16 13:29:14,977 - INFO - ✓ completed Iraq 2014 (252 articles)
+2025-11-16 13:29:14,977 - INFO - using guardian api for Iraq 2015
+2025-11-16 13:29:14,977 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:29:14,977 - INFO - fetching guardian page 1 for Iraq (2015-01-01 to 2015-03-31)
+2025-11-16 13:29:16,663 - INFO - fetching guardian page 2 for Iraq (2015-01-01 to 2015-03-31)
+2025-11-16 13:29:17,263 - INFO - fetched 8 relevant articles for Iraq after filtering
+2025-11-16 13:29:18,369 - INFO - fetching guardian page 1 for Iraq (2015-04-01 to 2015-06-30)
+2025-11-16 13:29:20,211 - INFO - fetching guardian page 2 for Iraq (2015-04-01 to 2015-06-30)
+2025-11-16 13:29:20,924 - INFO - fetched 4 relevant articles for Iraq after filtering
+2025-11-16 13:29:22,031 - INFO - fetching guardian page 1 for Iraq (2015-07-01 to 2015-09-30)
+2025-11-16 13:29:23,698 - INFO - fetching guardian page 2 for Iraq (2015-07-01 to 2015-09-30)
+2025-11-16 13:29:24,351 - INFO - fetched 6 relevant articles for Iraq after filtering
+2025-11-16 13:29:25,454 - INFO - fetching guardian page 1 for Iraq (2015-10-01 to 2015-12-31)
+2025-11-16 13:29:27,134 - INFO - fetching guardian page 2 for Iraq (2015-10-01 to 2015-12-31)
+2025-11-16 13:29:27,797 - INFO - fetched 4 relevant articles for Iraq after filtering
+2025-11-16 13:29:28,905 - INFO - ✓ completed Iraq 2015 (349 articles)
+2025-11-16 13:29:28,905 - INFO - using guardian api for Iraq 2016
+2025-11-16 13:29:28,906 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:29:28,906 - INFO - fetching guardian page 1 for Iraq (2016-01-01 to 2016-03-31)
+2025-11-16 13:29:30,799 - INFO - fetching guardian page 2 for Iraq (2016-01-01 to 2016-03-31)
+2025-11-16 13:29:31,432 - INFO - fetched 2 relevant articles for Iraq after filtering
+2025-11-16 13:29:32,537 - INFO - fetching guardian page 1 for Iraq (2016-04-01 to 2016-06-30)
+2025-11-16 13:29:34,365 - INFO - fetching guardian page 2 for Iraq (2016-04-01 to 2016-06-30)
+2025-11-16 13:29:35,143 - INFO - fetched 6 relevant articles for Iraq after filtering
+2025-11-16 13:29:36,250 - INFO - fetching guardian page 1 for Iraq (2016-07-01 to 2016-09-30)
+2025-11-16 13:29:38,033 - INFO - fetching guardian page 2 for Iraq (2016-07-01 to 2016-09-30)
+2025-11-16 13:29:38,843 - INFO - fetched 10 relevant articles for Iraq after filtering
+2025-11-16 13:29:39,950 - INFO - fetching guardian page 1 for Iraq (2016-10-01 to 2016-12-31)
+2025-11-16 13:29:41,709 - INFO - fetching guardian page 2 for Iraq (2016-10-01 to 2016-12-31)
+2025-11-16 13:29:42,813 - INFO - fetched 8 relevant articles for Iraq after filtering
+2025-11-16 13:29:43,921 - INFO - ✓ completed Iraq 2016 (296 articles)
+2025-11-16 13:29:43,921 - INFO - using guardian api for Malaysia 2010
+2025-11-16 13:29:43,922 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:29:43,922 - INFO - fetching guardian page 1 for Malaysia (2010-01-01 to 2010-03-31)
+2025-11-16 13:29:44,407 - INFO - fetched 1 relevant articles for Malaysia after filtering
+2025-11-16 13:29:45,513 - INFO - fetching guardian page 1 for Malaysia (2010-04-01 to 2010-06-30)
+2025-11-16 13:29:46,093 - INFO - fetched 0 relevant articles for Malaysia after filtering
+2025-11-16 13:29:47,195 - INFO - fetching guardian page 1 for Malaysia (2010-07-01 to 2010-09-30)
+2025-11-16 13:29:47,673 - INFO - fetched 1 relevant articles for Malaysia after filtering
+2025-11-16 13:29:48,774 - INFO - fetching guardian page 1 for Malaysia (2010-10-01 to 2010-12-31)
+2025-11-16 13:29:49,261 - INFO - fetched 2 relevant articles for Malaysia after filtering
+2025-11-16 13:29:50,369 - INFO - ✓ completed Malaysia 2010 (196 articles)
+2025-11-16 13:29:50,370 - INFO - using guardian api for Malaysia 2011
+2025-11-16 13:29:50,370 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:29:50,370 - INFO - fetching guardian page 1 for Malaysia (2011-01-01 to 2011-03-31)
+2025-11-16 13:29:50,927 - INFO - fetched 0 relevant articles for Malaysia after filtering
+2025-11-16 13:29:52,035 - INFO - fetching guardian page 1 for Malaysia (2011-04-01 to 2011-06-30)
+2025-11-16 13:29:52,510 - INFO - fetched 1 relevant articles for Malaysia after filtering
+2025-11-16 13:29:53,618 - INFO - fetching guardian page 1 for Malaysia (2011-07-01 to 2011-09-30)
+2025-11-16 13:29:54,235 - INFO - fetched 3 relevant articles for Malaysia after filtering
+2025-11-16 13:29:55,340 - INFO - fetching guardian page 1 for Malaysia (2011-10-01 to 2011-12-31)
+2025-11-16 13:29:55,816 - INFO - fetched 2 relevant articles for Malaysia after filtering
+2025-11-16 13:29:56,919 - INFO - ✓ completed Malaysia 2011 (189 articles)
+2025-11-16 13:29:56,919 - INFO - using guardian api for Malaysia 2012
+2025-11-16 13:29:56,920 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:29:56,920 - INFO - fetching guardian page 1 for Malaysia (2012-01-01 to 2012-03-31)
+2025-11-16 13:29:57,541 - INFO - fetched 0 relevant articles for Malaysia after filtering
+2025-11-16 13:29:58,648 - INFO - fetching guardian page 1 for Malaysia (2012-04-01 to 2012-06-30)
+2025-11-16 13:29:59,252 - INFO - fetched 0 relevant articles for Malaysia after filtering
+2025-11-16 13:30:00,359 - INFO - fetching guardian page 1 for Malaysia (2012-07-01 to 2012-09-30)
+2025-11-16 13:30:01,051 - INFO - fetched 1 relevant articles for Malaysia after filtering
+2025-11-16 13:30:02,159 - INFO - fetching guardian page 1 for Malaysia (2012-10-01 to 2012-12-31)
+2025-11-16 13:30:03,150 - INFO - fetched 2 relevant articles for Malaysia after filtering
+2025-11-16 13:30:04,255 - INFO - ✓ completed Malaysia 2012 (163 articles)
+2025-11-16 13:30:04,255 - INFO - using guardian api for Malaysia 2013
+2025-11-16 13:30:04,255 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:30:04,255 - INFO - fetching guardian page 1 for Malaysia (2013-01-01 to 2013-03-31)
+2025-11-16 13:30:05,133 - INFO - fetched 1 relevant articles for Malaysia after filtering
+2025-11-16 13:30:06,240 - INFO - fetching guardian page 1 for Malaysia (2013-04-01 to 2013-06-30)
+2025-11-16 13:30:07,017 - INFO - fetched 4 relevant articles for Malaysia after filtering
+2025-11-16 13:30:08,124 - INFO - fetching guardian page 1 for Malaysia (2013-07-01 to 2013-09-30)
+2025-11-16 13:30:08,661 - INFO - fetched 1 relevant articles for Malaysia after filtering
+2025-11-16 13:30:09,769 - INFO - fetching guardian page 1 for Malaysia (2013-10-01 to 2013-12-31)
+2025-11-16 13:30:10,487 - INFO - fetched 0 relevant articles for Malaysia after filtering
+2025-11-16 13:30:11,595 - INFO - ✓ completed Malaysia 2013 (240 articles)
+2025-11-16 13:30:11,595 - INFO - using guardian api for Malaysia 2014
+2025-11-16 13:30:11,596 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:30:11,596 - INFO - fetching guardian page 1 for Malaysia (2014-01-01 to 2014-03-31)
+2025-11-16 13:30:12,240 - INFO - fetched 3 relevant articles for Malaysia after filtering
+2025-11-16 13:30:13,343 - INFO - fetching guardian page 1 for Malaysia (2014-04-01 to 2014-06-30)
+2025-11-16 13:30:13,992 - INFO - fetched 1 relevant articles for Malaysia after filtering
+2025-11-16 13:30:15,098 - INFO - fetching guardian page 1 for Malaysia (2014-07-01 to 2014-09-30)
+2025-11-16 13:30:15,754 - INFO - fetched 2 relevant articles for Malaysia after filtering
+2025-11-16 13:30:16,861 - INFO - fetching guardian page 1 for Malaysia (2014-10-01 to 2014-12-31)
+2025-11-16 13:30:17,487 - INFO - fetched 1 relevant articles for Malaysia after filtering
+2025-11-16 13:30:18,595 - INFO - ✓ completed Malaysia 2014 (259 articles)
+2025-11-16 13:30:18,595 - INFO - using guardian api for Malaysia 2015
+2025-11-16 13:30:18,596 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:30:18,596 - INFO - fetching guardian page 1 for Malaysia (2015-01-01 to 2015-03-31)
+2025-11-16 13:30:19,197 - INFO - fetched 2 relevant articles for Malaysia after filtering
+2025-11-16 13:30:20,303 - INFO - fetching guardian page 1 for Malaysia (2015-04-01 to 2015-06-30)
+2025-11-16 13:30:20,871 - INFO - fetched 1 relevant articles for Malaysia after filtering
+2025-11-16 13:30:21,977 - INFO - fetching guardian page 1 for Malaysia (2015-07-01 to 2015-09-30)
+2025-11-16 13:30:22,546 - INFO - fetched 11 relevant articles for Malaysia after filtering
+2025-11-16 13:30:23,653 - INFO - fetching guardian page 1 for Malaysia (2015-10-01 to 2015-12-31)
+2025-11-16 13:30:24,264 - INFO - fetched 5 relevant articles for Malaysia after filtering
+2025-11-16 13:30:25,371 - INFO - ✓ completed Malaysia 2015 (368 articles)
+2025-11-16 13:30:25,371 - INFO - using guardian api for Malaysia 2016
+2025-11-16 13:30:25,371 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:30:25,371 - INFO - fetching guardian page 1 for Malaysia (2016-01-01 to 2016-03-31)
+2025-11-16 13:30:25,983 - INFO - fetched 3 relevant articles for Malaysia after filtering
+2025-11-16 13:30:27,089 - INFO - fetching guardian page 1 for Malaysia (2016-04-01 to 2016-06-30)
+2025-11-16 13:30:27,657 - INFO - fetched 4 relevant articles for Malaysia after filtering
+2025-11-16 13:30:28,763 - INFO - fetching guardian page 1 for Malaysia (2016-07-01 to 2016-09-30)
+2025-11-16 13:30:29,439 - INFO - fetched 3 relevant articles for Malaysia after filtering
+2025-11-16 13:30:30,543 - INFO - fetching guardian page 1 for Malaysia (2016-10-01 to 2016-12-31)
+2025-11-16 13:30:31,135 - INFO - fetched 3 relevant articles for Malaysia after filtering
+2025-11-16 13:30:32,244 - INFO - ✓ completed Malaysia 2016 (309 articles)
+2025-11-16 13:30:32,244 - INFO - using guardian api for Mozambique 2010
+2025-11-16 13:30:32,245 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:30:32,245 - INFO - fetching guardian page 1 for Mozambique (2010-01-01 to 2010-03-31)
+2025-11-16 13:30:32,750 - INFO - fetched 1 relevant articles for Mozambique after filtering
+2025-11-16 13:30:33,854 - INFO - fetching guardian page 1 for Mozambique (2010-04-01 to 2010-06-30)
+2025-11-16 13:30:34,320 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:30:35,427 - INFO - fetching guardian page 1 for Mozambique (2010-07-01 to 2010-09-30)
+2025-11-16 13:30:35,900 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:30:37,008 - INFO - fetching guardian page 1 for Mozambique (2010-10-01 to 2010-12-31)
+2025-11-16 13:30:37,472 - INFO - fetched 2 relevant articles for Mozambique after filtering
+2025-11-16 13:30:38,577 - INFO - ✓ completed Mozambique 2010 (199 articles)
+2025-11-16 13:30:38,577 - INFO - using guardian api for Mozambique 2011
+2025-11-16 13:30:38,577 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:30:38,577 - INFO - fetching guardian page 1 for Mozambique (2011-01-01 to 2011-03-31)
+2025-11-16 13:30:39,046 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:30:40,153 - INFO - fetching guardian page 1 for Mozambique (2011-04-01 to 2011-06-30)
+2025-11-16 13:30:40,717 - INFO - fetched 1 relevant articles for Mozambique after filtering
+2025-11-16 13:30:41,821 - INFO - fetching guardian page 1 for Mozambique (2011-07-01 to 2011-09-30)
+2025-11-16 13:30:42,313 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:30:43,418 - INFO - fetching guardian page 1 for Mozambique (2011-10-01 to 2011-12-31)
+2025-11-16 13:30:44,039 - INFO - fetched 1 relevant articles for Mozambique after filtering
+2025-11-16 13:30:45,145 - INFO - ✓ completed Mozambique 2011 (191 articles)
+2025-11-16 13:30:45,146 - INFO - using guardian api for Mozambique 2012
+2025-11-16 13:30:45,146 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:30:45,146 - INFO - fetching guardian page 1 for Mozambique (2012-01-01 to 2012-03-31)
+2025-11-16 13:30:45,611 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:30:46,718 - INFO - fetching guardian page 1 for Mozambique (2012-04-01 to 2012-06-30)
+2025-11-16 13:30:47,186 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:30:48,289 - INFO - fetching guardian page 1 for Mozambique (2012-07-01 to 2012-09-30)
+2025-11-16 13:30:48,786 - INFO - fetched 1 relevant articles for Mozambique after filtering
+2025-11-16 13:30:49,894 - INFO - fetching guardian page 1 for Mozambique (2012-10-01 to 2012-12-31)
+2025-11-16 13:30:50,465 - INFO - fetched 1 relevant articles for Mozambique after filtering
+2025-11-16 13:30:51,573 - INFO - ✓ completed Mozambique 2012 (165 articles)
+2025-11-16 13:30:51,573 - INFO - using guardian api for Mozambique 2013
+2025-11-16 13:30:51,573 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:30:51,573 - INFO - fetching guardian page 1 for Mozambique (2013-01-01 to 2013-03-31)
+2025-11-16 13:30:52,140 - INFO - fetched 1 relevant articles for Mozambique after filtering
+2025-11-16 13:30:53,246 - INFO - fetching guardian page 1 for Mozambique (2013-04-01 to 2013-06-30)
+2025-11-16 13:30:53,724 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:30:54,833 - INFO - fetching guardian page 1 for Mozambique (2013-07-01 to 2013-09-30)
+2025-11-16 13:30:55,391 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:30:56,505 - INFO - fetching guardian page 1 for Mozambique (2013-10-01 to 2013-12-31)
+2025-11-16 13:30:56,993 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:30:58,100 - INFO - ✓ completed Mozambique 2013 (241 articles)
+2025-11-16 13:30:58,100 - INFO - using guardian api for Mozambique 2014
+2025-11-16 13:30:58,100 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:30:58,101 - INFO - fetching guardian page 1 for Mozambique (2014-01-01 to 2014-03-31)
+2025-11-16 13:30:58,720 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:30:59,827 - INFO - fetching guardian page 1 for Mozambique (2014-04-01 to 2014-06-30)
+2025-11-16 13:31:00,317 - INFO - fetched 1 relevant articles for Mozambique after filtering
+2025-11-16 13:31:01,422 - INFO - fetching guardian page 1 for Mozambique (2014-07-01 to 2014-09-30)
+2025-11-16 13:31:01,994 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:31:03,101 - INFO - fetching guardian page 1 for Mozambique (2014-10-01 to 2014-12-31)
+2025-11-16 13:31:03,685 - INFO - fetched 1 relevant articles for Mozambique after filtering
+2025-11-16 13:31:04,793 - INFO - ✓ completed Mozambique 2014 (261 articles)
+2025-11-16 13:31:04,793 - INFO - using guardian api for Mozambique 2015
+2025-11-16 13:31:04,793 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:31:04,793 - INFO - fetching guardian page 1 for Mozambique (2015-01-01 to 2015-03-31)
+2025-11-16 13:31:05,290 - INFO - fetched 3 relevant articles for Mozambique after filtering
+2025-11-16 13:31:06,396 - INFO - fetching guardian page 1 for Mozambique (2015-04-01 to 2015-06-30)
+2025-11-16 13:31:06,949 - INFO - fetched 1 relevant articles for Mozambique after filtering
+2025-11-16 13:31:08,051 - INFO - fetching guardian page 1 for Mozambique (2015-07-01 to 2015-09-30)
+2025-11-16 13:31:08,563 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:31:09,670 - INFO - fetching guardian page 1 for Mozambique (2015-10-01 to 2015-12-31)
+2025-11-16 13:31:10,263 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:31:11,369 - INFO - ✓ completed Mozambique 2015 (372 articles)
+2025-11-16 13:31:11,369 - INFO - using guardian api for Mozambique 2016
+2025-11-16 13:31:11,370 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:31:11,370 - INFO - fetching guardian page 1 for Mozambique (2016-01-01 to 2016-03-31)
+2025-11-16 13:31:11,873 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:31:12,977 - INFO - fetching guardian page 1 for Mozambique (2016-04-01 to 2016-06-30)
+2025-11-16 13:31:13,530 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:31:14,637 - INFO - fetching guardian page 1 for Mozambique (2016-07-01 to 2016-09-30)
+2025-11-16 13:31:15,242 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:31:16,349 - INFO - fetching guardian page 1 for Mozambique (2016-10-01 to 2016-12-31)
+2025-11-16 13:31:16,916 - INFO - fetched 0 relevant articles for Mozambique after filtering
+2025-11-16 13:31:18,023 - INFO - ✓ completed Mozambique 2016 (309 articles)
+2025-11-16 13:31:18,023 - INFO - using guardian api for New Zealand 2010
+2025-11-16 13:31:18,023 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:31:18,024 - INFO - fetching guardian page 1 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:19,752 - INFO - fetching guardian page 2 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:21,361 - INFO - fetching guardian page 3 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:23,063 - INFO - fetching guardian page 4 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:24,767 - INFO - fetching guardian page 5 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:26,445 - INFO - fetching guardian page 6 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:28,152 - INFO - fetching guardian page 7 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:29,768 - INFO - fetching guardian page 8 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:31,460 - INFO - fetching guardian page 9 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:31,991 - WARNING - rate limit hit for api key 93c1ada7..., rotating to next key
+2025-11-16 13:31:31,991 - INFO - using guardian api key: c1bb1584...
+2025-11-16 13:31:31,991 - INFO - fetching guardian page 9 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:33,674 - INFO - fetching guardian page 10 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:35,363 - INFO - fetching guardian page 11 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:37,064 - INFO - fetching guardian page 12 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:38,670 - INFO - fetching guardian page 13 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:40,287 - INFO - fetching guardian page 14 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:41,974 - INFO - fetching guardian page 15 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:43,647 - INFO - fetching guardian page 16 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:45,326 - INFO - fetching guardian page 17 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:47,032 - INFO - fetching guardian page 18 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:48,646 - INFO - fetching guardian page 19 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:50,330 - INFO - fetching guardian page 20 for New Zealand (2010-01-01 to 2010-03-31)
+2025-11-16 13:31:52,026 - INFO - fetched 9 relevant articles for New Zealand after filtering
+2025-11-16 13:31:53,131 - INFO - fetching guardian page 1 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:31:54,786 - INFO - fetching guardian page 2 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:31:56,507 - INFO - fetching guardian page 3 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:31:58,210 - INFO - fetching guardian page 4 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:31:59,904 - INFO - fetching guardian page 5 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:01,586 - INFO - fetching guardian page 6 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:03,295 - INFO - fetching guardian page 7 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:04,922 - INFO - fetching guardian page 8 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:06,603 - INFO - fetching guardian page 9 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:08,281 - INFO - fetching guardian page 10 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:09,986 - INFO - fetching guardian page 11 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:11,857 - INFO - fetching guardian page 12 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:13,669 - INFO - fetching guardian page 13 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:15,437 - INFO - fetching guardian page 14 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:17,082 - INFO - fetching guardian page 15 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:18,771 - INFO - fetching guardian page 16 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:20,450 - INFO - fetching guardian page 17 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:22,162 - INFO - fetching guardian page 18 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:23,774 - INFO - fetching guardian page 19 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:25,470 - INFO - fetching guardian page 20 for New Zealand (2010-04-01 to 2010-06-30)
+2025-11-16 13:32:27,153 - INFO - fetched 7 relevant articles for New Zealand after filtering
+2025-11-16 13:32:28,261 - INFO - fetching guardian page 1 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:29,897 - INFO - fetching guardian page 2 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:31,602 - INFO - fetching guardian page 3 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:33,226 - INFO - fetching guardian page 4 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:34,919 - INFO - fetching guardian page 5 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:36,587 - INFO - fetching guardian page 6 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:38,324 - INFO - fetching guardian page 7 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:39,986 - INFO - fetching guardian page 8 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:41,596 - INFO - fetching guardian page 9 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:43,368 - INFO - fetching guardian page 10 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:44,976 - INFO - fetching guardian page 11 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:46,672 - INFO - fetching guardian page 12 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:48,376 - INFO - fetching guardian page 13 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:49,972 - INFO - fetching guardian page 14 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:51,577 - INFO - fetching guardian page 15 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:53,257 - INFO - fetching guardian page 16 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:54,940 - INFO - fetching guardian page 17 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:56,633 - INFO - fetching guardian page 18 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:58,342 - INFO - fetching guardian page 19 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:32:59,943 - INFO - fetching guardian page 20 for New Zealand (2010-07-01 to 2010-09-30)
+2025-11-16 13:33:01,643 - INFO - fetched 8 relevant articles for New Zealand after filtering
+2025-11-16 13:33:02,748 - INFO - fetching guardian page 1 for New Zealand (2010-10-01 to 2010-12-31)
+2025-11-16 13:33:04,382 - INFO - fetching guardian page 2 for New Zealand (2010-10-01 to 2010-12-31)
+2025-11-16 13:33:06,062 - INFO - fetching guardian page 3 for New Zealand (2010-10-01 to 2010-12-31)
+2025-11-16 13:33:07,776 - INFO - fetching guardian page 4 for New Zealand (2010-10-01 to 2010-12-31)
+2025-11-16 13:33:09,389 - INFO - fetching guardian page 5 for New Zealand (2010-10-01 to 2010-12-31)
+2025-11-16 13:33:11,091 - INFO - fetching guardian page 6 for New Zealand (2010-10-01 to 2010-12-31)
+2025-11-16 13:33:12,774 - INFO - fetching guardian page 7 for New Zealand (2010-10-01 to 2010-12-31)
+2025-11-16 13:33:14,465 - INFO - fetching guardian page 8 for New Zealand (2010-10-01 to 2010-12-31)
+2025-11-16 13:33:16,166 - INFO - fetching guardian page 9 for New Zealand (2010-10-01 to 2010-12-31)
+2025-11-16 13:33:17,811 - INFO - fetching guardian page 10 for New Zealand (2010-10-01 to 2010-12-31)
+2025-11-16 13:33:19,475 - INFO - fetching guardian page 11 for New Zealand (2010-10-01 to 2010-12-31)
+2025-11-16 13:33:21,158 - INFO - fetching guardian page 12 for New Zealand (2010-10-01 to 2010-12-31)
+2025-11-16 13:33:22,828 - INFO - fetching guardian page 13 for New Zealand (2010-10-01 to 2010-12-31)
+2025-11-16 13:33:24,556 - INFO - fetching guardian page 14 for New Zealand (2010-10-01 to 2010-12-31)
+2025-11-16 13:33:26,178 - INFO - fetching guardian page 15 for New Zealand (2010-10-01 to 2010-12-31)

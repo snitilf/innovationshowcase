@@ -138,13 +138,15 @@ if raw_file.exists():
 else:
     print(f"\n⚠ Raw articles file not found")
 
-# sentiment scores data
+# sentiment scores data (calculated from articles, may lag behind collection)
 if sentiment_file.exists():
     df = pd.read_csv(sentiment_file)
     print(f"\n" + "="*70)
     print("SENTIMENT SCORES DATA")
     print("="*70)
-    print(f"Total country-years: {len(df)}")
+    print("Note: Sentiment scores are calculated after articles are collected.")
+    print("      This may lag behind the actual collection progress shown above.")
+    print(f"\nTotal country-years with sentiment scores: {len(df)}")
     print(f"Countries: {df['country'].nunique()}")
     
     if len(df) > 0:
@@ -157,18 +159,32 @@ if sentiment_file.exists():
         gdelt_scores = df[df['year'] >= 2017]
         
         print(f"\nBy data source:")
-        print(f"  Guardian (2010-2016): {len(guardian_scores)} country-years, {guardian_scores['article_count'].sum():,} articles")
-        print(f"    Mean sentiment: {guardian_scores['sentiment_score'].mean():.3f}")
-        print(f"  GDELT (2017-2023):    {len(gdelt_scores)} country-years, {gdelt_scores['article_count'].sum():,} articles")
-        print(f"    Mean sentiment: {gdelt_scores['sentiment_score'].mean():.3f}")
+        if len(guardian_scores) > 0:
+            print(f"  Guardian (2010-2016): {len(guardian_scores)} country-years, {guardian_scores['article_count'].sum():,} articles")
+            print(f"    Mean sentiment: {guardian_scores['sentiment_score'].mean():.3f}")
+        else:
+            print(f"  Guardian (2010-2016): 0 country-years (sentiment not calculated yet)")
         
-        # coverage comparison
-        print(f"\nCoverage vs Expected:")
-        print(f"  Guardian: {len(guardian_scores)}/{EXPECTED_GUARDIAN} country-years ({len(guardian_scores)/EXPECTED_GUARDIAN*100:.1f}%)")
-        print(f"  GDELT:    {len(gdelt_scores)}/{EXPECTED_GDELT} country-years ({len(gdelt_scores)/EXPECTED_GDELT*100:.1f}%)")
-        print(f"  Total:    {len(df)}/{EXPECTED_TOTAL} country-years ({len(df)/EXPECTED_TOTAL*100:.1f}%)")
+        if len(gdelt_scores) > 0:
+            print(f"  GDELT (2017-2023):    {len(gdelt_scores)} country-years, {gdelt_scores['article_count'].sum():,} articles")
+            print(f"    Mean sentiment: {gdelt_scores['sentiment_score'].mean():.3f}")
+        else:
+            print(f"  GDELT (2017-2023):    0 country-years (sentiment not calculated yet)")
+        
+        # show that this is different from checkpoint
+        if checkpoint_file.exists():
+            with open(checkpoint_file, 'r') as f:
+                checkpoint_data = json.load(f)
+            checkpoint_guardian = len([(c, y) for c, y in checkpoint_data if y <= 2016])
+            checkpoint_gdelt = len([(c, y) for c, y in checkpoint_data if y >= 2017])
+            
+            print(f"\nNote: Checkpoint shows {checkpoint_guardian} Guardian and {checkpoint_gdelt} GDELT country-years completed.")
+            print(f"      Sentiment scores calculated for {len(guardian_scores)} Guardian and {len(gdelt_scores)} GDELT.")
+            if checkpoint_guardian > len(guardian_scores) or checkpoint_gdelt > len(gdelt_scores):
+                print(f"      ⚠ Sentiment calculation is behind collection progress.")
 else:
     print(f"\n⚠ Sentiment scores file not found")
+    print("   Sentiment scores will be calculated after articles are collected and processed.")
 
 print("\n" + "="*70)
 print("Collection processes should be running in background.")
