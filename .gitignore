@@ -26,6 +26,8 @@ ENV/
 *.swo
 *~
 .cursorrules
+.clj-kondo/
+.lsp/
 
 # macOS
 .DS_Store
