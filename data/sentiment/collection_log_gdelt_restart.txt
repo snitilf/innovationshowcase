@@ -18,3 +18,562 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 2025-11-16 13:14:16,448 - INFO - fetching articles for Angola (2017-07-01 to 2017-09-30) [attempt 1/3]
 2025-11-16 13:14:17,131 - INFO - fetched 100 articles for Angola
 2025-11-16 13:14:20,137 - INFO - fetching articles for Angola (2017-10-01 to 2017-12-31) [attempt 1/3]
+2025-11-16 13:14:21,080 - INFO - fetched 100 articles for Angola
+2025-11-16 13:14:24,089 - INFO - ✓ completed Angola 2017 (400 articles)
+2025-11-16 13:14:24,089 - INFO - using gdelt api for Angola 2018
+2025-11-16 13:14:24,089 - INFO - fetching articles for Angola (2018-01-01 to 2018-03-31) [attempt 1/3]
+2025-11-16 13:14:25,391 - INFO - fetched 100 articles for Angola
+2025-11-16 13:14:28,400 - INFO - fetching articles for Angola (2018-04-01 to 2018-06-30) [attempt 1/3]
+2025-11-16 13:14:29,483 - INFO - fetched 100 articles for Angola
+2025-11-16 13:14:32,490 - INFO - fetching articles for Angola (2018-07-01 to 2018-09-30) [attempt 1/3]
+2025-11-16 13:14:33,187 - INFO - fetched 100 articles for Angola
+2025-11-16 13:14:36,194 - INFO - fetching articles for Angola (2018-10-01 to 2018-12-31) [attempt 1/3]
+2025-11-16 13:14:36,895 - INFO - fetched 100 articles for Angola
+2025-11-16 13:14:39,903 - INFO - ✓ completed Angola 2018 (400 articles)
+2025-11-16 13:14:39,905 - INFO - using gdelt api for Angola 2019
+2025-11-16 13:14:39,905 - INFO - fetching articles for Angola (2019-01-01 to 2019-03-31) [attempt 1/3]
+2025-11-16 13:14:41,022 - INFO - fetched 100 articles for Angola
+2025-11-16 13:14:44,030 - INFO - fetching articles for Angola (2019-04-01 to 2019-06-30) [attempt 1/3]
+2025-11-16 13:14:44,690 - INFO - fetched 100 articles for Angola
+2025-11-16 13:14:47,697 - INFO - fetching articles for Angola (2019-07-01 to 2019-09-30) [attempt 1/3]
+2025-11-16 13:14:48,632 - INFO - fetched 100 articles for Angola
+2025-11-16 13:14:51,636 - INFO - fetching articles for Angola (2019-10-01 to 2019-12-31) [attempt 1/3]
+2025-11-16 13:14:52,506 - INFO - fetched 100 articles for Angola
+2025-11-16 13:14:55,518 - INFO - ✓ completed Angola 2019 (400 articles)
+2025-11-16 13:14:55,519 - INFO - using gdelt api for Angola 2020
+2025-11-16 13:14:55,519 - INFO - fetching articles for Angola (2020-01-01 to 2020-03-31) [attempt 1/3]
+2025-11-16 13:14:57,001 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:00,012 - INFO - fetching articles for Angola (2020-04-01 to 2020-06-30) [attempt 1/3]
+2025-11-16 13:15:00,998 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:04,006 - INFO - fetching articles for Angola (2020-07-01 to 2020-09-30) [attempt 1/3]
+2025-11-16 13:15:04,802 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:07,808 - INFO - fetching articles for Angola (2020-10-01 to 2020-12-31) [attempt 1/3]
+2025-11-16 13:15:09,072 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:12,077 - INFO - ✓ completed Angola 2020 (400 articles)
+2025-11-16 13:15:12,078 - INFO - using gdelt api for Angola 2021
+2025-11-16 13:15:12,078 - INFO - fetching articles for Angola (2021-01-01 to 2021-03-31) [attempt 1/3]
+2025-11-16 13:15:12,991 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:15,994 - INFO - fetching articles for Angola (2021-04-01 to 2021-06-30) [attempt 1/3]
+2025-11-16 13:15:16,951 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:19,955 - INFO - fetching articles for Angola (2021-07-01 to 2021-09-30) [attempt 1/3]
+2025-11-16 13:15:20,820 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:23,827 - INFO - fetching articles for Angola (2021-10-01 to 2021-12-31) [attempt 1/3]
+2025-11-16 13:15:24,593 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:27,601 - INFO - ✓ completed Angola 2021 (400 articles)
+2025-11-16 13:15:27,601 - INFO - using gdelt api for Angola 2022
+2025-11-16 13:15:27,601 - INFO - fetching articles for Angola (2022-01-01 to 2022-03-31) [attempt 1/3]
+2025-11-16 13:15:28,809 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:31,815 - INFO - fetching articles for Angola (2022-04-01 to 2022-06-30) [attempt 1/3]
+2025-11-16 13:15:32,485 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:35,494 - INFO - fetching articles for Angola (2022-07-01 to 2022-09-30) [attempt 1/3]
+2025-11-16 13:15:36,662 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:39,671 - INFO - fetching articles for Angola (2022-10-01 to 2022-12-31) [attempt 1/3]
+2025-11-16 13:15:40,965 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:43,973 - INFO - ✓ completed Angola 2022 (400 articles)
+2025-11-16 13:15:43,974 - INFO - using gdelt api for Angola 2023
+2025-11-16 13:15:43,974 - INFO - fetching articles for Angola (2023-01-01 to 2023-03-31) [attempt 1/3]
+2025-11-16 13:15:44,731 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:47,739 - INFO - fetching articles for Angola (2023-04-01 to 2023-06-30) [attempt 1/3]
+2025-11-16 13:15:48,385 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:51,392 - INFO - fetching articles for Angola (2023-07-01 to 2023-09-30) [attempt 1/3]
+2025-11-16 13:15:52,231 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:55,240 - INFO - fetching articles for Angola (2023-10-01 to 2023-12-31) [attempt 1/3]
+2025-11-16 13:15:56,323 - INFO - fetched 100 articles for Angola
+2025-11-16 13:15:59,336 - INFO - ✓ completed Angola 2023 (400 articles)
+2025-11-16 13:15:59,336 - INFO - using gdelt api for Australia 2017
+2025-11-16 13:15:59,336 - INFO - fetching articles for Australia (2017-01-01 to 2017-03-31) [attempt 1/3]
+2025-11-16 13:16:00,247 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:03,255 - INFO - fetching articles for Australia (2017-04-01 to 2017-06-30) [attempt 1/3]
+2025-11-16 13:16:03,890 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:06,893 - INFO - fetching articles for Australia (2017-07-01 to 2017-09-30) [attempt 1/3]
+2025-11-16 13:16:08,186 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:11,195 - INFO - fetching articles for Australia (2017-10-01 to 2017-12-31) [attempt 1/3]
+2025-11-16 13:16:12,020 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:15,024 - INFO - ✓ completed Australia 2017 (800 articles)
+2025-11-16 13:16:15,024 - INFO - using gdelt api for Australia 2018
+2025-11-16 13:16:15,024 - INFO - fetching articles for Australia (2018-01-01 to 2018-03-31) [attempt 1/3]
+2025-11-16 13:16:15,821 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:18,828 - INFO - fetching articles for Australia (2018-04-01 to 2018-06-30) [attempt 1/3]
+2025-11-16 13:16:19,599 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:22,607 - INFO - fetching articles for Australia (2018-07-01 to 2018-09-30) [attempt 1/3]
+2025-11-16 13:16:23,561 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:26,569 - INFO - fetching articles for Australia (2018-10-01 to 2018-12-31) [attempt 1/3]
+2025-11-16 13:16:27,196 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:30,204 - INFO - ✓ completed Australia 2018 (800 articles)
+2025-11-16 13:16:30,204 - INFO - using gdelt api for Australia 2019
+2025-11-16 13:16:30,204 - INFO - fetching articles for Australia (2019-01-01 to 2019-03-31) [attempt 1/3]
+2025-11-16 13:16:31,142 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:34,149 - INFO - fetching articles for Australia (2019-04-01 to 2019-06-30) [attempt 1/3]
+2025-11-16 13:16:34,922 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:37,934 - INFO - fetching articles for Australia (2019-07-01 to 2019-09-30) [attempt 1/3]
+2025-11-16 13:16:38,927 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:41,932 - INFO - fetching articles for Australia (2019-10-01 to 2019-12-31) [attempt 1/3]
+2025-11-16 13:16:42,826 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:45,837 - INFO - ✓ completed Australia 2019 (800 articles)
+2025-11-16 13:16:45,837 - INFO - using gdelt api for Australia 2020
+2025-11-16 13:16:45,837 - INFO - fetching articles for Australia (2020-01-01 to 2020-03-31) [attempt 1/3]
+2025-11-16 13:16:46,660 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:49,663 - INFO - fetching articles for Australia (2020-04-01 to 2020-06-30) [attempt 1/3]
+2025-11-16 13:16:50,616 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:53,624 - INFO - fetching articles for Australia (2020-07-01 to 2020-09-30) [attempt 1/3]
+2025-11-16 13:16:54,424 - INFO - fetched 100 articles for Australia
+2025-11-16 13:16:57,432 - INFO - fetching articles for Australia (2020-10-01 to 2020-12-31) [attempt 1/3]
+2025-11-16 13:16:58,376 - INFO - fetched 100 articles for Australia
+2025-11-16 13:17:01,385 - INFO - ✓ completed Australia 2020 (800 articles)
+2025-11-16 13:17:01,385 - INFO - using gdelt api for Australia 2021
+2025-11-16 13:17:01,385 - INFO - fetching articles for Australia (2021-01-01 to 2021-03-31) [attempt 1/3]
+2025-11-16 13:17:02,276 - INFO - fetched 100 articles for Australia
+2025-11-16 13:17:05,284 - INFO - fetching articles for Australia (2021-04-01 to 2021-06-30) [attempt 1/3]
+2025-11-16 13:17:05,996 - INFO - fetched 100 articles for Australia
+2025-11-16 13:17:09,007 - INFO - fetching articles for Australia (2021-07-01 to 2021-09-30) [attempt 1/3]
+2025-11-16 13:17:10,168 - INFO - fetched 100 articles for Australia
+2025-11-16 13:17:13,176 - INFO - fetching articles for Australia (2021-10-01 to 2021-12-31) [attempt 1/3]
+2025-11-16 13:17:14,298 - INFO - fetched 100 articles for Australia
+2025-11-16 13:17:17,308 - INFO - ✓ completed Australia 2021 (800 articles)
+2025-11-16 13:17:17,308 - INFO - using gdelt api for Australia 2022
+2025-11-16 13:17:17,308 - INFO - fetching articles for Australia (2022-01-01 to 2022-03-31) [attempt 1/3]
+2025-11-16 13:17:18,071 - INFO - fetched 100 articles for Australia
+2025-11-16 13:17:21,077 - INFO - fetching articles for Australia (2022-04-01 to 2022-06-30) [attempt 1/3]
+2025-11-16 13:17:22,135 - INFO - fetched 100 articles for Australia
+2025-11-16 13:17:25,142 - INFO - fetching articles for Australia (2022-07-01 to 2022-09-30) [attempt 1/3]
+2025-11-16 13:17:25,970 - INFO - fetched 100 articles for Australia
+2025-11-16 13:17:28,978 - INFO - fetching articles for Australia (2022-10-01 to 2022-12-31) [attempt 1/3]
+2025-11-16 13:17:29,787 - INFO - fetched 100 articles for Australia
+2025-11-16 13:17:32,798 - INFO - ✓ completed Australia 2022 (800 articles)
+2025-11-16 13:17:32,798 - INFO - using gdelt api for Australia 2023
+2025-11-16 13:17:32,799 - INFO - fetching articles for Australia (2023-01-01 to 2023-03-31) [attempt 1/3]
+2025-11-16 13:17:33,516 - INFO - fetched 100 articles for Australia
+2025-11-16 13:17:36,520 - INFO - fetching articles for Australia (2023-04-01 to 2023-06-30) [attempt 1/3]
+2025-11-16 13:17:37,189 - INFO - fetched 100 articles for Australia
+2025-11-16 13:17:40,194 - INFO - fetching articles for Australia (2023-07-01 to 2023-09-30) [attempt 1/3]
+2025-11-16 13:17:41,382 - INFO - fetched 100 articles for Australia
+2025-11-16 13:17:44,390 - INFO - fetching articles for Australia (2023-10-01 to 2023-12-31) [attempt 1/3]
+2025-11-16 13:17:45,148 - INFO - fetched 100 articles for Australia
+2025-11-16 13:17:48,160 - INFO - ✓ completed Australia 2023 (800 articles)
+2025-11-16 13:17:48,160 - INFO - using gdelt api for Brazil 2017
+2025-11-16 13:17:48,160 - INFO - fetching articles for Brazil (2017-01-01 to 2017-03-31) [attempt 1/3]
+2025-11-16 13:17:49,181 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:17:52,190 - INFO - fetching articles for Brazil (2017-04-01 to 2017-06-30) [attempt 1/3]
+2025-11-16 13:17:53,341 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:17:56,347 - INFO - fetching articles for Brazil (2017-07-01 to 2017-09-30) [attempt 1/3]
+2025-11-16 13:17:57,327 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:00,334 - INFO - fetching articles for Brazil (2017-10-01 to 2017-12-31) [attempt 1/3]
+2025-11-16 13:18:01,291 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:04,297 - INFO - ✓ completed Brazil 2017 (1200 articles)
+2025-11-16 13:18:04,297 - INFO - using gdelt api for Brazil 2018
+2025-11-16 13:18:04,297 - INFO - fetching articles for Brazil (2018-01-01 to 2018-03-31) [attempt 1/3]
+2025-11-16 13:18:05,145 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:08,152 - INFO - fetching articles for Brazil (2018-04-01 to 2018-06-30) [attempt 1/3]
+2025-11-16 13:18:08,913 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:11,920 - INFO - fetching articles for Brazil (2018-07-01 to 2018-09-30) [attempt 1/3]
+2025-11-16 13:18:13,135 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:16,140 - INFO - fetching articles for Brazil (2018-10-01 to 2018-12-31) [attempt 1/3]
+2025-11-16 13:18:17,025 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:20,036 - INFO - ✓ completed Brazil 2018 (1200 articles)
+2025-11-16 13:18:20,036 - INFO - using gdelt api for Brazil 2019
+2025-11-16 13:18:20,036 - INFO - fetching articles for Brazil (2019-01-01 to 2019-03-31) [attempt 1/3]
+2025-11-16 13:18:20,695 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:23,702 - INFO - fetching articles for Brazil (2019-04-01 to 2019-06-30) [attempt 1/3]
+2025-11-16 13:18:24,844 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:27,852 - INFO - fetching articles for Brazil (2019-07-01 to 2019-09-30) [attempt 1/3]
+2025-11-16 13:18:29,194 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:32,203 - INFO - fetching articles for Brazil (2019-10-01 to 2019-12-31) [attempt 1/3]
+2025-11-16 13:18:32,872 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:35,885 - INFO - ✓ completed Brazil 2019 (1200 articles)
+2025-11-16 13:18:35,886 - INFO - using gdelt api for Brazil 2020
+2025-11-16 13:18:35,886 - INFO - fetching articles for Brazil (2020-01-01 to 2020-03-31) [attempt 1/3]
+2025-11-16 13:18:36,533 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:39,541 - INFO - fetching articles for Brazil (2020-04-01 to 2020-06-30) [attempt 1/3]
+2025-11-16 13:18:40,784 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:43,791 - INFO - fetching articles for Brazil (2020-07-01 to 2020-09-30) [attempt 1/3]
+2025-11-16 13:18:44,768 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:47,772 - INFO - fetching articles for Brazil (2020-10-01 to 2020-12-31) [attempt 1/3]
+2025-11-16 13:18:49,084 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:52,090 - INFO - ✓ completed Brazil 2020 (1200 articles)
+2025-11-16 13:18:52,091 - INFO - using gdelt api for Brazil 2021
+2025-11-16 13:18:52,091 - INFO - fetching articles for Brazil (2021-01-01 to 2021-03-31) [attempt 1/3]
+2025-11-16 13:18:52,861 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:18:55,867 - INFO - fetching articles for Brazil (2021-04-01 to 2021-06-30) [attempt 1/3]
+2025-11-16 13:18:56,994 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:19:00,000 - INFO - fetching articles for Brazil (2021-07-01 to 2021-09-30) [attempt 1/3]
+2025-11-16 13:19:00,820 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:19:03,828 - INFO - fetching articles for Brazil (2021-10-01 to 2021-12-31) [attempt 1/3]
+2025-11-16 13:19:04,768 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:19:07,802 - INFO - ✓ completed Brazil 2021 (1200 articles)
+2025-11-16 13:19:07,802 - INFO - using gdelt api for Brazil 2022
+2025-11-16 13:19:07,802 - INFO - fetching articles for Brazil (2022-01-01 to 2022-03-31) [attempt 1/3]
+2025-11-16 13:19:08,413 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:19:11,421 - INFO - fetching articles for Brazil (2022-04-01 to 2022-06-30) [attempt 1/3]
+2025-11-16 13:19:12,147 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:19:15,151 - INFO - fetching articles for Brazil (2022-07-01 to 2022-09-30) [attempt 1/3]
+2025-11-16 13:19:16,276 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:19:19,285 - INFO - fetching articles for Brazil (2022-10-01 to 2022-12-31) [attempt 1/3]
+2025-11-16 13:19:20,517 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:19:23,525 - INFO - ✓ completed Brazil 2022 (1200 articles)
+2025-11-16 13:19:23,525 - INFO - using gdelt api for Brazil 2023
+2025-11-16 13:19:23,526 - INFO - fetching articles for Brazil (2023-01-01 to 2023-03-31) [attempt 1/3]
+2025-11-16 13:19:24,611 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:19:27,618 - INFO - fetching articles for Brazil (2023-04-01 to 2023-06-30) [attempt 1/3]
+2025-11-16 13:19:28,453 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:19:31,459 - INFO - fetching articles for Brazil (2023-07-01 to 2023-09-30) [attempt 1/3]
+2025-11-16 13:19:32,302 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:19:35,309 - INFO - fetching articles for Brazil (2023-10-01 to 2023-12-31) [attempt 1/3]
+2025-11-16 13:19:36,225 - INFO - fetched 100 articles for Brazil
+2025-11-16 13:19:39,233 - INFO - ✓ completed Brazil 2023 (1200 articles)
+2025-11-16 13:19:39,233 - INFO - using gdelt api for Canada 2017
+2025-11-16 13:19:39,233 - INFO - fetching articles for Canada (2017-01-01 to 2017-03-31) [attempt 1/3]
+2025-11-16 13:19:40,139 - INFO - fetched 100 articles for Canada
+2025-11-16 13:19:43,142 - INFO - fetching articles for Canada (2017-04-01 to 2017-06-30) [attempt 1/3]
+2025-11-16 13:19:44,032 - INFO - fetched 100 articles for Canada
+2025-11-16 13:19:47,040 - INFO - fetching articles for Canada (2017-07-01 to 2017-09-30) [attempt 1/3]
+2025-11-16 13:19:47,828 - INFO - fetched 100 articles for Canada
+2025-11-16 13:19:50,836 - INFO - fetching articles for Canada (2017-10-01 to 2017-12-31) [attempt 1/3]
+2025-11-16 13:19:51,409 - INFO - fetched 100 articles for Canada
+2025-11-16 13:19:54,419 - INFO - ✓ completed Canada 2017 (1600 articles)
+2025-11-16 13:19:54,419 - INFO - using gdelt api for Canada 2018
+2025-11-16 13:19:54,419 - INFO - fetching articles for Canada (2018-01-01 to 2018-03-31) [attempt 1/3]
+2025-11-16 13:19:55,206 - INFO - fetched 100 articles for Canada
+2025-11-16 13:19:58,214 - INFO - fetching articles for Canada (2018-04-01 to 2018-06-30) [attempt 1/3]
+2025-11-16 13:19:59,261 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:02,268 - INFO - fetching articles for Canada (2018-07-01 to 2018-09-30) [attempt 1/3]
+2025-11-16 13:20:03,362 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:06,365 - INFO - fetching articles for Canada (2018-10-01 to 2018-12-31) [attempt 1/3]
+2025-11-16 13:20:08,167 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:11,179 - INFO - ✓ completed Canada 2018 (1600 articles)
+2025-11-16 13:20:11,180 - INFO - using gdelt api for Canada 2019
+2025-11-16 13:20:11,180 - INFO - fetching articles for Canada (2019-01-01 to 2019-03-31) [attempt 1/3]
+2025-11-16 13:20:11,972 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:14,974 - INFO - fetching articles for Canada (2019-04-01 to 2019-06-30) [attempt 1/3]
+2025-11-16 13:20:15,704 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:18,710 - INFO - fetching articles for Canada (2019-07-01 to 2019-09-30) [attempt 1/3]
+2025-11-16 13:20:19,476 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:22,483 - INFO - fetching articles for Canada (2019-10-01 to 2019-12-31) [attempt 1/3]
+2025-11-16 13:20:23,170 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:26,177 - INFO - ✓ completed Canada 2019 (1600 articles)
+2025-11-16 13:20:26,177 - INFO - using gdelt api for Canada 2020
+2025-11-16 13:20:26,177 - INFO - fetching articles for Canada (2020-01-01 to 2020-03-31) [attempt 1/3]
+2025-11-16 13:20:26,802 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:29,809 - INFO - fetching articles for Canada (2020-04-01 to 2020-06-30) [attempt 1/3]
+2025-11-16 13:20:30,326 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:33,331 - INFO - fetching articles for Canada (2020-07-01 to 2020-09-30) [attempt 1/3]
+2025-11-16 13:20:34,293 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:37,300 - INFO - fetching articles for Canada (2020-10-01 to 2020-12-31) [attempt 1/3]
+2025-11-16 13:20:38,075 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:41,086 - INFO - ✓ completed Canada 2020 (1600 articles)
+2025-11-16 13:20:41,086 - INFO - using gdelt api for Canada 2021
+2025-11-16 13:20:41,086 - INFO - fetching articles for Canada (2021-01-01 to 2021-03-31) [attempt 1/3]
+2025-11-16 13:20:41,775 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:44,782 - INFO - fetching articles for Canada (2021-04-01 to 2021-06-30) [attempt 1/3]
+2025-11-16 13:20:45,550 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:48,557 - INFO - fetching articles for Canada (2021-07-01 to 2021-09-30) [attempt 1/3]
+2025-11-16 13:20:49,271 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:52,274 - INFO - fetching articles for Canada (2021-10-01 to 2021-12-31) [attempt 1/3]
+2025-11-16 13:20:53,168 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:56,174 - INFO - ✓ completed Canada 2021 (1600 articles)
+2025-11-16 13:20:56,174 - INFO - using gdelt api for Canada 2022
+2025-11-16 13:20:56,175 - INFO - fetching articles for Canada (2022-01-01 to 2022-03-31) [attempt 1/3]
+2025-11-16 13:20:56,933 - INFO - fetched 100 articles for Canada
+2025-11-16 13:20:59,939 - INFO - fetching articles for Canada (2022-04-01 to 2022-06-30) [attempt 1/3]
+2025-11-16 13:21:00,600 - INFO - fetched 100 articles for Canada
+2025-11-16 13:21:03,607 - INFO - fetching articles for Canada (2022-07-01 to 2022-09-30) [attempt 1/3]
+2025-11-16 13:21:04,593 - INFO - fetched 100 articles for Canada
+2025-11-16 13:21:07,600 - INFO - fetching articles for Canada (2022-10-01 to 2022-12-31) [attempt 1/3]
+2025-11-16 13:21:08,224 - INFO - fetched 100 articles for Canada
+2025-11-16 13:21:11,234 - INFO - ✓ completed Canada 2022 (1600 articles)
+2025-11-16 13:21:11,234 - INFO - using gdelt api for Canada 2023
+2025-11-16 13:21:11,234 - INFO - fetching articles for Canada (2023-01-01 to 2023-03-31) [attempt 1/3]
+2025-11-16 13:21:12,088 - INFO - fetched 100 articles for Canada
+2025-11-16 13:21:15,093 - INFO - fetching articles for Canada (2023-04-01 to 2023-06-30) [attempt 1/3]
+2025-11-16 13:21:15,823 - INFO - fetched 100 articles for Canada
+2025-11-16 13:21:18,832 - INFO - fetching articles for Canada (2023-07-01 to 2023-09-30) [attempt 1/3]
+2025-11-16 13:21:19,480 - INFO - fetched 100 articles for Canada
+2025-11-16 13:21:22,485 - INFO - fetching articles for Canada (2023-10-01 to 2023-12-31) [attempt 1/3]
+2025-11-16 13:21:23,226 - INFO - fetched 100 articles for Canada
+2025-11-16 13:21:26,238 - INFO - ✓ completed Canada 2023 (1600 articles)
+2025-11-16 13:21:26,239 - INFO - using gdelt api for Denmark 2017
+2025-11-16 13:21:26,239 - INFO - fetching articles for Denmark (2017-01-01 to 2017-03-31) [attempt 1/3]
+2025-11-16 13:21:27,026 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:21:30,035 - INFO - fetching articles for Denmark (2017-04-01 to 2017-06-30) [attempt 1/3]
+2025-11-16 13:21:30,668 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:21:33,676 - INFO - fetching articles for Denmark (2017-07-01 to 2017-09-30) [attempt 1/3]
+2025-11-16 13:21:34,393 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:21:37,397 - INFO - fetching articles for Denmark (2017-10-01 to 2017-12-31) [attempt 1/3]
+2025-11-16 13:21:38,062 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:21:41,069 - INFO - ✓ completed Denmark 2017 (2000 articles)
+2025-11-16 13:21:41,069 - INFO - using gdelt api for Denmark 2018
+2025-11-16 13:21:41,069 - INFO - fetching articles for Denmark (2018-01-01 to 2018-03-31) [attempt 1/3]
+2025-11-16 13:21:41,831 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:21:44,837 - INFO - fetching articles for Denmark (2018-04-01 to 2018-06-30) [attempt 1/3]
+2025-11-16 13:21:45,599 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:21:48,608 - INFO - fetching articles for Denmark (2018-07-01 to 2018-09-30) [attempt 1/3]
+2025-11-16 13:21:49,555 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:21:52,562 - INFO - fetching articles for Denmark (2018-10-01 to 2018-12-31) [attempt 1/3]
+2025-11-16 13:21:53,270 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:21:56,279 - INFO - ✓ completed Denmark 2018 (2000 articles)
+2025-11-16 13:21:56,279 - INFO - using gdelt api for Denmark 2019
+2025-11-16 13:21:56,279 - INFO - fetching articles for Denmark (2019-01-01 to 2019-03-31) [attempt 1/3]
+2025-11-16 13:21:56,928 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:21:59,935 - INFO - fetching articles for Denmark (2019-04-01 to 2019-06-30) [attempt 1/3]
+2025-11-16 13:22:01,017 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:22:04,022 - INFO - fetching articles for Denmark (2019-07-01 to 2019-09-30) [attempt 1/3]
+2025-11-16 13:22:05,263 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:22:08,270 - INFO - fetching articles for Denmark (2019-10-01 to 2019-12-31) [attempt 1/3]
+2025-11-16 13:22:08,984 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:22:11,994 - INFO - ✓ completed Denmark 2019 (2000 articles)
+2025-11-16 13:22:11,995 - INFO - using gdelt api for Denmark 2020
+2025-11-16 13:22:11,995 - INFO - fetching articles for Denmark (2020-01-01 to 2020-03-31) [attempt 1/3]
+2025-11-16 13:22:12,681 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:22:15,686 - INFO - fetching articles for Denmark (2020-04-01 to 2020-06-30) [attempt 1/3]
+2025-11-16 13:22:16,763 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:22:19,767 - INFO - fetching articles for Denmark (2020-07-01 to 2020-09-30) [attempt 1/3]
+2025-11-16 13:22:20,593 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:22:23,602 - INFO - fetching articles for Denmark (2020-10-01 to 2020-12-31) [attempt 1/3]
+2025-11-16 13:22:24,208 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:22:27,219 - INFO - ✓ completed Denmark 2020 (2000 articles)
+2025-11-16 13:22:27,220 - INFO - using gdelt api for Denmark 2021
+2025-11-16 13:22:27,220 - INFO - fetching articles for Denmark (2021-01-01 to 2021-03-31) [attempt 1/3]
+2025-11-16 13:22:27,912 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:22:30,917 - INFO - fetching articles for Denmark (2021-04-01 to 2021-06-30) [attempt 1/3]
+2025-11-16 13:22:31,782 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:22:34,786 - INFO - fetching articles for Denmark (2021-07-01 to 2021-09-30) [attempt 1/3]
+2025-11-16 13:22:36,201 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:22:39,209 - INFO - fetching articles for Denmark (2021-10-01 to 2021-12-31) [attempt 1/3]
+2025-11-16 13:22:41,790 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:22:44,798 - INFO - ✓ completed Denmark 2021 (2000 articles)
+2025-11-16 13:22:44,798 - INFO - using gdelt api for Denmark 2022
+2025-11-16 13:22:44,799 - INFO - fetching articles for Denmark (2022-01-01 to 2022-03-31) [attempt 1/3]
+2025-11-16 13:22:46,235 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:22:49,243 - INFO - fetching articles for Denmark (2022-04-01 to 2022-06-30) [attempt 1/3]
+2025-11-16 13:22:50,086 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:22:53,091 - INFO - fetching articles for Denmark (2022-07-01 to 2022-09-30) [attempt 1/3]
+2025-11-16 13:22:54,103 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:22:57,109 - INFO - fetching articles for Denmark (2022-10-01 to 2022-12-31) [attempt 1/3]
+2025-11-16 13:22:57,851 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:23:00,861 - INFO - ✓ completed Denmark 2022 (2000 articles)
+2025-11-16 13:23:00,862 - INFO - using gdelt api for Denmark 2023
+2025-11-16 13:23:00,862 - INFO - fetching articles for Denmark (2023-01-01 to 2023-03-31) [attempt 1/3]
+2025-11-16 13:23:01,439 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:23:04,446 - INFO - fetching articles for Denmark (2023-04-01 to 2023-06-30) [attempt 1/3]
+2025-11-16 13:23:05,124 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:23:08,132 - INFO - fetching articles for Denmark (2023-07-01 to 2023-09-30) [attempt 1/3]
+2025-11-16 13:23:08,776 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:23:11,782 - INFO - fetching articles for Denmark (2023-10-01 to 2023-12-31) [attempt 1/3]
+2025-11-16 13:23:12,420 - INFO - fetched 100 articles for Denmark
+2025-11-16 13:23:15,429 - INFO - ✓ completed Denmark 2023 (2000 articles)
+2025-11-16 13:23:15,429 - INFO - using gdelt api for Germany 2017
+2025-11-16 13:23:15,429 - INFO - fetching articles for Germany (2017-01-01 to 2017-03-31) [attempt 1/3]
+2025-11-16 13:23:16,399 - INFO - fetched 100 articles for Germany
+2025-11-16 13:23:19,403 - INFO - fetching articles for Germany (2017-04-01 to 2017-06-30) [attempt 1/3]
+2025-11-16 13:23:20,495 - INFO - fetched 100 articles for Germany
+2025-11-16 13:23:23,502 - INFO - fetching articles for Germany (2017-07-01 to 2017-09-30) [attempt 1/3]
+2025-11-16 13:23:24,344 - INFO - fetched 100 articles for Germany
+2025-11-16 13:23:27,352 - INFO - fetching articles for Germany (2017-10-01 to 2017-12-31) [attempt 1/3]
+2025-11-16 13:23:28,070 - INFO - fetched 100 articles for Germany
+2025-11-16 13:23:31,084 - INFO - ✓ completed Germany 2017 (2400 articles)
+2025-11-16 13:23:31,084 - INFO - using gdelt api for Germany 2018
+2025-11-16 13:23:31,084 - INFO - fetching articles for Germany (2018-01-01 to 2018-03-31) [attempt 1/3]
+2025-11-16 13:23:32,127 - INFO - fetched 100 articles for Germany
+2025-11-16 13:23:35,135 - INFO - fetching articles for Germany (2018-04-01 to 2018-06-30) [attempt 1/3]
+2025-11-16 13:23:35,793 - INFO - fetched 100 articles for Germany
+2025-11-16 13:23:38,800 - INFO - fetching articles for Germany (2018-07-01 to 2018-09-30) [attempt 1/3]
+2025-11-16 13:23:39,654 - INFO - fetched 100 articles for Germany
+2025-11-16 13:23:42,659 - INFO - fetching articles for Germany (2018-10-01 to 2018-12-31) [attempt 1/3]
+2025-11-16 13:23:43,440 - INFO - fetched 100 articles for Germany
+2025-11-16 13:23:46,450 - INFO - ✓ completed Germany 2018 (2400 articles)
+2025-11-16 13:23:46,451 - INFO - using gdelt api for Germany 2019
+2025-11-16 13:23:46,451 - INFO - fetching articles for Germany (2019-01-01 to 2019-03-31) [attempt 1/3]
+2025-11-16 13:23:47,414 - INFO - fetched 100 articles for Germany
+2025-11-16 13:23:50,422 - INFO - fetching articles for Germany (2019-04-01 to 2019-06-30) [attempt 1/3]
+2025-11-16 13:23:51,526 - INFO - fetched 100 articles for Germany
+2025-11-16 13:23:54,533 - INFO - fetching articles for Germany (2019-07-01 to 2019-09-30) [attempt 1/3]
+2025-11-16 13:23:55,796 - INFO - fetched 100 articles for Germany
+2025-11-16 13:23:58,802 - INFO - fetching articles for Germany (2019-10-01 to 2019-12-31) [attempt 1/3]
+2025-11-16 13:23:59,429 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:02,437 - INFO - ✓ completed Germany 2019 (2400 articles)
+2025-11-16 13:24:02,437 - INFO - using gdelt api for Germany 2020
+2025-11-16 13:24:02,437 - INFO - fetching articles for Germany (2020-01-01 to 2020-03-31) [attempt 1/3]
+2025-11-16 13:24:03,079 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:06,085 - INFO - fetching articles for Germany (2020-04-01 to 2020-06-30) [attempt 1/3]
+2025-11-16 13:24:07,207 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:10,212 - INFO - fetching articles for Germany (2020-07-01 to 2020-09-30) [attempt 1/3]
+2025-11-16 13:24:11,157 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:14,164 - INFO - fetching articles for Germany (2020-10-01 to 2020-12-31) [attempt 1/3]
+2025-11-16 13:24:14,822 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:17,844 - INFO - ✓ completed Germany 2020 (2400 articles)
+2025-11-16 13:24:17,845 - INFO - using gdelt api for Germany 2021
+2025-11-16 13:24:17,845 - INFO - fetching articles for Germany (2021-01-01 to 2021-03-31) [attempt 1/3]
+2025-11-16 13:24:18,541 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:21,553 - INFO - fetching articles for Germany (2021-04-01 to 2021-06-30) [attempt 1/3]
+2025-11-16 13:24:22,452 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:25,456 - INFO - fetching articles for Germany (2021-07-01 to 2021-09-30) [attempt 1/3]
+2025-11-16 13:24:26,126 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:29,135 - INFO - fetching articles for Germany (2021-10-01 to 2021-12-31) [attempt 1/3]
+2025-11-16 13:24:30,314 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:33,326 - INFO - ✓ completed Germany 2021 (2400 articles)
+2025-11-16 13:24:33,326 - INFO - using gdelt api for Germany 2022
+2025-11-16 13:24:33,326 - INFO - fetching articles for Germany (2022-01-01 to 2022-03-31) [attempt 1/3]
+2025-11-16 13:24:34,136 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:37,139 - INFO - fetching articles for Germany (2022-04-01 to 2022-06-30) [attempt 1/3]
+2025-11-16 13:24:37,831 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:40,840 - INFO - fetching articles for Germany (2022-07-01 to 2022-09-30) [attempt 1/3]
+2025-11-16 13:24:41,586 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:44,593 - INFO - fetching articles for Germany (2022-10-01 to 2022-12-31) [attempt 1/3]
+2025-11-16 13:24:45,428 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:48,443 - INFO - ✓ completed Germany 2022 (2400 articles)
+2025-11-16 13:24:48,443 - INFO - using gdelt api for Germany 2023
+2025-11-16 13:24:48,443 - INFO - fetching articles for Germany (2023-01-01 to 2023-03-31) [attempt 1/3]
+2025-11-16 13:24:49,243 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:52,257 - INFO - fetching articles for Germany (2023-04-01 to 2023-06-30) [attempt 1/3]
+2025-11-16 13:24:52,934 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:55,944 - INFO - fetching articles for Germany (2023-07-01 to 2023-09-30) [attempt 1/3]
+2025-11-16 13:24:56,713 - INFO - fetched 100 articles for Germany
+2025-11-16 13:24:59,718 - INFO - fetching articles for Germany (2023-10-01 to 2023-12-31) [attempt 1/3]
+2025-11-16 13:25:00,331 - INFO - fetched 100 articles for Germany
+2025-11-16 13:25:03,344 - INFO - ✓ completed Germany 2023 (2400 articles)
+2025-11-16 13:25:03,344 - INFO - using gdelt api for India 2017
+2025-11-16 13:25:03,344 - INFO - fetching articles for India (2017-01-01 to 2017-03-31) [attempt 1/3]
+2025-11-16 13:25:04,155 - INFO - fetched 100 articles for India
+2025-11-16 13:25:07,159 - INFO - fetching articles for India (2017-04-01 to 2017-06-30) [attempt 1/3]
+2025-11-16 13:25:07,750 - INFO - fetched 100 articles for India
+2025-11-16 13:25:10,758 - INFO - fetching articles for India (2017-07-01 to 2017-09-30) [attempt 1/3]
+2025-11-16 13:25:11,686 - INFO - fetched 100 articles for India
+2025-11-16 13:25:14,694 - INFO - fetching articles for India (2017-10-01 to 2017-12-31) [attempt 1/3]
+2025-11-16 13:25:15,404 - INFO - fetched 100 articles for India
+2025-11-16 13:25:18,415 - INFO - ✓ completed India 2017 (2800 articles)
+2025-11-16 13:25:18,415 - INFO - using gdelt api for India 2018
+2025-11-16 13:25:18,415 - INFO - fetching articles for India (2018-01-01 to 2018-03-31) [attempt 1/3]
+2025-11-16 13:25:19,259 - INFO - fetched 100 articles for India
+2025-11-16 13:25:22,266 - INFO - fetching articles for India (2018-04-01 to 2018-06-30) [attempt 1/3]
+2025-11-16 13:25:23,273 - INFO - fetched 100 articles for India
+2025-11-16 13:25:26,284 - INFO - fetching articles for India (2018-07-01 to 2018-09-30) [attempt 1/3]
+2025-11-16 13:25:27,470 - INFO - fetched 100 articles for India
+2025-11-16 13:25:30,479 - INFO - fetching articles for India (2018-10-01 to 2018-12-31) [attempt 1/3]
+2025-11-16 13:25:31,138 - INFO - fetched 100 articles for India
+2025-11-16 13:25:34,149 - INFO - ✓ completed India 2018 (2800 articles)
+2025-11-16 13:25:34,149 - INFO - using gdelt api for India 2019
+2025-11-16 13:25:34,149 - INFO - fetching articles for India (2019-01-01 to 2019-03-31) [attempt 1/3]
+2025-11-16 13:25:35,234 - INFO - fetched 100 articles for India
+2025-11-16 13:25:38,243 - INFO - fetching articles for India (2019-04-01 to 2019-06-30) [attempt 1/3]
+2025-11-16 13:25:39,043 - INFO - fetched 100 articles for India
+2025-11-16 13:25:42,045 - INFO - fetching articles for India (2019-07-01 to 2019-09-30) [attempt 1/3]
+2025-11-16 13:25:43,141 - INFO - fetched 100 articles for India
+2025-11-16 13:25:46,148 - INFO - fetching articles for India (2019-10-01 to 2019-12-31) [attempt 1/3]
+2025-11-16 13:25:47,333 - INFO - fetched 100 articles for India
+2025-11-16 13:25:50,355 - INFO - ✓ completed India 2019 (2800 articles)
+2025-11-16 13:25:50,355 - INFO - using gdelt api for India 2020
+2025-11-16 13:25:50,355 - INFO - fetching articles for India (2020-01-01 to 2020-03-31) [attempt 1/3]
+2025-11-16 13:25:51,143 - INFO - fetched 100 articles for India
+2025-11-16 13:25:54,152 - INFO - fetching articles for India (2020-04-01 to 2020-06-30) [attempt 1/3]
+2025-11-16 13:25:54,797 - INFO - fetched 100 articles for India
+2025-11-16 13:25:57,805 - INFO - fetching articles for India (2020-07-01 to 2020-09-30) [attempt 1/3]
+2025-11-16 13:25:58,667 - INFO - fetched 100 articles for India
+2025-11-16 13:26:01,672 - INFO - fetching articles for India (2020-10-01 to 2020-12-31) [attempt 1/3]
+2025-11-16 13:26:02,324 - INFO - fetched 100 articles for India
+2025-11-16 13:26:05,335 - INFO - ✓ completed India 2020 (2800 articles)
+2025-11-16 13:26:05,335 - INFO - using gdelt api for India 2021
+2025-11-16 13:26:05,335 - INFO - fetching articles for India (2021-01-01 to 2021-03-31) [attempt 1/3]
+2025-11-16 13:26:05,984 - INFO - fetched 100 articles for India
+2025-11-16 13:26:08,989 - INFO - fetching articles for India (2021-04-01 to 2021-06-30) [attempt 1/3]
+2025-11-16 13:26:09,662 - INFO - fetched 100 articles for India
+2025-11-16 13:26:12,670 - INFO - fetching articles for India (2021-07-01 to 2021-09-30) [attempt 1/3]
+2025-11-16 13:26:13,377 - INFO - fetched 100 articles for India
+2025-11-16 13:26:16,386 - INFO - fetching articles for India (2021-10-01 to 2021-12-31) [attempt 1/3]
+2025-11-16 13:26:17,272 - INFO - fetched 100 articles for India
+2025-11-16 13:26:20,283 - INFO - ✓ completed India 2021 (2800 articles)
+2025-11-16 13:26:20,283 - INFO - using gdelt api for India 2022
+2025-11-16 13:26:20,283 - INFO - fetching articles for India (2022-01-01 to 2022-03-31) [attempt 1/3]
+2025-11-16 13:26:21,766 - INFO - fetched 100 articles for India
+2025-11-16 13:26:24,768 - INFO - fetching articles for India (2022-04-01 to 2022-06-30) [attempt 1/3]
+2025-11-16 13:26:26,091 - INFO - fetched 100 articles for India
+2025-11-16 13:26:29,097 - INFO - fetching articles for India (2022-07-01 to 2022-09-30) [attempt 1/3]
+2025-11-16 13:26:30,338 - INFO - fetched 100 articles for India
+2025-11-16 13:26:33,344 - INFO - fetching articles for India (2022-10-01 to 2022-12-31) [attempt 1/3]
+2025-11-16 13:26:34,124 - INFO - fetched 100 articles for India
+2025-11-16 13:26:37,135 - INFO - ✓ completed India 2022 (2800 articles)
+2025-11-16 13:26:37,135 - INFO - using gdelt api for India 2023
+2025-11-16 13:26:37,136 - INFO - fetching articles for India (2023-01-01 to 2023-03-31) [attempt 1/3]
+2025-11-16 13:26:38,008 - INFO - fetched 100 articles for India
+2025-11-16 13:26:41,012 - INFO - fetching articles for India (2023-04-01 to 2023-06-30) [attempt 1/3]
+2025-11-16 13:26:41,913 - INFO - fetched 100 articles for India
+2025-11-16 13:26:44,916 - INFO - fetching articles for India (2023-07-01 to 2023-09-30) [attempt 1/3]
+2025-11-16 13:26:45,595 - INFO - fetched 100 articles for India
+2025-11-16 13:26:48,602 - INFO - fetching articles for India (2023-10-01 to 2023-12-31) [attempt 1/3]
+2025-11-16 13:26:49,390 - INFO - fetched 100 articles for India
+2025-11-16 13:26:52,396 - INFO - ✓ completed India 2023 (2800 articles)
+2025-11-16 13:26:52,396 - INFO - using gdelt api for Iraq 2017
+2025-11-16 13:26:52,396 - INFO - fetching articles for Iraq (2017-01-01 to 2017-03-31) [attempt 1/3]
+2025-11-16 13:26:52,884 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:26:55,892 - INFO - fetching articles for Iraq (2017-04-01 to 2017-06-30) [attempt 1/3]
+2025-11-16 13:26:57,932 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:00,939 - INFO - fetching articles for Iraq (2017-07-01 to 2017-09-30) [attempt 1/3]
+2025-11-16 13:27:01,837 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:04,843 - INFO - fetching articles for Iraq (2017-10-01 to 2017-12-31) [attempt 1/3]
+2025-11-16 13:27:05,759 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:08,768 - INFO - ✓ completed Iraq 2017 (3200 articles)
+2025-11-16 13:27:08,768 - INFO - using gdelt api for Iraq 2018
+2025-11-16 13:27:08,768 - INFO - fetching articles for Iraq (2018-01-01 to 2018-03-31) [attempt 1/3]
+2025-11-16 13:27:09,698 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:12,705 - INFO - fetching articles for Iraq (2018-04-01 to 2018-06-30) [attempt 1/3]
+2025-11-16 13:27:13,695 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:16,701 - INFO - fetching articles for Iraq (2018-07-01 to 2018-09-30) [attempt 1/3]
+2025-11-16 13:27:17,289 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:20,298 - INFO - fetching articles for Iraq (2018-10-01 to 2018-12-31) [attempt 1/3]
+2025-11-16 13:27:20,977 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:23,987 - INFO - ✓ completed Iraq 2018 (3200 articles)
+2025-11-16 13:27:23,987 - INFO - using gdelt api for Iraq 2019
+2025-11-16 13:27:23,987 - INFO - fetching articles for Iraq (2019-01-01 to 2019-03-31) [attempt 1/3]
+2025-11-16 13:27:24,638 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:27,644 - INFO - fetching articles for Iraq (2019-04-01 to 2019-06-30) [attempt 1/3]
+2025-11-16 13:27:28,578 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:31,586 - INFO - fetching articles for Iraq (2019-07-01 to 2019-09-30) [attempt 1/3]
+2025-11-16 13:27:32,288 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:35,296 - INFO - fetching articles for Iraq (2019-10-01 to 2019-12-31) [attempt 1/3]
+2025-11-16 13:27:36,053 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:39,063 - INFO - ✓ completed Iraq 2019 (3200 articles)
+2025-11-16 13:27:39,063 - INFO - using gdelt api for Iraq 2020
+2025-11-16 13:27:39,063 - INFO - fetching articles for Iraq (2020-01-01 to 2020-03-31) [attempt 1/3]
+2025-11-16 13:27:40,058 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:43,065 - INFO - fetching articles for Iraq (2020-04-01 to 2020-06-30) [attempt 1/3]
+2025-11-16 13:27:43,862 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:46,865 - INFO - fetching articles for Iraq (2020-07-01 to 2020-09-30) [attempt 1/3]
+2025-11-16 13:27:47,545 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:50,553 - INFO - fetching articles for Iraq (2020-10-01 to 2020-12-31) [attempt 1/3]
+2025-11-16 13:27:51,276 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:54,285 - INFO - ✓ completed Iraq 2020 (3200 articles)
+2025-11-16 13:27:54,285 - INFO - using gdelt api for Iraq 2021
+2025-11-16 13:27:54,285 - INFO - fetching articles for Iraq (2021-01-01 to 2021-03-31) [attempt 1/3]
+2025-11-16 13:27:56,006 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:27:59,009 - INFO - fetching articles for Iraq (2021-04-01 to 2021-06-30) [attempt 1/3]
+2025-11-16 13:27:59,678 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:28:02,679 - INFO - fetching articles for Iraq (2021-07-01 to 2021-09-30) [attempt 1/3]
+2025-11-16 13:28:03,422 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:28:06,425 - INFO - fetching articles for Iraq (2021-10-01 to 2021-12-31) [attempt 1/3]
+2025-11-16 13:28:06,972 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:28:09,979 - INFO - ✓ completed Iraq 2021 (3200 articles)
+2025-11-16 13:28:09,980 - INFO - using gdelt api for Iraq 2022
+2025-11-16 13:28:09,981 - INFO - fetching articles for Iraq (2022-01-01 to 2022-03-31) [attempt 1/3]
+2025-11-16 13:28:10,639 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:28:13,654 - INFO - fetching articles for Iraq (2022-04-01 to 2022-06-30) [attempt 1/3]
+2025-11-16 13:28:14,759 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:28:17,763 - INFO - fetching articles for Iraq (2022-07-01 to 2022-09-30) [attempt 1/3]
+2025-11-16 13:28:18,388 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:28:21,391 - INFO - fetching articles for Iraq (2022-10-01 to 2022-12-31) [attempt 1/3]
+2025-11-16 13:28:22,172 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:28:25,182 - INFO - ✓ completed Iraq 2022 (3200 articles)
+2025-11-16 13:28:25,183 - INFO - using gdelt api for Iraq 2023
+2025-11-16 13:28:25,183 - INFO - fetching articles for Iraq (2023-01-01 to 2023-03-31) [attempt 1/3]
+2025-11-16 13:28:25,860 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:28:28,866 - INFO - fetching articles for Iraq (2023-04-01 to 2023-06-30) [attempt 1/3]
+2025-11-16 13:28:29,533 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:28:32,537 - INFO - fetching articles for Iraq (2023-07-01 to 2023-09-30) [attempt 1/3]
+2025-11-16 13:28:33,219 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:28:36,223 - INFO - fetching articles for Iraq (2023-10-01 to 2023-12-31) [attempt 1/3]
+2025-11-16 13:28:36,799 - INFO - fetched 100 articles for Iraq
+2025-11-16 13:28:39,806 - INFO - ✓ completed Iraq 2023 (3200 articles)
+2025-11-16 13:28:39,807 - INFO - skipping Malaysia 2017 (already fetched)
+2025-11-16 13:28:39,807 - INFO - using gdelt api for Malaysia 2018
+2025-11-16 13:28:39,807 - INFO - fetching articles for Malaysia (2018-01-01 to 2018-03-31) [attempt 1/3]
+2025-11-16 13:28:40,400 - INFO - fetched 100 articles for Malaysia
+2025-11-16 13:28:43,406 - INFO - fetching articles for Malaysia (2018-04-01 to 2018-06-30) [attempt 1/3]
+2025-11-16 13:28:44,112 - INFO - fetched 100 articles for Malaysia
+2025-11-16 13:28:47,118 - INFO - fetching articles for Malaysia (2018-07-01 to 2018-09-30) [attempt 1/3]

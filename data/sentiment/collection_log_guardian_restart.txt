@@ -1,0 +1,849 @@
+/Users/snitil/Library/CloudStorage/OneDrive-McGillUniversity/McGill/U3/F2025/ECON302/innovationshowcase/src/sentiment_analysis.py:13: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+2025-11-16 13:18:56,160 - INFO - processing 19 countries: ['Angola', 'Australia', 'Brazil', 'Canada', 'Denmark', 'Germany', 'India', 'Iraq', 'Malaysia', 'Mozambique', 'New Zealand', 'Norway', 'Philippines', 'Singapore', 'South Africa', 'Switzerland', 'Ukraine', 'Venezuela', 'Zimbabwe']
+2025-11-16 13:18:56,160 - INFO - year range: 2010 to 2016
+2025-11-16 13:18:56,160 - INFO - keywords: ['corruption', 'bribery', '"money laundering"', 'fraud', 'embezzlement', 'scandal']
+2025-11-16 13:18:56,160 - INFO - fetching news articles...
+2025-11-16 13:18:56,160 - INFO - skipping Angola 2010 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Angola 2011 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Angola 2012 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Angola 2013 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Angola 2014 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Angola 2015 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Angola 2016 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Australia 2010 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Australia 2011 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Australia 2012 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Australia 2013 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Australia 2014 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Australia 2015 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Australia 2016 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Brazil 2010 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Brazil 2011 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Brazil 2012 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Brazil 2013 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Brazil 2014 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Brazil 2015 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Brazil 2016 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Canada 2010 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Canada 2011 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Canada 2012 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Canada 2013 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Canada 2014 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Canada 2015 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Canada 2016 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Denmark 2010 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Denmark 2011 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Denmark 2012 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Denmark 2013 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Denmark 2014 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Denmark 2015 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Denmark 2016 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Germany 2010 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Germany 2011 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Germany 2012 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Germany 2013 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Germany 2014 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Germany 2015 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Germany 2016 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping India 2010 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping India 2011 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping India 2012 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping India 2013 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping India 2014 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping India 2015 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping India 2016 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Iraq 2010 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Iraq 2011 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Iraq 2012 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Iraq 2013 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Iraq 2014 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Iraq 2015 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Iraq 2016 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Malaysia 2010 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Malaysia 2011 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Malaysia 2012 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Malaysia 2013 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Malaysia 2014 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Malaysia 2015 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Malaysia 2016 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Mozambique 2010 (already fetched)
+2025-11-16 13:18:56,160 - INFO - skipping Mozambique 2011 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Mozambique 2012 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Mozambique 2013 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Mozambique 2014 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Mozambique 2015 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Mozambique 2016 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping New Zealand 2010 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping New Zealand 2011 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping New Zealand 2012 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping New Zealand 2013 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping New Zealand 2014 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping New Zealand 2015 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping New Zealand 2016 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Norway 2010 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Norway 2011 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Norway 2012 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Norway 2013 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Norway 2014 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Norway 2015 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Norway 2016 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Philippines 2010 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Philippines 2011 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Philippines 2012 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Philippines 2013 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Philippines 2014 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Philippines 2015 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Philippines 2016 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Singapore 2010 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Singapore 2011 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Singapore 2012 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Singapore 2013 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Singapore 2014 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Singapore 2015 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Singapore 2016 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping South Africa 2010 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping South Africa 2011 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping South Africa 2012 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping South Africa 2013 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping South Africa 2014 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping South Africa 2015 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping South Africa 2016 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Switzerland 2010 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Switzerland 2011 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Switzerland 2012 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Switzerland 2013 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Switzerland 2014 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Switzerland 2015 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Switzerland 2016 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Ukraine 2010 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Ukraine 2011 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Ukraine 2012 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Ukraine 2013 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Ukraine 2014 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Ukraine 2015 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Ukraine 2016 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Venezuela 2010 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Venezuela 2011 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Venezuela 2012 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Venezuela 2013 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Venezuela 2014 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Venezuela 2015 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Venezuela 2016 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Zimbabwe 2010 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Zimbabwe 2011 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Zimbabwe 2012 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Zimbabwe 2013 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Zimbabwe 2014 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Zimbabwe 2015 (already fetched)
+2025-11-16 13:18:56,161 - INFO - skipping Zimbabwe 2016 (already fetched)
+2025-11-16 13:18:56,161 - WARNING - no articles fetched
+/Users/snitil/Library/CloudStorage/OneDrive-McGillUniversity/McGill/U3/F2025/ECON302/innovationshowcase/src/sentiment_analysis.py:13: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+2025-11-16 13:19:26,632 - INFO - processing 19 countries: ['Angola', 'Australia', 'Brazil', 'Canada', 'Denmark', 'Germany', 'India', 'Iraq', 'Malaysia', 'Mozambique', 'New Zealand', 'Norway', 'Philippines', 'Singapore', 'South Africa', 'Switzerland', 'Ukraine', 'Venezuela', 'Zimbabwe']
+2025-11-16 13:19:26,632 - INFO - year range: 2010 to 2016
+2025-11-16 13:19:26,632 - INFO - keywords: ['corruption', 'bribery', '"money laundering"', 'fraud', 'embezzlement', 'scandal']
+2025-11-16 13:19:26,632 - INFO - overwriting existing raw data...
+2025-11-16 13:19:26,633 - INFO - fetching news articles...
+2025-11-16 13:19:26,633 - INFO - using guardian api for Angola 2010
+2025-11-16 13:19:26,633 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:19:26,633 - INFO - fetching guardian page 1 for Angola (2010-01-01 to 2010-03-31)
+2025-11-16 13:19:27,315 - INFO - fetched 2 relevant articles for Angola after filtering
+2025-11-16 13:19:28,421 - INFO - fetching guardian page 1 for Angola (2010-04-01 to 2010-06-30)
+2025-11-16 13:19:28,891 - INFO - fetched 1 relevant articles for Angola after filtering
+2025-11-16 13:19:29,996 - INFO - fetching guardian page 1 for Angola (2010-07-01 to 2010-09-30)
+2025-11-16 13:19:30,482 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:19:31,584 - INFO - fetching guardian page 1 for Angola (2010-10-01 to 2010-12-31)
+2025-11-16 13:19:32,174 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:19:33,282 - INFO - ✓ completed Angola 2010 (3 articles)
+2025-11-16 13:19:33,283 - INFO - using guardian api for Angola 2011
+2025-11-16 13:19:33,283 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:19:33,283 - INFO - fetching guardian page 1 for Angola (2011-01-01 to 2011-03-31)
+2025-11-16 13:19:33,858 - INFO - fetched 1 relevant articles for Angola after filtering
+2025-11-16 13:19:34,962 - INFO - fetching guardian page 1 for Angola (2011-04-01 to 2011-06-30)
+2025-11-16 13:19:35,576 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:19:36,682 - INFO - fetching guardian page 1 for Angola (2011-07-01 to 2011-09-30)
+2025-11-16 13:19:37,167 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:19:38,272 - INFO - fetching guardian page 1 for Angola (2011-10-01 to 2011-12-31)
+2025-11-16 13:19:38,867 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:19:39,974 - INFO - ✓ completed Angola 2011 (1 articles)
+2025-11-16 13:19:39,974 - INFO - using guardian api for Angola 2012
+2025-11-16 13:19:39,974 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:19:39,974 - INFO - fetching guardian page 1 for Angola (2012-01-01 to 2012-03-31)
+2025-11-16 13:19:40,536 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:19:41,645 - INFO - fetching guardian page 1 for Angola (2012-04-01 to 2012-06-30)
+2025-11-16 13:19:42,114 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:19:43,220 - INFO - fetching guardian page 1 for Angola (2012-07-01 to 2012-09-30)
+2025-11-16 13:19:43,687 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:19:44,791 - INFO - fetching guardian page 1 for Angola (2012-10-01 to 2012-12-31)
+2025-11-16 13:19:45,273 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:19:46,380 - INFO - ✓ completed Angola 2012 (0 articles)
+2025-11-16 13:19:46,380 - INFO - using guardian api for Angola 2013
+2025-11-16 13:19:46,380 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:19:46,380 - INFO - fetching guardian page 1 for Angola (2013-01-01 to 2013-03-31)
+2025-11-16 13:19:46,939 - INFO - fetched 1 relevant articles for Angola after filtering
+2025-11-16 13:19:48,049 - INFO - fetching guardian page 1 for Angola (2013-04-01 to 2013-06-30)
+2025-11-16 13:19:48,521 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:19:49,625 - INFO - fetching guardian page 1 for Angola (2013-07-01 to 2013-09-30)
+2025-11-16 13:19:50,081 - INFO - fetched 1 relevant articles for Angola after filtering
+2025-11-16 13:19:51,187 - INFO - fetching guardian page 1 for Angola (2013-10-01 to 2013-12-31)
+2025-11-16 13:19:51,668 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:19:52,774 - INFO - ✓ completed Angola 2013 (2 articles)
+2025-11-16 13:19:52,775 - INFO - using guardian api for Angola 2014
+2025-11-16 13:19:52,775 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:19:52,775 - INFO - fetching guardian page 1 for Angola (2014-01-01 to 2014-03-31)
+2025-11-16 13:19:53,233 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:19:54,340 - INFO - fetching guardian page 1 for Angola (2014-04-01 to 2014-06-30)
+2025-11-16 13:19:54,830 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:19:55,936 - INFO - fetching guardian page 1 for Angola (2014-07-01 to 2014-09-30)
+2025-11-16 13:19:56,547 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:19:57,654 - INFO - fetching guardian page 1 for Angola (2014-10-01 to 2014-12-31)
+2025-11-16 13:19:58,163 - INFO - fetched 4 relevant articles for Angola after filtering
+2025-11-16 13:19:59,268 - INFO - ✓ completed Angola 2014 (4 articles)
+2025-11-16 13:19:59,268 - INFO - using guardian api for Angola 2015
+2025-11-16 13:19:59,268 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:19:59,268 - INFO - fetching guardian page 1 for Angola (2015-01-01 to 2015-03-31)
+2025-11-16 13:19:59,825 - INFO - fetched 5 relevant articles for Angola after filtering
+2025-11-16 13:20:00,932 - INFO - fetching guardian page 1 for Angola (2015-04-01 to 2015-06-30)
+2025-11-16 13:20:01,428 - INFO - fetched 4 relevant articles for Angola after filtering
+2025-11-16 13:20:02,535 - INFO - fetching guardian page 1 for Angola (2015-07-01 to 2015-09-30)
+2025-11-16 13:20:03,098 - INFO - fetched 1 relevant articles for Angola after filtering
+2025-11-16 13:20:04,205 - INFO - fetching guardian page 1 for Angola (2015-10-01 to 2015-12-31)
+2025-11-16 13:20:04,789 - INFO - fetched 0 relevant articles for Angola after filtering
+2025-11-16 13:20:05,894 - INFO - ✓ completed Angola 2015 (10 articles)
+2025-11-16 13:20:05,894 - INFO - using guardian api for Angola 2016
+2025-11-16 13:20:05,894 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:20:05,894 - INFO - fetching guardian page 1 for Angola (2016-01-01 to 2016-03-31)
+2025-11-16 13:20:06,507 - INFO - fetched 2 relevant articles for Angola after filtering
+2025-11-16 13:20:07,610 - INFO - fetching guardian page 1 for Angola (2016-04-01 to 2016-06-30)
+2025-11-16 13:20:08,142 - INFO - fetched 1 relevant articles for Angola after filtering
+2025-11-16 13:20:09,245 - INFO - fetching guardian page 1 for Angola (2016-07-01 to 2016-09-30)
+2025-11-16 13:20:09,795 - INFO - fetched 1 relevant articles for Angola after filtering
+2025-11-16 13:20:10,900 - INFO - fetching guardian page 1 for Angola (2016-10-01 to 2016-12-31)
+2025-11-16 13:20:11,504 - INFO - fetched 3 relevant articles for Angola after filtering
+2025-11-16 13:20:12,611 - INFO - ✓ completed Angola 2016 (7 articles)
+2025-11-16 13:20:12,611 - INFO - using guardian api for Australia 2010
+2025-11-16 13:20:12,611 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:20:12,611 - INFO - fetching guardian page 1 for Australia (2010-01-01 to 2010-03-31)
+2025-11-16 13:20:13,325 - INFO - fetched 13 relevant articles for Australia after filtering
+2025-11-16 13:20:14,430 - INFO - fetching guardian page 1 for Australia (2010-04-01 to 2010-06-30)
+2025-11-16 13:20:14,960 - INFO - fetched 8 relevant articles for Australia after filtering
+2025-11-16 13:20:16,063 - INFO - fetching guardian page 1 for Australia (2010-07-01 to 2010-09-30)
+2025-11-16 13:20:17,753 - INFO - fetching guardian page 2 for Australia (2010-07-01 to 2010-09-30)
+2025-11-16 13:20:18,288 - INFO - fetched 24 relevant articles for Australia after filtering
+2025-11-16 13:20:19,394 - INFO - fetching guardian page 1 for Australia (2010-10-01 to 2010-12-31)
+2025-11-16 13:20:21,040 - INFO - fetching guardian page 2 for Australia (2010-10-01 to 2010-12-31)
+2025-11-16 13:20:21,624 - INFO - fetched 12 relevant articles for Australia after filtering
+2025-11-16 13:20:22,727 - INFO - ✓ completed Australia 2010 (60 articles)
+2025-11-16 13:20:22,727 - INFO - using guardian api for Australia 2011
+2025-11-16 13:20:22,727 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:20:22,727 - INFO - fetching guardian page 1 for Australia (2011-01-01 to 2011-03-31)
+2025-11-16 13:20:24,395 - INFO - fetching guardian page 2 for Australia (2011-01-01 to 2011-03-31)
+2025-11-16 13:20:24,893 - INFO - fetched 4 relevant articles for Australia after filtering
+2025-11-16 13:20:25,997 - INFO - fetching guardian page 1 for Australia (2011-04-01 to 2011-06-30)
+2025-11-16 13:20:26,593 - INFO - fetched 4 relevant articles for Australia after filtering
+2025-11-16 13:20:27,700 - INFO - fetching guardian page 1 for Australia (2011-07-01 to 2011-09-30)
+2025-11-16 13:20:29,388 - INFO - fetching guardian page 2 for Australia (2011-07-01 to 2011-09-30)
+2025-11-16 13:20:29,979 - INFO - fetched 20 relevant articles for Australia after filtering
+2025-11-16 13:20:31,086 - INFO - fetching guardian page 1 for Australia (2011-10-01 to 2011-12-31)
+2025-11-16 13:20:31,690 - INFO - fetched 5 relevant articles for Australia after filtering
+2025-11-16 13:20:32,797 - INFO - ✓ completed Australia 2011 (34 articles)
+2025-11-16 13:20:32,797 - INFO - using guardian api for Australia 2012
+2025-11-16 13:20:32,798 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:20:32,798 - INFO - fetching guardian page 1 for Australia (2012-01-01 to 2012-03-31)
+2025-11-16 13:20:33,458 - INFO - fetched 5 relevant articles for Australia after filtering
+2025-11-16 13:20:34,567 - INFO - fetching guardian page 1 for Australia (2012-04-01 to 2012-06-30)
+2025-11-16 13:20:35,125 - INFO - fetched 8 relevant articles for Australia after filtering
+2025-11-16 13:20:36,227 - INFO - fetching guardian page 1 for Australia (2012-07-01 to 2012-09-30)
+2025-11-16 13:20:36,793 - INFO - fetched 5 relevant articles for Australia after filtering
+2025-11-16 13:20:37,898 - INFO - fetching guardian page 1 for Australia (2012-10-01 to 2012-12-31)
+2025-11-16 13:20:39,631 - INFO - fetching guardian page 2 for Australia (2012-10-01 to 2012-12-31)
+2025-11-16 13:20:40,215 - INFO - fetched 7 relevant articles for Australia after filtering
+2025-11-16 13:20:41,319 - INFO - ✓ completed Australia 2012 (25 articles)
+2025-11-16 13:20:41,319 - INFO - using guardian api for Australia 2013
+2025-11-16 13:20:41,320 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:20:41,320 - INFO - fetching guardian page 1 for Australia (2013-01-01 to 2013-03-31)
+2025-11-16 13:20:43,030 - INFO - fetching guardian page 2 for Australia (2013-01-01 to 2013-03-31)
+2025-11-16 13:20:43,626 - INFO - fetched 14 relevant articles for Australia after filtering
+2025-11-16 13:20:44,734 - INFO - fetching guardian page 1 for Australia (2013-04-01 to 2013-06-30)
+2025-11-16 13:20:46,430 - INFO - fetching guardian page 2 for Australia (2013-04-01 to 2013-06-30)
+2025-11-16 13:20:47,040 - INFO - fetched 11 relevant articles for Australia after filtering
+2025-11-16 13:20:48,147 - INFO - fetching guardian page 1 for Australia (2013-07-01 to 2013-09-30)
+2025-11-16 13:20:49,863 - INFO - fetching guardian page 2 for Australia (2013-07-01 to 2013-09-30)
+2025-11-16 13:20:51,652 - INFO - fetching guardian page 3 for Australia (2013-07-01 to 2013-09-30)
+2025-11-16 13:20:52,212 - INFO - fetched 14 relevant articles for Australia after filtering
+2025-11-16 13:20:53,318 - INFO - fetching guardian page 1 for Australia (2013-10-01 to 2013-12-31)
+2025-11-16 13:20:54,977 - INFO - fetching guardian page 2 for Australia (2013-10-01 to 2013-12-31)
+2025-11-16 13:20:56,685 - INFO - fetching guardian page 3 for Australia (2013-10-01 to 2013-12-31)
+2025-11-16 13:20:57,367 - INFO - fetched 12 relevant articles for Australia after filtering
+2025-11-16 13:20:58,473 - INFO - ✓ completed Australia 2013 (53 articles)
+2025-11-16 13:20:58,473 - INFO - using guardian api for Australia 2014
+2025-11-16 13:20:58,474 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:20:58,474 - INFO - fetching guardian page 1 for Australia (2014-01-01 to 2014-03-31)
+2025-11-16 13:21:00,141 - INFO - fetching guardian page 2 for Australia (2014-01-01 to 2014-03-31)
+2025-11-16 13:21:00,826 - INFO - fetched 9 relevant articles for Australia after filtering
+2025-11-16 13:21:01,933 - INFO - fetching guardian page 1 for Australia (2014-04-01 to 2014-06-30)
+2025-11-16 13:21:03,587 - INFO - fetching guardian page 2 for Australia (2014-04-01 to 2014-06-30)
+2025-11-16 13:21:05,338 - INFO - fetching guardian page 3 for Australia (2014-04-01 to 2014-06-30)
+2025-11-16 13:21:06,039 - INFO - fetched 23 relevant articles for Australia after filtering
+2025-11-16 13:21:07,143 - INFO - fetching guardian page 1 for Australia (2014-07-01 to 2014-09-30)
+2025-11-16 13:21:08,865 - INFO - fetching guardian page 2 for Australia (2014-07-01 to 2014-09-30)
+2025-11-16 13:21:10,595 - INFO - fetching guardian page 3 for Australia (2014-07-01 to 2014-09-30)
+2025-11-16 13:21:11,328 - INFO - fetched 17 relevant articles for Australia after filtering
+2025-11-16 13:21:12,435 - INFO - fetching guardian page 1 for Australia (2014-10-01 to 2014-12-31)
+2025-11-16 13:21:14,198 - INFO - fetching guardian page 2 for Australia (2014-10-01 to 2014-12-31)
+2025-11-16 13:21:15,972 - INFO - fetching guardian page 3 for Australia (2014-10-01 to 2014-12-31)
+2025-11-16 13:21:16,652 - INFO - fetched 20 relevant articles for Australia after filtering
+2025-11-16 13:21:17,758 - INFO - ✓ completed Australia 2014 (73 articles)
+2025-11-16 13:21:17,759 - INFO - using guardian api for Australia 2015
+2025-11-16 13:21:17,759 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:21:17,759 - INFO - fetching guardian page 1 for Australia (2015-01-01 to 2015-03-31)
+2025-11-16 13:21:19,455 - INFO - fetching guardian page 2 for Australia (2015-01-01 to 2015-03-31)
+2025-11-16 13:21:21,096 - INFO - fetching guardian page 3 for Australia (2015-01-01 to 2015-03-31)
+2025-11-16 13:21:21,725 - INFO - fetched 19 relevant articles for Australia after filtering
+2025-11-16 13:21:22,828 - INFO - fetching guardian page 1 for Australia (2015-04-01 to 2015-06-30)
+2025-11-16 13:21:24,682 - INFO - fetching guardian page 2 for Australia (2015-04-01 to 2015-06-30)
+2025-11-16 13:21:26,360 - INFO - fetching guardian page 3 for Australia (2015-04-01 to 2015-06-30)
+2025-11-16 13:21:28,150 - INFO - fetching guardian page 4 for Australia (2015-04-01 to 2015-06-30)
+2025-11-16 13:21:28,825 - INFO - fetched 23 relevant articles for Australia after filtering
+2025-11-16 13:21:29,932 - INFO - fetching guardian page 1 for Australia (2015-07-01 to 2015-09-30)
+2025-11-16 13:21:31,596 - INFO - fetching guardian page 2 for Australia (2015-07-01 to 2015-09-30)
+2025-11-16 13:21:33,307 - INFO - fetching guardian page 3 for Australia (2015-07-01 to 2015-09-30)
+2025-11-16 13:21:35,044 - INFO - fetching guardian page 4 for Australia (2015-07-01 to 2015-09-30)
+2025-11-16 13:21:35,729 - INFO - fetched 32 relevant articles for Australia after filtering
+2025-11-16 13:21:36,832 - INFO - fetching guardian page 1 for Australia (2015-10-01 to 2015-12-31)
+2025-11-16 13:21:38,522 - INFO - fetching guardian page 2 for Australia (2015-10-01 to 2015-12-31)
+2025-11-16 13:21:39,191 - INFO - fetched 17 relevant articles for Australia after filtering
+2025-11-16 13:21:40,298 - INFO - ✓ completed Australia 2015 (101 articles)
+2025-11-16 13:21:40,299 - INFO - using guardian api for Australia 2016
+2025-11-16 13:21:40,299 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:21:40,299 - INFO - fetching guardian page 1 for Australia (2016-01-01 to 2016-03-31)
+2025-11-16 13:21:42,022 - INFO - fetching guardian page 2 for Australia (2016-01-01 to 2016-03-31)
+2025-11-16 13:21:43,843 - INFO - fetching guardian page 3 for Australia (2016-01-01 to 2016-03-31)
+2025-11-16 13:21:44,551 - INFO - fetched 18 relevant articles for Australia after filtering
+2025-11-16 13:21:45,657 - INFO - fetching guardian page 1 for Australia (2016-04-01 to 2016-06-30)
+2025-11-16 13:21:47,328 - INFO - fetching guardian page 2 for Australia (2016-04-01 to 2016-06-30)
+2025-11-16 13:21:49,011 - INFO - fetching guardian page 3 for Australia (2016-04-01 to 2016-06-30)
+2025-11-16 13:21:51,025 - INFO - fetching guardian page 4 for Australia (2016-04-01 to 2016-06-30)
+2025-11-16 13:21:51,792 - INFO - fetched 26 relevant articles for Australia after filtering
+2025-11-16 13:21:52,899 - INFO - fetching guardian page 1 for Australia (2016-07-01 to 2016-09-30)
+2025-11-16 13:21:54,590 - INFO - fetching guardian page 2 for Australia (2016-07-01 to 2016-09-30)
+2025-11-16 13:21:56,365 - INFO - fetching guardian page 3 for Australia (2016-07-01 to 2016-09-30)
+2025-11-16 13:21:57,149 - INFO - fetched 14 relevant articles for Australia after filtering
+2025-11-16 13:21:58,257 - INFO - fetching guardian page 1 for Australia (2016-10-01 to 2016-12-31)
+2025-11-16 13:22:00,031 - INFO - fetching guardian page 2 for Australia (2016-10-01 to 2016-12-31)
+2025-11-16 13:22:01,768 - INFO - fetching guardian page 3 for Australia (2016-10-01 to 2016-12-31)
+2025-11-16 13:22:02,603 - INFO - fetched 16 relevant articles for Australia after filtering
+2025-11-16 13:22:03,710 - INFO - ✓ completed Australia 2016 (81 articles)
+2025-11-16 13:22:03,710 - INFO - using guardian api for Brazil 2010
+2025-11-16 13:22:03,711 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:22:03,711 - INFO - fetching guardian page 1 for Brazil (2010-01-01 to 2010-03-31)
+2025-11-16 13:22:04,206 - INFO - fetched 2 relevant articles for Brazil after filtering
+2025-11-16 13:22:05,314 - INFO - fetching guardian page 1 for Brazil (2010-04-01 to 2010-06-30)
+2025-11-16 13:22:05,920 - INFO - fetched 3 relevant articles for Brazil after filtering
+2025-11-16 13:22:07,025 - INFO - fetching guardian page 1 for Brazil (2010-07-01 to 2010-09-30)
+2025-11-16 13:22:07,622 - INFO - fetched 1 relevant articles for Brazil after filtering
+2025-11-16 13:22:08,736 - INFO - fetching guardian page 1 for Brazil (2010-10-01 to 2010-12-31)
+2025-11-16 13:22:09,387 - INFO - fetched 3 relevant articles for Brazil after filtering
+2025-11-16 13:22:10,495 - INFO - ✓ completed Brazil 2010 (69 articles)
+2025-11-16 13:22:10,496 - INFO - using guardian api for Brazil 2011
+2025-11-16 13:22:10,497 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:22:10,497 - INFO - fetching guardian page 1 for Brazil (2011-01-01 to 2011-03-31)
+2025-11-16 13:22:11,050 - INFO - fetched 2 relevant articles for Brazil after filtering
+2025-11-16 13:22:12,158 - INFO - fetching guardian page 1 for Brazil (2011-04-01 to 2011-06-30)
+2025-11-16 13:22:12,749 - INFO - fetched 10 relevant articles for Brazil after filtering
+2025-11-16 13:22:13,855 - INFO - fetching guardian page 1 for Brazil (2011-07-01 to 2011-09-30)
+2025-11-16 13:22:14,491 - INFO - fetched 4 relevant articles for Brazil after filtering
+2025-11-16 13:22:15,598 - INFO - fetching guardian page 1 for Brazil (2011-10-01 to 2011-12-31)
+2025-11-16 13:22:16,351 - INFO - fetched 6 relevant articles for Brazil after filtering
+2025-11-16 13:22:17,459 - INFO - ✓ completed Brazil 2011 (56 articles)
+2025-11-16 13:22:17,459 - INFO - using guardian api for Brazil 2012
+2025-11-16 13:22:17,460 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:22:17,460 - INFO - fetching guardian page 1 for Brazil (2012-01-01 to 2012-03-31)
+2025-11-16 13:22:18,109 - INFO - fetched 6 relevant articles for Brazil after filtering
+2025-11-16 13:22:19,219 - INFO - fetching guardian page 1 for Brazil (2012-04-01 to 2012-06-30)
+2025-11-16 13:22:19,756 - INFO - fetched 8 relevant articles for Brazil after filtering
+2025-11-16 13:22:20,867 - INFO - fetching guardian page 1 for Brazil (2012-07-01 to 2012-09-30)
+2025-11-16 13:22:21,397 - INFO - fetched 5 relevant articles for Brazil after filtering
+2025-11-16 13:22:22,502 - INFO - fetching guardian page 1 for Brazil (2012-10-01 to 2012-12-31)
+2025-11-16 13:22:23,123 - INFO - fetched 2 relevant articles for Brazil after filtering
+2025-11-16 13:22:24,228 - INFO - ✓ completed Brazil 2012 (46 articles)
+2025-11-16 13:22:24,228 - INFO - using guardian api for Brazil 2013
+2025-11-16 13:22:24,228 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:22:24,228 - INFO - fetching guardian page 1 for Brazil (2013-01-01 to 2013-03-31)
+2025-11-16 13:22:24,922 - INFO - fetched 7 relevant articles for Brazil after filtering
+2025-11-16 13:22:26,031 - INFO - fetching guardian page 1 for Brazil (2013-04-01 to 2013-06-30)
+2025-11-16 13:22:27,768 - INFO - fetching guardian page 2 for Brazil (2013-04-01 to 2013-06-30)
+2025-11-16 13:22:28,365 - INFO - fetched 7 relevant articles for Brazil after filtering
+2025-11-16 13:22:29,472 - INFO - fetching guardian page 1 for Brazil (2013-07-01 to 2013-09-30)
+2025-11-16 13:22:31,167 - INFO - fetching guardian page 2 for Brazil (2013-07-01 to 2013-09-30)
+2025-11-16 13:22:31,740 - INFO - fetched 7 relevant articles for Brazil after filtering
+2025-11-16 13:22:32,847 - INFO - fetching guardian page 1 for Brazil (2013-10-01 to 2013-12-31)
+2025-11-16 13:22:34,487 - INFO - fetching guardian page 2 for Brazil (2013-10-01 to 2013-12-31)
+2025-11-16 13:22:35,137 - INFO - fetched 6 relevant articles for Brazil after filtering
+2025-11-16 13:22:36,246 - INFO - ✓ completed Brazil 2013 (80 articles)
+2025-11-16 13:22:36,246 - INFO - using guardian api for Brazil 2014
+2025-11-16 13:22:36,246 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:22:36,246 - INFO - fetching guardian page 1 for Brazil (2014-01-01 to 2014-03-31)
+2025-11-16 13:22:38,082 - INFO - fetching guardian page 2 for Brazil (2014-01-01 to 2014-03-31)
+2025-11-16 13:22:38,597 - INFO - fetched 4 relevant articles for Brazil after filtering
+2025-11-16 13:22:39,703 - INFO - fetching guardian page 1 for Brazil (2014-04-01 to 2014-06-30)
+2025-11-16 13:22:41,415 - INFO - fetching guardian page 2 for Brazil (2014-04-01 to 2014-06-30)
+2025-11-16 13:22:43,150 - INFO - fetching guardian page 3 for Brazil (2014-04-01 to 2014-06-30)
+2025-11-16 13:22:43,799 - INFO - fetched 19 relevant articles for Brazil after filtering
+2025-11-16 13:22:44,904 - INFO - fetching guardian page 1 for Brazil (2014-07-01 to 2014-09-30)
+2025-11-16 13:22:46,558 - INFO - fetching guardian page 2 for Brazil (2014-07-01 to 2014-09-30)
+2025-11-16 13:22:47,118 - INFO - fetched 2 relevant articles for Brazil after filtering
+2025-11-16 13:22:48,221 - INFO - fetching guardian page 1 for Brazil (2014-10-01 to 2014-12-31)
+2025-11-16 13:22:49,930 - INFO - fetching guardian page 2 for Brazil (2014-10-01 to 2014-12-31)
+2025-11-16 13:22:50,496 - INFO - fetched 8 relevant articles for Brazil after filtering
+2025-11-16 13:22:51,604 - INFO - ✓ completed Brazil 2014 (106 articles)
+2025-11-16 13:22:51,604 - INFO - using guardian api for Brazil 2015
+2025-11-16 13:22:51,604 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:22:51,604 - INFO - fetching guardian page 1 for Brazil (2015-01-01 to 2015-03-31)
+2025-11-16 13:22:53,295 - INFO - fetching guardian page 2 for Brazil (2015-01-01 to 2015-03-31)
+2025-11-16 13:22:53,790 - INFO - fetched 13 relevant articles for Brazil after filtering
+2025-11-16 13:22:54,897 - INFO - fetching guardian page 1 for Brazil (2015-04-01 to 2015-06-30)
+2025-11-16 13:22:56,697 - INFO - fetching guardian page 2 for Brazil (2015-04-01 to 2015-06-30)
+2025-11-16 13:22:57,432 - INFO - fetched 22 relevant articles for Brazil after filtering
+2025-11-16 13:22:58,540 - INFO - fetching guardian page 1 for Brazil (2015-07-01 to 2015-09-30)
+2025-11-16 13:23:00,212 - INFO - fetching guardian page 2 for Brazil (2015-07-01 to 2015-09-30)
+2025-11-16 13:23:00,726 - INFO - fetched 17 relevant articles for Brazil after filtering
+2025-11-16 13:23:01,832 - INFO - fetching guardian page 1 for Brazil (2015-10-01 to 2015-12-31)
+2025-11-16 13:23:03,546 - INFO - fetching guardian page 2 for Brazil (2015-10-01 to 2015-12-31)
+2025-11-16 13:23:04,247 - INFO - fetched 17 relevant articles for Brazil after filtering
+2025-11-16 13:23:05,351 - INFO - ✓ completed Brazil 2015 (170 articles)
+2025-11-16 13:23:05,351 - INFO - using guardian api for Brazil 2016
+2025-11-16 13:23:05,352 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:23:05,352 - INFO - fetching guardian page 1 for Brazil (2016-01-01 to 2016-03-31)
+2025-11-16 13:23:07,001 - INFO - fetching guardian page 2 for Brazil (2016-01-01 to 2016-03-31)
+2025-11-16 13:23:07,593 - INFO - fetched 28 relevant articles for Brazil after filtering
+2025-11-16 13:23:08,700 - INFO - fetching guardian page 1 for Brazil (2016-04-01 to 2016-06-30)
+2025-11-16 13:23:10,588 - INFO - fetching guardian page 2 for Brazil (2016-04-01 to 2016-06-30)
+2025-11-16 13:23:11,141 - INFO - fetched 15 relevant articles for Brazil after filtering
+2025-11-16 13:23:12,245 - INFO - fetching guardian page 1 for Brazil (2016-07-01 to 2016-09-30)
+2025-11-16 13:23:13,978 - INFO - fetching guardian page 2 for Brazil (2016-07-01 to 2016-09-30)
+2025-11-16 13:23:14,741 - INFO - fetched 18 relevant articles for Brazil after filtering
+2025-11-16 13:23:15,848 - INFO - fetching guardian page 1 for Brazil (2016-10-01 to 2016-12-31)
+2025-11-16 13:23:16,431 - INFO - fetched 13 relevant articles for Brazil after filtering
+2025-11-16 13:23:17,537 - INFO - ✓ completed Brazil 2016 (155 articles)
+2025-11-16 13:23:17,537 - INFO - using guardian api for Canada 2010
+2025-11-16 13:23:17,538 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:23:17,538 - INFO - fetching guardian page 1 for Canada (2010-01-01 to 2010-03-31)
+2025-11-16 13:23:18,116 - INFO - fetched 6 relevant articles for Canada after filtering
+2025-11-16 13:23:19,224 - INFO - fetching guardian page 1 for Canada (2010-04-01 to 2010-06-30)
+2025-11-16 13:23:19,842 - INFO - fetched 4 relevant articles for Canada after filtering
+2025-11-16 13:23:20,951 - INFO - fetching guardian page 1 for Canada (2010-07-01 to 2010-09-30)
+2025-11-16 13:23:21,544 - INFO - fetched 2 relevant articles for Canada after filtering
+2025-11-16 13:23:22,650 - INFO - fetching guardian page 1 for Canada (2010-10-01 to 2010-12-31)
+2025-11-16 13:23:23,188 - INFO - fetched 3 relevant articles for Canada after filtering
+2025-11-16 13:23:24,295 - INFO - ✓ completed Canada 2010 (84 articles)
+2025-11-16 13:23:24,295 - INFO - using guardian api for Canada 2011
+2025-11-16 13:23:24,295 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:23:24,295 - INFO - fetching guardian page 1 for Canada (2011-01-01 to 2011-03-31)
+2025-11-16 13:23:24,840 - INFO - fetched 3 relevant articles for Canada after filtering
+2025-11-16 13:23:25,947 - INFO - fetching guardian page 1 for Canada (2011-04-01 to 2011-06-30)
+2025-11-16 13:23:26,525 - INFO - fetched 2 relevant articles for Canada after filtering
+2025-11-16 13:23:27,633 - INFO - fetching guardian page 1 for Canada (2011-07-01 to 2011-09-30)
+2025-11-16 13:23:28,208 - INFO - fetched 1 relevant articles for Canada after filtering
+2025-11-16 13:23:29,314 - INFO - fetching guardian page 1 for Canada (2011-10-01 to 2011-12-31)
+2025-11-16 13:23:29,932 - INFO - fetched 3 relevant articles for Canada after filtering
+2025-11-16 13:23:31,041 - INFO - ✓ completed Canada 2011 (65 articles)
+2025-11-16 13:23:31,041 - INFO - using guardian api for Canada 2012
+2025-11-16 13:23:31,041 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:23:31,041 - INFO - fetching guardian page 1 for Canada (2012-01-01 to 2012-03-31)
+2025-11-16 13:23:31,536 - INFO - fetched 1 relevant articles for Canada after filtering
+2025-11-16 13:23:32,640 - INFO - fetching guardian page 1 for Canada (2012-04-01 to 2012-06-30)
+2025-11-16 13:23:33,242 - INFO - fetched 6 relevant articles for Canada after filtering
+2025-11-16 13:23:34,350 - INFO - fetching guardian page 1 for Canada (2012-07-01 to 2012-09-30)
+2025-11-16 13:23:34,918 - INFO - fetched 4 relevant articles for Canada after filtering
+2025-11-16 13:23:36,022 - INFO - fetching guardian page 1 for Canada (2012-10-01 to 2012-12-31)
+2025-11-16 13:23:36,749 - INFO - fetched 4 relevant articles for Canada after filtering
+2025-11-16 13:23:37,856 - INFO - ✓ completed Canada 2012 (61 articles)
+2025-11-16 13:23:37,856 - INFO - using guardian api for Canada 2013
+2025-11-16 13:23:37,857 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:23:37,857 - INFO - fetching guardian page 1 for Canada (2013-01-01 to 2013-03-31)
+2025-11-16 13:23:38,412 - INFO - fetched 4 relevant articles for Canada after filtering
+2025-11-16 13:23:39,517 - INFO - fetching guardian page 1 for Canada (2013-04-01 to 2013-06-30)
+2025-11-16 13:23:41,220 - INFO - fetching guardian page 2 for Canada (2013-04-01 to 2013-06-30)
+2025-11-16 13:23:41,746 - INFO - fetched 5 relevant articles for Canada after filtering
+2025-11-16 13:23:42,854 - INFO - fetching guardian page 1 for Canada (2013-07-01 to 2013-09-30)
+2025-11-16 13:23:43,567 - INFO - fetched 6 relevant articles for Canada after filtering
+2025-11-16 13:23:44,672 - INFO - fetching guardian page 1 for Canada (2013-10-01 to 2013-12-31)
+2025-11-16 13:23:45,274 - INFO - fetched 6 relevant articles for Canada after filtering
+2025-11-16 13:23:46,382 - INFO - ✓ completed Canada 2013 (101 articles)
+2025-11-16 13:23:46,382 - INFO - using guardian api for Canada 2014
+2025-11-16 13:23:46,382 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:23:46,382 - INFO - fetching guardian page 1 for Canada (2014-01-01 to 2014-03-31)
+2025-11-16 13:23:47,067 - INFO - fetched 4 relevant articles for Canada after filtering
+2025-11-16 13:23:48,173 - INFO - fetching guardian page 1 for Canada (2014-04-01 to 2014-06-30)
+2025-11-16 13:23:48,717 - INFO - fetched 2 relevant articles for Canada after filtering
+2025-11-16 13:23:49,822 - INFO - fetching guardian page 1 for Canada (2014-07-01 to 2014-09-30)
+2025-11-16 13:23:50,387 - INFO - fetched 5 relevant articles for Canada after filtering
+2025-11-16 13:23:51,494 - INFO - fetching guardian page 1 for Canada (2014-10-01 to 2014-12-31)
+2025-11-16 13:23:52,049 - INFO - fetched 3 relevant articles for Canada after filtering
+2025-11-16 13:23:53,157 - INFO - ✓ completed Canada 2014 (120 articles)
+2025-11-16 13:23:53,157 - INFO - using guardian api for Canada 2015
+2025-11-16 13:23:53,157 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:23:53,157 - INFO - fetching guardian page 1 for Canada (2015-01-01 to 2015-03-31)
+2025-11-16 13:23:53,684 - INFO - fetched 3 relevant articles for Canada after filtering
+2025-11-16 13:23:54,789 - INFO - fetching guardian page 1 for Canada (2015-04-01 to 2015-06-30)
+2025-11-16 13:23:56,585 - INFO - fetching guardian page 2 for Canada (2015-04-01 to 2015-06-30)
+2025-11-16 13:23:57,199 - INFO - fetched 8 relevant articles for Canada after filtering
+2025-11-16 13:23:58,306 - INFO - fetching guardian page 1 for Canada (2015-07-01 to 2015-09-30)
+2025-11-16 13:23:58,886 - INFO - fetched 8 relevant articles for Canada after filtering
+2025-11-16 13:23:59,992 - INFO - fetching guardian page 1 for Canada (2015-10-01 to 2015-12-31)
+2025-11-16 13:24:00,596 - INFO - fetched 7 relevant articles for Canada after filtering
+2025-11-16 13:24:01,703 - INFO - ✓ completed Canada 2015 (196 articles)
+2025-11-16 13:24:01,704 - INFO - using guardian api for Canada 2016
+2025-11-16 13:24:01,704 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:24:01,704 - INFO - fetching guardian page 1 for Canada (2016-01-01 to 2016-03-31)
+2025-11-16 13:24:02,487 - INFO - fetched 4 relevant articles for Canada after filtering
+2025-11-16 13:24:03,592 - INFO - fetching guardian page 1 for Canada (2016-04-01 to 2016-06-30)
+2025-11-16 13:24:04,416 - INFO - fetched 4 relevant articles for Canada after filtering
+2025-11-16 13:24:05,521 - INFO - fetching guardian page 1 for Canada (2016-07-01 to 2016-09-30)
+2025-11-16 13:24:07,456 - INFO - fetching guardian page 2 for Canada (2016-07-01 to 2016-09-30)
+2025-11-16 13:24:07,995 - INFO - fetched 6 relevant articles for Canada after filtering
+2025-11-16 13:24:09,102 - INFO - fetching guardian page 1 for Canada (2016-10-01 to 2016-12-31)
+2025-11-16 13:24:09,899 - INFO - fetched 6 relevant articles for Canada after filtering
+2025-11-16 13:24:11,008 - INFO - ✓ completed Canada 2016 (175 articles)
+2025-11-16 13:24:11,008 - INFO - using guardian api for Denmark 2010
+2025-11-16 13:24:11,009 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:24:11,009 - INFO - fetching guardian page 1 for Denmark (2010-01-01 to 2010-03-31)
+2025-11-16 13:24:11,482 - INFO - fetched 0 relevant articles for Denmark after filtering
+2025-11-16 13:24:12,585 - INFO - fetching guardian page 1 for Denmark (2010-04-01 to 2010-06-30)
+2025-11-16 13:24:13,079 - INFO - fetched 1 relevant articles for Denmark after filtering
+2025-11-16 13:24:14,183 - INFO - fetching guardian page 1 for Denmark (2010-07-01 to 2010-09-30)
+2025-11-16 13:24:14,750 - INFO - fetched 0 relevant articles for Denmark after filtering
+2025-11-16 13:24:15,858 - INFO - fetching guardian page 1 for Denmark (2010-10-01 to 2010-12-31)
+2025-11-16 13:24:16,433 - INFO - fetched 1 relevant articles for Denmark after filtering
+2025-11-16 13:24:17,536 - INFO - ✓ completed Denmark 2010 (86 articles)
+2025-11-16 13:24:17,537 - INFO - using guardian api for Denmark 2011
+2025-11-16 13:24:17,537 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:24:17,537 - INFO - fetching guardian page 1 for Denmark (2011-01-01 to 2011-03-31)
+2025-11-16 13:24:18,013 - INFO - fetched 0 relevant articles for Denmark after filtering
+2025-11-16 13:24:19,117 - INFO - fetching guardian page 1 for Denmark (2011-04-01 to 2011-06-30)
+2025-11-16 13:24:19,740 - INFO - fetched 0 relevant articles for Denmark after filtering
+2025-11-16 13:24:20,847 - INFO - fetching guardian page 1 for Denmark (2011-07-01 to 2011-09-30)
+2025-11-16 13:24:21,322 - INFO - fetched 0 relevant articles for Denmark after filtering
+2025-11-16 13:24:22,430 - INFO - fetching guardian page 1 for Denmark (2011-10-01 to 2011-12-31)
+2025-11-16 13:24:22,910 - INFO - fetched 0 relevant articles for Denmark after filtering
+2025-11-16 13:24:24,018 - INFO - ✓ completed Denmark 2011 (65 articles)
+2025-11-16 13:24:24,018 - INFO - using guardian api for Denmark 2012
+2025-11-16 13:24:24,018 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:24:24,018 - INFO - fetching guardian page 1 for Denmark (2012-01-01 to 2012-03-31)
+2025-11-16 13:24:24,614 - INFO - fetched 0 relevant articles for Denmark after filtering
+2025-11-16 13:24:25,718 - INFO - fetching guardian page 1 for Denmark (2012-04-01 to 2012-06-30)
+2025-11-16 13:24:26,289 - INFO - fetched 1 relevant articles for Denmark after filtering
+2025-11-16 13:24:27,395 - INFO - fetching guardian page 1 for Denmark (2012-07-01 to 2012-09-30)
+2025-11-16 13:24:27,965 - INFO - fetched 0 relevant articles for Denmark after filtering
+2025-11-16 13:24:29,067 - INFO - fetching guardian page 1 for Denmark (2012-10-01 to 2012-12-31)
+2025-11-16 13:24:29,702 - INFO - fetched 5 relevant articles for Denmark after filtering
+2025-11-16 13:24:30,807 - INFO - ✓ completed Denmark 2012 (67 articles)
+2025-11-16 13:24:30,807 - INFO - using guardian api for Denmark 2013
+2025-11-16 13:24:30,807 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:24:30,808 - INFO - fetching guardian page 1 for Denmark (2013-01-01 to 2013-03-31)
+2025-11-16 13:24:31,317 - INFO - fetched 2 relevant articles for Denmark after filtering
+2025-11-16 13:24:32,426 - INFO - fetching guardian page 1 for Denmark (2013-04-01 to 2013-06-30)
+2025-11-16 13:24:33,016 - INFO - fetched 3 relevant articles for Denmark after filtering
+2025-11-16 13:24:34,125 - INFO - fetching guardian page 1 for Denmark (2013-07-01 to 2013-09-30)
+2025-11-16 13:24:34,670 - INFO - fetched 2 relevant articles for Denmark after filtering
+2025-11-16 13:24:35,777 - INFO - fetching guardian page 1 for Denmark (2013-10-01 to 2013-12-31)
+2025-11-16 13:24:36,380 - INFO - fetched 2 relevant articles for Denmark after filtering
+2025-11-16 13:24:37,484 - INFO - ✓ completed Denmark 2013 (110 articles)
+2025-11-16 13:24:37,484 - INFO - using guardian api for Denmark 2014
+2025-11-16 13:24:37,485 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:24:37,485 - INFO - fetching guardian page 1 for Denmark (2014-01-01 to 2014-03-31)
+2025-11-16 13:24:38,100 - INFO - fetched 1 relevant articles for Denmark after filtering
+2025-11-16 13:24:39,204 - INFO - fetching guardian page 1 for Denmark (2014-04-01 to 2014-06-30)
+2025-11-16 13:24:39,868 - INFO - fetched 1 relevant articles for Denmark after filtering
+2025-11-16 13:24:40,976 - INFO - fetching guardian page 1 for Denmark (2014-07-01 to 2014-09-30)
+2025-11-16 13:24:41,527 - INFO - fetched 2 relevant articles for Denmark after filtering
+2025-11-16 13:24:42,632 - INFO - fetching guardian page 1 for Denmark (2014-10-01 to 2014-12-31)
+2025-11-16 13:24:43,335 - INFO - fetched 4 relevant articles for Denmark after filtering
+2025-11-16 13:24:44,442 - INFO - ✓ completed Denmark 2014 (128 articles)
+2025-11-16 13:24:44,442 - INFO - using guardian api for Denmark 2015
+2025-11-16 13:24:44,443 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:24:44,443 - INFO - fetching guardian page 1 for Denmark (2015-01-01 to 2015-03-31)
+2025-11-16 13:24:44,930 - INFO - fetched 2 relevant articles for Denmark after filtering
+2025-11-16 13:24:46,038 - INFO - fetching guardian page 1 for Denmark (2015-04-01 to 2015-06-30)
+2025-11-16 13:24:46,696 - INFO - fetched 1 relevant articles for Denmark after filtering
+2025-11-16 13:24:47,804 - INFO - fetching guardian page 1 for Denmark (2015-07-01 to 2015-09-30)
+2025-11-16 13:24:48,311 - INFO - fetched 1 relevant articles for Denmark after filtering
+2025-11-16 13:24:49,414 - INFO - fetching guardian page 1 for Denmark (2015-10-01 to 2015-12-31)
+2025-11-16 13:24:50,010 - INFO - fetched 2 relevant articles for Denmark after filtering
+2025-11-16 13:24:51,116 - INFO - ✓ completed Denmark 2015 (202 articles)
+2025-11-16 13:24:51,116 - INFO - using guardian api for Denmark 2016
+2025-11-16 13:24:51,117 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:24:51,117 - INFO - fetching guardian page 1 for Denmark (2016-01-01 to 2016-03-31)
+2025-11-16 13:24:51,728 - INFO - fetched 4 relevant articles for Denmark after filtering
+2025-11-16 13:24:52,836 - INFO - fetching guardian page 1 for Denmark (2016-04-01 to 2016-06-30)
+2025-11-16 13:24:53,502 - INFO - fetched 2 relevant articles for Denmark after filtering
+2025-11-16 13:24:54,609 - INFO - fetching guardian page 1 for Denmark (2016-07-01 to 2016-09-30)
+2025-11-16 13:24:55,392 - INFO - fetched 3 relevant articles for Denmark after filtering
+2025-11-16 13:24:56,500 - INFO - fetching guardian page 1 for Denmark (2016-10-01 to 2016-12-31)
+2025-11-16 13:24:57,072 - INFO - fetched 0 relevant articles for Denmark after filtering
+2025-11-16 13:24:58,184 - INFO - ✓ completed Denmark 2016 (184 articles)
+2025-11-16 13:24:58,184 - INFO - using guardian api for Germany 2010
+2025-11-16 13:24:58,185 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:24:58,185 - INFO - fetching guardian page 1 for Germany (2010-01-01 to 2010-03-31)
+2025-11-16 13:24:58,748 - INFO - fetched 12 relevant articles for Germany after filtering
+2025-11-16 13:24:59,855 - INFO - fetching guardian page 1 for Germany (2010-04-01 to 2010-06-30)
+2025-11-16 13:25:01,500 - INFO - fetching guardian page 2 for Germany (2010-04-01 to 2010-06-30)
+2025-11-16 13:25:02,209 - INFO - fetched 9 relevant articles for Germany after filtering
+2025-11-16 13:25:03,316 - INFO - fetching guardian page 1 for Germany (2010-07-01 to 2010-09-30)
+2025-11-16 13:25:05,057 - INFO - fetching guardian page 2 for Germany (2010-07-01 to 2010-09-30)
+2025-11-16 13:25:05,633 - INFO - fetched 5 relevant articles for Germany after filtering
+2025-11-16 13:25:06,741 - INFO - fetching guardian page 1 for Germany (2010-10-01 to 2010-12-31)
+2025-11-16 13:25:08,557 - INFO - fetching guardian page 2 for Germany (2010-10-01 to 2010-12-31)
+2025-11-16 13:25:09,217 - INFO - fetched 9 relevant articles for Germany after filtering
+2025-11-16 13:25:10,326 - INFO - ✓ completed Germany 2010 (121 articles)
+2025-11-16 13:25:10,326 - INFO - using guardian api for Germany 2011
+2025-11-16 13:25:10,326 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:25:10,326 - INFO - fetching guardian page 1 for Germany (2011-01-01 to 2011-03-31)
+2025-11-16 13:25:10,915 - INFO - fetched 4 relevant articles for Germany after filtering
+2025-11-16 13:25:12,022 - INFO - fetching guardian page 1 for Germany (2011-04-01 to 2011-06-30)
+2025-11-16 13:25:13,672 - INFO - fetching guardian page 2 for Germany (2011-04-01 to 2011-06-30)
+2025-11-16 13:25:14,268 - INFO - fetched 5 relevant articles for Germany after filtering
+2025-11-16 13:25:15,370 - INFO - fetching guardian page 1 for Germany (2011-07-01 to 2011-09-30)
+2025-11-16 13:25:16,991 - INFO - fetching guardian page 2 for Germany (2011-07-01 to 2011-09-30)
+2025-11-16 13:25:17,559 - INFO - fetched 6 relevant articles for Germany after filtering
+2025-11-16 13:25:18,662 - INFO - fetching guardian page 1 for Germany (2011-10-01 to 2011-12-31)
+2025-11-16 13:25:20,357 - INFO - fetching guardian page 2 for Germany (2011-10-01 to 2011-12-31)
+2025-11-16 13:25:20,923 - INFO - fetched 7 relevant articles for Germany after filtering
+2025-11-16 13:25:22,029 - INFO - ✓ completed Germany 2011 (87 articles)
+2025-11-16 13:25:22,029 - INFO - using guardian api for Germany 2012
+2025-11-16 13:25:22,029 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:25:22,029 - INFO - fetching guardian page 1 for Germany (2012-01-01 to 2012-03-31)
+2025-11-16 13:25:23,646 - INFO - fetching guardian page 2 for Germany (2012-01-01 to 2012-03-31)
+2025-11-16 13:25:24,227 - INFO - fetched 13 relevant articles for Germany after filtering
+2025-11-16 13:25:25,334 - INFO - fetching guardian page 1 for Germany (2012-04-01 to 2012-06-30)
+2025-11-16 13:25:26,981 - INFO - fetching guardian page 2 for Germany (2012-04-01 to 2012-06-30)
+2025-11-16 13:25:27,541 - INFO - fetched 11 relevant articles for Germany after filtering
+2025-11-16 13:25:28,648 - INFO - fetching guardian page 1 for Germany (2012-07-01 to 2012-09-30)
+2025-11-16 13:25:30,352 - INFO - fetching guardian page 2 for Germany (2012-07-01 to 2012-09-30)
+2025-11-16 13:25:30,885 - INFO - fetched 10 relevant articles for Germany after filtering
+2025-11-16 13:25:31,989 - INFO - fetching guardian page 1 for Germany (2012-10-01 to 2012-12-31)
+2025-11-16 13:25:33,624 - INFO - fetching guardian page 2 for Germany (2012-10-01 to 2012-12-31)
+2025-11-16 13:25:34,304 - INFO - fetched 2 relevant articles for Germany after filtering
+2025-11-16 13:25:35,412 - INFO - ✓ completed Germany 2012 (103 articles)
+2025-11-16 13:25:35,412 - INFO - using guardian api for Germany 2013
+2025-11-16 13:25:35,413 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:25:35,413 - INFO - fetching guardian page 1 for Germany (2013-01-01 to 2013-03-31)
+2025-11-16 13:25:37,071 - INFO - fetching guardian page 2 for Germany (2013-01-01 to 2013-03-31)
+2025-11-16 13:25:37,723 - INFO - fetched 21 relevant articles for Germany after filtering
+2025-11-16 13:25:38,826 - INFO - fetching guardian page 1 for Germany (2013-04-01 to 2013-06-30)
+2025-11-16 13:25:40,535 - INFO - fetching guardian page 2 for Germany (2013-04-01 to 2013-06-30)
+2025-11-16 13:25:41,346 - INFO - fetched 8 relevant articles for Germany after filtering
+2025-11-16 13:25:42,453 - INFO - fetching guardian page 1 for Germany (2013-07-01 to 2013-09-30)
+2025-11-16 13:25:44,204 - INFO - fetching guardian page 2 for Germany (2013-07-01 to 2013-09-30)
+2025-11-16 13:25:46,020 - INFO - fetching guardian page 3 for Germany (2013-07-01 to 2013-09-30)
+2025-11-16 13:25:46,511 - INFO - fetched 15 relevant articles for Germany after filtering
+2025-11-16 13:25:47,616 - INFO - fetching guardian page 1 for Germany (2013-10-01 to 2013-12-31)
+2025-11-16 13:25:49,341 - INFO - fetching guardian page 2 for Germany (2013-10-01 to 2013-12-31)
+2025-11-16 13:25:51,150 - INFO - fetching guardian page 3 for Germany (2013-10-01 to 2013-12-31)
+2025-11-16 13:25:51,728 - INFO - fetched 12 relevant articles for Germany after filtering
+2025-11-16 13:25:52,837 - INFO - ✓ completed Germany 2013 (166 articles)
+2025-11-16 13:25:52,837 - INFO - using guardian api for Germany 2014
+2025-11-16 13:25:52,838 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:25:52,838 - INFO - fetching guardian page 1 for Germany (2014-01-01 to 2014-03-31)
+2025-11-16 13:25:54,479 - INFO - fetching guardian page 2 for Germany (2014-01-01 to 2014-03-31)
+2025-11-16 13:25:56,358 - INFO - fetching guardian page 3 for Germany (2014-01-01 to 2014-03-31)
+2025-11-16 13:25:56,942 - INFO - fetched 10 relevant articles for Germany after filtering
+2025-11-16 13:25:58,049 - INFO - fetching guardian page 1 for Germany (2014-04-01 to 2014-06-30)
+2025-11-16 13:25:59,735 - INFO - fetching guardian page 2 for Germany (2014-04-01 to 2014-06-30)
+2025-11-16 13:26:00,548 - INFO - fetched 8 relevant articles for Germany after filtering
+2025-11-16 13:26:01,655 - INFO - fetching guardian page 1 for Germany (2014-07-01 to 2014-09-30)
+2025-11-16 13:26:03,384 - INFO - fetching guardian page 2 for Germany (2014-07-01 to 2014-09-30)
+2025-11-16 13:26:05,241 - INFO - fetching guardian page 3 for Germany (2014-07-01 to 2014-09-30)
+2025-11-16 13:26:05,853 - INFO - fetched 14 relevant articles for Germany after filtering
+2025-11-16 13:26:06,958 - INFO - fetching guardian page 1 for Germany (2014-10-01 to 2014-12-31)
+2025-11-16 13:26:08,623 - INFO - fetching guardian page 2 for Germany (2014-10-01 to 2014-12-31)
+2025-11-16 13:26:09,400 - INFO - fetched 14 relevant articles for Germany after filtering
+2025-11-16 13:26:10,504 - INFO - ✓ completed Germany 2014 (174 articles)
+2025-11-16 13:26:10,504 - INFO - using guardian api for Germany 2015
+2025-11-16 13:26:10,505 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:26:10,505 - INFO - fetching guardian page 1 for Germany (2015-01-01 to 2015-03-31)
+2025-11-16 13:26:12,226 - INFO - fetching guardian page 2 for Germany (2015-01-01 to 2015-03-31)
+2025-11-16 13:26:12,986 - INFO - fetched 5 relevant articles for Germany after filtering
+2025-11-16 13:26:14,092 - INFO - fetching guardian page 1 for Germany (2015-04-01 to 2015-06-30)
+2025-11-16 13:26:15,767 - INFO - fetching guardian page 2 for Germany (2015-04-01 to 2015-06-30)
+2025-11-16 13:26:17,665 - INFO - fetching guardian page 3 for Germany (2015-04-01 to 2015-06-30)
+2025-11-16 13:26:18,232 - INFO - fetched 15 relevant articles for Germany after filtering
+2025-11-16 13:26:19,339 - INFO - fetching guardian page 1 for Germany (2015-07-01 to 2015-09-30)
+2025-11-16 13:26:21,173 - INFO - fetching guardian page 2 for Germany (2015-07-01 to 2015-09-30)
+2025-11-16 13:26:23,050 - INFO - fetching guardian page 3 for Germany (2015-07-01 to 2015-09-30)
+2025-11-16 13:26:23,801 - INFO - fetched 27 relevant articles for Germany after filtering
+2025-11-16 13:26:24,908 - INFO - fetching guardian page 1 for Germany (2015-10-01 to 2015-12-31)
+2025-11-16 13:26:26,686 - INFO - fetching guardian page 2 for Germany (2015-10-01 to 2015-12-31)
+2025-11-16 13:26:28,359 - INFO - fetching guardian page 3 for Germany (2015-10-01 to 2015-12-31)
+2025-11-16 13:26:28,931 - INFO - fetched 36 relevant articles for Germany after filtering
+2025-11-16 13:26:30,039 - INFO - ✓ completed Germany 2015 (285 articles)
+2025-11-16 13:26:30,039 - INFO - using guardian api for Germany 2016
+2025-11-16 13:26:30,040 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:26:30,040 - INFO - fetching guardian page 1 for Germany (2016-01-01 to 2016-03-31)
+2025-11-16 13:26:31,695 - INFO - fetching guardian page 2 for Germany (2016-01-01 to 2016-03-31)
+2025-11-16 13:26:32,471 - INFO - fetched 15 relevant articles for Germany after filtering
+2025-11-16 13:26:33,578 - INFO - fetching guardian page 1 for Germany (2016-04-01 to 2016-06-30)
+2025-11-16 13:26:35,272 - INFO - fetching guardian page 2 for Germany (2016-04-01 to 2016-06-30)
+2025-11-16 13:26:37,191 - INFO - fetching guardian page 3 for Germany (2016-04-01 to 2016-06-30)
+2025-11-16 13:26:38,041 - INFO - fetched 21 relevant articles for Germany after filtering
+2025-11-16 13:26:39,147 - INFO - fetching guardian page 1 for Germany (2016-07-01 to 2016-09-30)
+2025-11-16 13:26:40,874 - INFO - fetching guardian page 2 for Germany (2016-07-01 to 2016-09-30)
+2025-11-16 13:26:41,823 - INFO - fetched 8 relevant articles for Germany after filtering
+2025-11-16 13:26:42,929 - INFO - fetching guardian page 1 for Germany (2016-10-01 to 2016-12-31)
+2025-11-16 13:26:44,631 - INFO - fetching guardian page 2 for Germany (2016-10-01 to 2016-12-31)
+2025-11-16 13:26:45,530 - INFO - fetched 10 relevant articles for Germany after filtering
+2025-11-16 13:26:46,639 - INFO - ✓ completed Germany 2016 (238 articles)
+2025-11-16 13:26:46,639 - INFO - using guardian api for India 2010
+2025-11-16 13:26:46,639 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:26:46,639 - INFO - fetching guardian page 1 for India (2010-01-01 to 2010-03-31)
+2025-11-16 13:26:47,213 - INFO - fetched 2 relevant articles for India after filtering
+2025-11-16 13:26:48,320 - INFO - fetching guardian page 1 for India (2010-04-01 to 2010-06-30)
+2025-11-16 13:26:48,942 - INFO - fetched 7 relevant articles for India after filtering
+2025-11-16 13:26:50,048 - INFO - fetching guardian page 1 for India (2010-07-01 to 2010-09-30)
+2025-11-16 13:26:51,713 - INFO - fetching guardian page 2 for India (2010-07-01 to 2010-09-30)
+2025-11-16 13:26:52,309 - INFO - fetched 18 relevant articles for India after filtering
+2025-11-16 13:26:53,414 - INFO - fetching guardian page 1 for India (2010-10-01 to 2010-12-31)
+2025-11-16 13:26:55,173 - INFO - fetching guardian page 2 for India (2010-10-01 to 2010-12-31)
+2025-11-16 13:26:55,766 - INFO - fetched 11 relevant articles for India after filtering
+2025-11-16 13:26:56,870 - INFO - ✓ completed India 2010 (159 articles)
+2025-11-16 13:26:56,870 - INFO - using guardian api for India 2011
+2025-11-16 13:26:56,870 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:26:56,871 - INFO - fetching guardian page 1 for India (2011-01-01 to 2011-03-31)
+2025-11-16 13:26:58,532 - INFO - fetching guardian page 2 for India (2011-01-01 to 2011-03-31)
+2025-11-16 13:26:59,123 - INFO - fetched 12 relevant articles for India after filtering
+2025-11-16 13:27:00,230 - INFO - fetching guardian page 1 for India (2011-04-01 to 2011-06-30)
+2025-11-16 13:27:01,850 - INFO - fetching guardian page 2 for India (2011-04-01 to 2011-06-30)
+2025-11-16 13:27:02,415 - INFO - fetched 9 relevant articles for India after filtering
+2025-11-16 13:27:03,522 - INFO - fetching guardian page 1 for India (2011-07-01 to 2011-09-30)
+2025-11-16 13:27:05,223 - INFO - fetching guardian page 2 for India (2011-07-01 to 2011-09-30)
+2025-11-16 13:27:05,813 - INFO - fetched 24 relevant articles for India after filtering
+2025-11-16 13:27:06,921 - INFO - fetching guardian page 1 for India (2011-10-01 to 2011-12-31)
+2025-11-16 13:27:08,616 - INFO - fetching guardian page 2 for India (2011-10-01 to 2011-12-31)
+2025-11-16 13:27:09,115 - INFO - fetched 11 relevant articles for India after filtering
+2025-11-16 13:27:10,222 - INFO - ✓ completed India 2011 (143 articles)
+2025-11-16 13:27:10,222 - INFO - using guardian api for India 2012
+2025-11-16 13:27:10,223 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:27:10,223 - INFO - fetching guardian page 1 for India (2012-01-01 to 2012-03-31)
+2025-11-16 13:27:11,865 - INFO - fetching guardian page 2 for India (2012-01-01 to 2012-03-31)
+2025-11-16 13:27:12,422 - INFO - fetched 10 relevant articles for India after filtering
+2025-11-16 13:27:13,529 - INFO - fetching guardian page 1 for India (2012-04-01 to 2012-06-30)
+2025-11-16 13:27:14,104 - INFO - fetched 6 relevant articles for India after filtering
+2025-11-16 13:27:15,210 - INFO - fetching guardian page 1 for India (2012-07-01 to 2012-09-30)
+2025-11-16 13:27:15,780 - INFO - fetched 6 relevant articles for India after filtering
+2025-11-16 13:27:16,888 - INFO - fetching guardian page 1 for India (2012-10-01 to 2012-12-31)
+2025-11-16 13:27:18,580 - INFO - fetching guardian page 2 for India (2012-10-01 to 2012-12-31)
+2025-11-16 13:27:19,176 - INFO - fetched 9 relevant articles for India after filtering
+2025-11-16 13:27:20,285 - INFO - ✓ completed India 2012 (134 articles)
+2025-11-16 13:27:20,285 - INFO - using guardian api for India 2013
+2025-11-16 13:27:20,286 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:27:20,286 - INFO - fetching guardian page 1 for India (2013-01-01 to 2013-03-31)
+2025-11-16 13:27:21,913 - INFO - fetching guardian page 2 for India (2013-01-01 to 2013-03-31)
+2025-11-16 13:27:22,493 - INFO - fetched 9 relevant articles for India after filtering
+2025-11-16 13:27:23,597 - INFO - fetching guardian page 1 for India (2013-04-01 to 2013-06-30)
+2025-11-16 13:27:25,277 - INFO - fetching guardian page 2 for India (2013-04-01 to 2013-06-30)
+2025-11-16 13:27:25,863 - INFO - fetched 12 relevant articles for India after filtering
+2025-11-16 13:27:26,969 - INFO - fetching guardian page 1 for India (2013-07-01 to 2013-09-30)
+2025-11-16 13:27:28,600 - INFO - fetching guardian page 2 for India (2013-07-01 to 2013-09-30)
+2025-11-16 13:27:29,297 - INFO - fetched 7 relevant articles for India after filtering
+2025-11-16 13:27:30,407 - INFO - fetching guardian page 1 for India (2013-10-01 to 2013-12-31)
+2025-11-16 13:27:32,105 - INFO - fetching guardian page 2 for India (2013-10-01 to 2013-12-31)
+2025-11-16 13:27:32,679 - INFO - fetched 10 relevant articles for India after filtering
+2025-11-16 13:27:33,782 - INFO - ✓ completed India 2013 (204 articles)
+2025-11-16 13:27:33,782 - INFO - using guardian api for India 2014
+2025-11-16 13:27:33,782 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:27:33,783 - INFO - fetching guardian page 1 for India (2014-01-01 to 2014-03-31)
+2025-11-16 13:27:35,396 - INFO - fetching guardian page 2 for India (2014-01-01 to 2014-03-31)
+2025-11-16 13:27:37,141 - INFO - fetching guardian page 3 for India (2014-01-01 to 2014-03-31)
+2025-11-16 13:27:37,708 - INFO - fetched 19 relevant articles for India after filtering
+2025-11-16 13:27:38,817 - INFO - fetching guardian page 1 for India (2014-04-01 to 2014-06-30)
+2025-11-16 13:27:40,599 - INFO - fetching guardian page 2 for India (2014-04-01 to 2014-06-30)
+2025-11-16 13:27:42,236 - INFO - fetching guardian page 3 for India (2014-04-01 to 2014-06-30)
+2025-11-16 13:27:42,813 - INFO - fetched 7 relevant articles for India after filtering
+2025-11-16 13:27:43,919 - INFO - fetching guardian page 1 for India (2014-07-01 to 2014-09-30)
+2025-11-16 13:27:45,610 - INFO - fetching guardian page 2 for India (2014-07-01 to 2014-09-30)
+2025-11-16 13:27:46,311 - INFO - fetched 6 relevant articles for India after filtering
+2025-11-16 13:27:47,422 - INFO - fetching guardian page 1 for India (2014-10-01 to 2014-12-31)
+2025-11-16 13:27:49,088 - INFO - fetching guardian page 2 for India (2014-10-01 to 2014-12-31)
+2025-11-16 13:27:49,687 - INFO - fetched 7 relevant articles for India after filtering
+2025-11-16 13:27:50,795 - INFO - ✓ completed India 2014 (213 articles)
+2025-11-16 13:27:50,796 - INFO - using guardian api for India 2015
+2025-11-16 13:27:50,796 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:27:50,796 - INFO - fetching guardian page 1 for India (2015-01-01 to 2015-03-31)
+2025-11-16 13:27:52,488 - INFO - fetching guardian page 2 for India (2015-01-01 to 2015-03-31)
+2025-11-16 13:27:53,126 - INFO - fetched 14 relevant articles for India after filtering
+2025-11-16 13:27:54,233 - INFO - fetching guardian page 1 for India (2015-04-01 to 2015-06-30)
+2025-11-16 13:27:55,902 - INFO - fetching guardian page 2 for India (2015-04-01 to 2015-06-30)
+2025-11-16 13:27:56,541 - INFO - fetched 10 relevant articles for India after filtering
+2025-11-16 13:27:57,647 - INFO - fetching guardian page 1 for India (2015-07-01 to 2015-09-30)
+2025-11-16 13:27:59,379 - INFO - fetching guardian page 2 for India (2015-07-01 to 2015-09-30)
+2025-11-16 13:27:59,987 - INFO - fetched 6 relevant articles for India after filtering
+2025-11-16 13:28:01,090 - INFO - fetching guardian page 1 for India (2015-10-01 to 2015-12-31)
+2025-11-16 13:28:02,877 - INFO - fetching guardian page 2 for India (2015-10-01 to 2015-12-31)
+2025-11-16 13:28:03,460 - INFO - fetched 12 relevant articles for India after filtering
+2025-11-16 13:28:04,566 - INFO - ✓ completed India 2015 (327 articles)
+2025-11-16 13:28:04,566 - INFO - using guardian api for India 2016
+2025-11-16 13:28:04,566 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:28:04,566 - INFO - fetching guardian page 1 for India (2016-01-01 to 2016-03-31)
+2025-11-16 13:28:06,297 - INFO - fetching guardian page 2 for India (2016-01-01 to 2016-03-31)
+2025-11-16 13:28:06,902 - INFO - fetched 9 relevant articles for India after filtering
+2025-11-16 13:28:08,005 - INFO - fetching guardian page 1 for India (2016-04-01 to 2016-06-30)
+2025-11-16 13:28:09,775 - INFO - fetching guardian page 2 for India (2016-04-01 to 2016-06-30)
+2025-11-16 13:28:10,431 - INFO - fetched 10 relevant articles for India after filtering
+2025-11-16 13:28:11,538 - INFO - fetching guardian page 1 for India (2016-07-01 to 2016-09-30)
+2025-11-16 13:28:12,235 - INFO - fetched 4 relevant articles for India after filtering
+2025-11-16 13:28:13,341 - INFO - fetching guardian page 1 for India (2016-10-01 to 2016-12-31)
+2025-11-16 13:28:15,032 - INFO - fetching guardian page 2 for India (2016-10-01 to 2016-12-31)
+2025-11-16 13:28:15,690 - INFO - fetched 9 relevant articles for India after filtering
+2025-11-16 13:28:16,796 - INFO - ✓ completed India 2016 (270 articles)
+2025-11-16 13:28:16,796 - INFO - using guardian api for Iraq 2010
+2025-11-16 13:28:16,796 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:28:16,796 - INFO - fetching guardian page 1 for Iraq (2010-01-01 to 2010-03-31)
+2025-11-16 13:28:18,397 - INFO - fetching guardian page 2 for Iraq (2010-01-01 to 2010-03-31)
+2025-11-16 13:28:18,982 - INFO - fetched 9 relevant articles for Iraq after filtering
+2025-11-16 13:28:20,089 - INFO - fetching guardian page 1 for Iraq (2010-04-01 to 2010-06-30)
+2025-11-16 13:28:21,770 - INFO - fetching guardian page 2 for Iraq (2010-04-01 to 2010-06-30)
+2025-11-16 13:28:22,487 - INFO - fetched 6 relevant articles for Iraq after filtering
+2025-11-16 13:28:23,590 - INFO - fetching guardian page 1 for Iraq (2010-07-01 to 2010-09-30)
+2025-11-16 13:28:25,322 - INFO - fetching guardian page 2 for Iraq (2010-07-01 to 2010-09-30)
+2025-11-16 13:28:25,900 - INFO - fetched 13 relevant articles for Iraq after filtering
+2025-11-16 13:28:27,007 - INFO - fetching guardian page 1 for Iraq (2010-10-01 to 2010-12-31)
+2025-11-16 13:28:28,740 - INFO - fetching guardian page 2 for Iraq (2010-10-01 to 2010-12-31)
+2025-11-16 13:28:29,356 - INFO - fetched 5 relevant articles for Iraq after filtering
+2025-11-16 13:28:30,461 - INFO - ✓ completed Iraq 2010 (192 articles)
+2025-11-16 13:28:30,462 - INFO - using guardian api for Iraq 2011
+2025-11-16 13:28:30,462 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:28:30,462 - INFO - fetching guardian page 1 for Iraq (2011-01-01 to 2011-03-31)
+2025-11-16 13:28:32,163 - INFO - fetching guardian page 2 for Iraq (2011-01-01 to 2011-03-31)
+2025-11-16 13:28:32,747 - INFO - fetched 9 relevant articles for Iraq after filtering
+2025-11-16 13:28:33,853 - INFO - fetching guardian page 1 for Iraq (2011-04-01 to 2011-06-30)
+2025-11-16 13:28:34,443 - INFO - fetched 5 relevant articles for Iraq after filtering
+2025-11-16 13:28:35,548 - INFO - fetching guardian page 1 for Iraq (2011-07-01 to 2011-09-30)
+2025-11-16 13:28:37,235 - INFO - fetching guardian page 2 for Iraq (2011-07-01 to 2011-09-30)
+2025-11-16 13:28:37,901 - INFO - fetched 20 relevant articles for Iraq after filtering
+2025-11-16 13:28:39,007 - INFO - fetching guardian page 1 for Iraq (2011-10-01 to 2011-12-31)
+2025-11-16 13:28:40,651 - INFO - fetching guardian page 2 for Iraq (2011-10-01 to 2011-12-31)
+2025-11-16 13:28:41,221 - INFO - fetched 6 relevant articles for Iraq after filtering
+2025-11-16 13:28:42,327 - INFO - ✓ completed Iraq 2011 (183 articles)
+2025-11-16 13:28:42,327 - INFO - using guardian api for Iraq 2012
+2025-11-16 13:28:42,327 - INFO - using guardian api key: 93c1ada7...
+2025-11-16 13:28:42,327 - INFO - fetching guardian page 1 for Iraq (2012-01-01 to 2012-03-31)
+2025-11-16 13:28:42,936 - INFO - fetched 5 relevant articles for Iraq after filtering
+2025-11-16 13:28:44,039 - INFO - fetching guardian page 1 for Iraq (2012-04-01 to 2012-06-30)
+2025-11-16 13:28:44,523 - INFO - fetched 6 relevant articles for Iraq after filtering
+2025-11-16 13:28:45,627 - INFO - fetching guardian page 1 for Iraq (2012-07-01 to 2012-09-30)
+2025-11-16 13:28:46,147 - INFO - fetched 7 relevant articles for Iraq after filtering
+2025-11-16 13:28:47,252 - INFO - fetching guardian page 1 for Iraq (2012-10-01 to 2012-12-31)
