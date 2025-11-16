@@ -1,23 +1,27 @@
 #!/usr/bin/env python3
 """
 test script for data cleaning and labeling notebook
-run from project root: python3 test_notebook02.py
+run from project root: python3 tests/test_notebook02.py
 """
 
 import pandas as pd
 import numpy as np
 import os
 
+# get project root directory (parent of tests/)
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 print("=== Testing Data Cleaning & Labeling notebook ===\n")
 
 try:
     # 1. load baseline data
     print("1. loading baseline data...")
-    if not os.path.exists('data/raw/corruption_data_baseline.csv'):
+    baseline_path = os.path.join(project_root, 'data', 'raw', 'corruption_data_baseline.csv')
+    if not os.path.exists(baseline_path):
         print("   ✗ ERROR: baseline data file not found")
         exit(1)
     
-    df = pd.read_csv('data/raw/corruption_data_baseline.csv')
+    df = pd.read_csv(baseline_path)
     print(f"   ✓ loaded: {df.shape[0]} rows, {df.shape[1]} columns")
     print(f"   years: {df['Year'].min()} to {df['Year'].max()}\n")
     
@@ -99,8 +103,9 @@ try:
     
     # 6. save processed dataset
     print("6. saving processed dataset...")
-    os.makedirs('data/processed', exist_ok=True)
-    output_path = 'data/processed/corruption_data_labeled.csv'
+    processed_dir = os.path.join(project_root, 'data', 'processed')
+    os.makedirs(processed_dir, exist_ok=True)
+    output_path = os.path.join(processed_dir, 'corruption_data_labeled.csv')
     df.to_csv(output_path, index=False)
     
     if os.path.exists(output_path):

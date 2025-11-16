@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """
 test script for expanded dataset notebook
-run from project root: python3 test_notebook03.py
+run from project root: python3 tests/test_notebook03.py
 """
 
 import pandas as pd
 import os
+
+# get project root directory (parent of tests/)
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 print("=== Testing Expanded Dataset notebook ===\n")
 
@@ -26,7 +29,7 @@ wb_country_variations = {
 try:
     # 1. check expanded dataset exists
     print("1. checking expanded dataset file...")
-    expanded_path = 'data/raw/corruption_data_expanded.csv'
+    expanded_path = os.path.join(project_root, 'data', 'raw', 'corruption_data_expanded.csv')
     if not os.path.exists(expanded_path):
         print(f"   ✗ ERROR: expanded dataset not found at {expanded_path}")
         exit(1)
@@ -154,7 +157,7 @@ try:
     
     # 9. compare with baseline dataset
     print("9. comparing with baseline dataset...")
-    baseline_path = 'data/raw/corruption_data_baseline.csv'
+    baseline_path = os.path.join(project_root, 'data', 'raw', 'corruption_data_baseline.csv')
     if os.path.exists(baseline_path):
         df_baseline = pd.read_csv(baseline_path)
         baseline_rows = len(df_baseline[df_baseline['Year'] != '2024'])

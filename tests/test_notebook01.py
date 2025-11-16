@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 """
 test script for world bank API notebook
-run from project root: python3 test_notebook.py
+run from project root: python3 tests/test_notebook01.py
 """
 
 import wbdata
 import pandas as pd
 import datetime
 import os
+
+# get project root directory (parent of tests/)
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 print("=== Testing World Bank API notebook ===\n")
 
@@ -52,8 +55,9 @@ try:
     print(f"   years: {df['Year'].min()} to {df['Year'].max()}\n")
     
     # save test
-    os.makedirs('data/raw', exist_ok=True)
-    output_path = 'data/raw/corruption_data_baseline.csv'
+    data_dir = os.path.join(project_root, 'data', 'raw')
+    os.makedirs(data_dir, exist_ok=True)
+    output_path = os.path.join(data_dir, 'corruption_data_baseline.csv')
     df.to_csv(output_path, index=False)
     
     if os.path.exists(output_path):
