@@ -75,9 +75,18 @@ class GDELTClient(BaseNewsClient):
         end_date: datetime,
         max_records: int = 250
     ) -> List[Dict[str, Any]]:
-        """fetch articles from gdelt api."""
+        """fetch articles from gdelt api.
         
-        # format dates for gdelt api
+        note: gdelt api v2 only supports dates from 2017 onwards.
+        earlier dates will return an error and be skipped.
+        """
+        
+        # gdelt v2 only supports dates from 2017
+        if start_date.year < 2017:
+            logger.warning(f"gdelt v2 only supports dates from 2017, skipping {country} {start_date.year}")
+            return []
+        
+        # format dates for gdelt api (YYYYMMDDHHMMSS)
         start_str = start_date.strftime("%Y%m%d%H%M%S")
         end_str = end_date.strftime("%Y%m%d%H%M%S")
         
@@ -99,7 +108,16 @@ class GDELTClient(BaseNewsClient):
             response = requests.get(self.base_url, params=params, timeout=30)
             response.raise_for_status()
             
-            data = response.json()
+            # check if response is valid json
+            try:
+                data = response.json()
+            except ValueError:
+                # response might be an error message
+                error_text = response.text.strip()
+                if "Invalid query" in error_text or "error" in error_text.lower():
+                    logger.warning(f"api error for {country} {start_date.year}: {error_text[:100]}")
+                    return []
+                raise
             
             # gdelt returns articles in 'articles' key
             articles = data.get("articles", [])
