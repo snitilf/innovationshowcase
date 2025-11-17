@@ -245,7 +245,6 @@ try:
     print("   ✓ results directories ready\n")
     
     print("=== ✓ All validation tests passed! ===")
-    print("\nNote: Run the notebook to generate visualizations and export results.")
     
 except Exception as e:
     print(f"\n✗ ERROR: {e}")

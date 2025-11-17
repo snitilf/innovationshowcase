@@ -201,7 +201,6 @@ try:
     print()
     
     print("=== ✓ All tests passed! ===")
-    print(f"\nExpanded dataset is ready for Step 2 (labeling process)")
     
 except Exception as e:
     print(f"\n✗ ERROR: {e}")
