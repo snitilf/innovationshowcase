@@ -1,9 +1,3 @@
-Voice_Accountability
-Political_Stability
-Government_Effectiveness
-Regulatory_Quality
-Rule_of_Law
-Control_of_Corruption
 GDP_Growth_annual_perc
 External_Debt_perc_GNI
 Govt_Expenditure_perc_GDP
