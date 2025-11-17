@@ -2,6 +2,7 @@
 wbdata==1.0.0
 pandas==2.2.0
 numpy==1.26.3
+pyarrow>=14.0.0
 
 # visualization
 matplotlib>=3.9.0
