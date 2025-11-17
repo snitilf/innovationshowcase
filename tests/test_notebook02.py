@@ -26,11 +26,11 @@ try:
     print("1. loading baseline data...")
     baseline_path = os.path.join(project_root, 'data', 'raw', 'corruption_data_baseline.csv')
     if not os.path.exists(baseline_path):
-        print("   ✗ ERROR: baseline data file not found")
+        print("   ERROR: baseline data file not found")
         exit(1)
     
     df = pd.read_csv(baseline_path)
-    print(f"   ✓ loaded: {df.shape[0]} rows, {df.shape[1]} columns")
+    print(f"   loaded: {df.shape[0]} rows, {df.shape[1]} columns")
     print(f"   years: {df['Year'].min()} to {df['Year'].max()}\n")
     
     # 2. drop 2024
@@ -51,15 +51,15 @@ try:
     # check governance indicators (should have none missing after dropping 2024)
     missing_governance = df[df[governance_cols].isnull().any(axis=1)]
     if len(missing_governance) > 0:
-        print(f"   ✗ ERROR: {len(missing_governance)} rows with missing governance indicators")
+        print(f"   ERROR: {len(missing_governance)} rows with missing governance indicators")
         exit(1)
-    print(f"   ✓ no missing governance indicators")
+    print(f"   no missing governance indicators")
     
     # forward fill economic indicators
     for col in economic_cols:
         df[col] = df.groupby('Country')[col].ffill()
     
-    print(f"   ✓ forward filled economic indicators\n")
+    print(f"   forward filled economic indicators\n")
     
     # 4. create corruption risk labels
     print("4. creating corruption risk labels...")
@@ -90,24 +90,24 @@ try:
     # malaysia 1MDB (2013-2015)
     malaysia_scandal = df[(df['Country'] == 'Malaysia') & (df['Year'].between(2013, 2015))]
     if not malaysia_scandal['corruption_risk'].all():
-        print(f"   ✗ ERROR: Malaysia 2013-2015 not all flagged as high risk")
+        print(f"   ERROR: Malaysia 2013-2015 not all flagged as high risk")
         exit(1)
-    print(f"   ✓ Malaysia 2013-2015: all flagged as high risk")
+    print(f"   Malaysia 2013-2015: all flagged as high risk")
     
     # mozambique hidden debt (2013-2016)
     mozambique_scandal = df[(df['Country'] == 'Mozambique') & (df['Year'].between(2013, 2016))]
     if not mozambique_scandal['corruption_risk'].all():
-        print(f"   ✗ ERROR: Mozambique 2013-2016 not all flagged as high risk")
+        print(f"   ERROR: Mozambique 2013-2016 not all flagged as high risk")
         exit(1)
-    print(f"   ✓ Mozambique 2013-2016: all flagged as high risk")
+    print(f"   Mozambique 2013-2016: all flagged as high risk")
     
     # canada (control - should be low risk)
     canada = df[df['Country'] == 'Canada']
     canada_high_risk = canada['corruption_risk'].sum()
     if canada_high_risk > 0:
-        print(f"   ✗ ERROR: Canada has {canada_high_risk} high risk years (expected 0)")
+        print(f"   ERROR: Canada has {canada_high_risk} high risk years (expected 0)")
         exit(1)
-    print(f"   ✓ Canada: {len(canada)} years, all low risk\n")
+    print(f"   Canada: {len(canada)} years, all low risk\n")
     
     # 6. save processed dataset
     print("6. saving processed dataset...")
@@ -118,10 +118,10 @@ try:
     
     if os.path.exists(output_path):
         file_size = os.path.getsize(output_path)
-        print(f"   ✓ file saved: {output_path} ({file_size} bytes)")
+        print(f"   file saved: {output_path} ({file_size} bytes)")
         print(f"   shape: {df.shape[0]} rows, {df.shape[1]} columns\n")
     else:
-        print(f"   ✗ ERROR: file not created\n")
+        print(f"   ERROR: file not created\n")
         exit(1)
     
     # 7. verify expected columns
@@ -129,15 +129,15 @@ try:
     expected_cols = ['Country', 'Year', 'corruption_risk', 'total_flags'] + list(thresholds.keys())
     missing_cols = [col for col in expected_cols if col not in df.columns]
     if missing_cols:
-        print(f"   ✗ ERROR: missing columns: {missing_cols}")
+        print(f"   ERROR: missing columns: {missing_cols}")
         exit(1)
-    print(f"   ✓ all expected columns present")
-    print(f"   ✓ total columns: {len(df.columns)}\n")
+    print(f"   all expected columns present")
+    print(f"   total columns: {len(df.columns)}\n")
     
-    print("=== ✓ All tests passed! ===")
+    print("=== All tests passed! ===")
     
 except Exception as e:
-    print(f"\n✗ ERROR: {e}")
+    print(f"\nERROR: {e}")
     import traceback
     traceback.print_exc()
     exit(1)

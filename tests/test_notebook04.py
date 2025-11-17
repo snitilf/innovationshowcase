@@ -28,17 +28,17 @@ try:
     labeled_path = os.path.join(project_root, 'data', 'processed', 'corruption_data_expanded_labeled.csv')
     
     if not os.path.exists(sentiment_path):
-        print("   ✗ ERROR: sentiment scores file not found")
+        print("   ERROR: sentiment scores file not found")
         exit(1)
     if not os.path.exists(labeled_path):
-        print("   ✗ ERROR: labeled data file not found")
+        print("   ERROR: labeled data file not found")
         exit(1)
     
     sentiment_df = pd.read_csv(sentiment_path)
     labeled_df = pd.read_csv(labeled_path)
     
-    print(f"   ✓ sentiment data: {len(sentiment_df)} records")
-    print(f"   ✓ labeled data: {len(labeled_df)} records")
+    print(f"   OK: sentiment data: {len(sentiment_df)} records")
+    print(f"   OK: labeled data: {len(labeled_df)} records")
     print(f"   countries: {sentiment_df['country'].nunique()}")
     print(f"   year range: {sentiment_df['year'].min()} to {sentiment_df['year'].max()}\n")
     
@@ -46,15 +46,15 @@ try:
     sentiment_cols = ['country', 'year', 'sentiment_score', 'article_count']
     missing_cols = [col for col in sentiment_cols if col not in sentiment_df.columns]
     if missing_cols:
-        print(f"   ✗ ERROR: missing sentiment columns: {missing_cols}")
+        print(f"   ERROR: missing sentiment columns: {missing_cols}")
         exit(1)
     
     required_labeled_cols = ['Country', 'Year', 'corruption_risk', 'Risk_Category']
     missing_labeled = [col for col in required_labeled_cols if col not in labeled_df.columns]
     if missing_labeled:
-        print(f"   ✗ ERROR: missing labeled columns: {missing_labeled}")
+        print(f"   ERROR: missing labeled columns: {missing_labeled}")
         exit(1)
-    print(f"   ✓ all required columns present\n")
+    print(f"   OK: all required columns present\n")
     
     # 2. merge sentiment with labeled data
     print("2. merging sentiment with labeled data...")
@@ -68,11 +68,11 @@ try:
     # fill missing sentiment with 0 (neutral) for analysis
     merged_df['sentiment_score'] = merged_df['sentiment_score'].fillna(0.0)
     
-    print(f"   ✓ merged dataset: {len(merged_df)} records")
+    print(f"   OK: merged dataset: {len(merged_df)} records")
     print(f"   records with sentiment data: {merged_df['sentiment_score'].notna().sum()}\n")
     
     if len(merged_df) == 0:
-        print("   ✗ ERROR: merged dataset is empty")
+        print("   ERROR: merged dataset is empty")
         exit(1)
     
     # 3. validate sentiment score ranges
@@ -81,10 +81,10 @@ try:
     in_range = (all_scores >= -1).all() and (all_scores <= 1).all()
     
     if not in_range:
-        print(f"   ✗ ERROR: sentiment scores outside [-1, 1] range")
+        print(f"   ERROR: sentiment scores outside [-1, 1] range")
         print(f"   min: {all_scores.min()}, max: {all_scores.max()}")
         exit(1)
-    print(f"   ✓ all scores in valid range [-1, 1]")
+    print(f"   OK: all scores in valid range [-1, 1]")
     print(f"   range: [{all_scores.min():.4f}, {all_scores.max():.4f}]\n")
     
     # 4. validate sentiment by risk category
@@ -93,7 +93,7 @@ try:
     low_risk_sentiment = merged_df[merged_df['corruption_risk'] == 0]['sentiment_score']
     
     if high_risk_sentiment.empty or low_risk_sentiment.empty:
-        print("   ✗ ERROR: no high-risk or low-risk sentiment data")
+        print("   ERROR: no high-risk or low-risk sentiment data")
         exit(1)
     
     high_mean = high_risk_sentiment.mean()
@@ -104,14 +104,14 @@ try:
     
     # both should be negative (corruption news is inherently negative)
     if high_mean > 0.1:
-        print(f"   ⚠ WARNING: high-risk mean is positive ({high_mean:.4f}), expected negative")
+        print(f"   WARNING: high-risk mean is positive ({high_mean:.4f}), expected negative")
     if low_mean > 0.1:
-        print(f"   ⚠ WARNING: low-risk mean is positive ({low_mean:.4f}), expected negative")
+        print(f"   WARNING: low-risk mean is positive ({low_mean:.4f}), expected negative")
     
     if high_mean < 0 and low_mean < 0:
-        print("   ✓ both risk categories show negative sentiment (as expected)\n")
+        print("   OK: both risk categories show negative sentiment (as expected)\n")
     else:
-        print("   ⚠ NOTE: one or both categories not negative\n")
+        print("   NOTE: one or both categories not negative\n")
     
     # 5. validate case study countries
     print("5. validating case study countries...")
@@ -126,13 +126,13 @@ try:
         print(f"     mean sentiment: {malaysia_sentiment:.4f}")
         print(f"     corruption risk: {malaysia_risk} (expected: 1)")
         if malaysia_risk != 1:
-            print("     ⚠ WARNING: malaysia should be high risk during 1MDB period")
+            print("     WARNING: malaysia should be high risk during 1MDB period")
         if malaysia_sentiment > 0.1:
-            print("     ⚠ WARNING: sentiment should be negative during scandal period")
+            print("     WARNING: sentiment should be negative during scandal period")
         else:
-            print("     ✓ sentiment is negative during scandal period")
+            print("     OK: sentiment is negative during scandal period")
     else:
-        print("   ⚠ WARNING: no malaysia data for 1MDB period")
+        print("   WARNING: no malaysia data for 1MDB period")
     
     # mozambique hidden debt (2013-2016)
     mozambique_scandal = merged_df[(merged_df['Country'] == 'Mozambique') & 
@@ -144,13 +144,13 @@ try:
         print(f"     mean sentiment: {mozambique_sentiment:.4f}")
         print(f"     corruption risk: {mozambique_risk} (expected: 1)")
         if mozambique_risk != 1:
-            print("     ⚠ WARNING: mozambique should be high risk during hidden debt period")
+            print("     WARNING: mozambique should be high risk during hidden debt period")
         if mozambique_sentiment > 0.1:
-            print("     ⚠ WARNING: sentiment should be negative during crisis period")
+            print("     WARNING: sentiment should be negative during crisis period")
         else:
-            print("     ✓ sentiment is negative or neutral during crisis period")
+            print("     OK: sentiment is negative or neutral during crisis period")
     else:
-        print("   ⚠ WARNING: no mozambique data for hidden debt period")
+        print("   WARNING: no mozambique data for hidden debt period")
     
     # canada (control - should be low risk)
     canada = merged_df[merged_df['Country'] == 'Canada']
@@ -162,11 +162,11 @@ try:
         print(f"     mean sentiment: {canada_sentiment:.4f}")
         print(f"     high-risk years: {canada_risk}/{canada_total} (expected: 0)")
         if canada_risk > 0:
-            print("     ⚠ WARNING: canada should be low risk throughout")
+            print("     WARNING: canada should be low risk throughout")
         else:
-            print("     ✓ canada correctly labeled as low risk")
+            print("     OK: canada correctly labeled as low risk")
     else:
-        print("   ⚠ WARNING: no canada data found")
+        print("   WARNING: no canada data found")
     
     print()
     
@@ -179,19 +179,19 @@ try:
     })
     
     if len(country_sentiment) == 0:
-        print("   ✗ ERROR: country-level analysis failed")
+        print("   ERROR: country-level analysis failed")
         exit(1)
     
-    print(f"   ✓ analyzed {len(country_sentiment)} countries")
+    print(f"   OK: analyzed {len(country_sentiment)} countries")
     
     # check that risk categories are present
     risk_categories = country_sentiment['Risk_Category'].unique()
     expected_categories = ['High-Risk', 'Medium-Risk', 'Low-Risk']
     missing_categories = [cat for cat in expected_categories if cat not in risk_categories]
     if missing_categories:
-        print(f"   ⚠ WARNING: missing risk categories: {missing_categories}")
+        print(f"   WARNING: missing risk categories: {missing_categories}")
     else:
-        print("   ✓ all risk categories present\n")
+        print("   OK: all risk categories present\n")
     
     # 7. validate data source separation (quick check)
     print("7. validating data sources (guardian vs gdelt)...")
@@ -199,22 +199,22 @@ try:
     gdelt_df = sentiment_df[sentiment_df['year'] >= 2017]
     
     if len(guardian_df) == 0:
-        print("   ✗ ERROR: no guardian data found")
+        print("   ERROR: no guardian data found")
         exit(1)
     if len(gdelt_df) == 0:
-        print("   ✗ ERROR: no gdelt data found")
+        print("   ERROR: no gdelt data found")
         exit(1)
     
     guardian_valid = (guardian_df['sentiment_score'] >= -1).all() and (guardian_df['sentiment_score'] <= 1).all()
     gdelt_valid = (gdelt_df['sentiment_score'] >= -1).all() and (gdelt_df['sentiment_score'] <= 1).all()
     
     if not guardian_valid or not gdelt_valid:
-        print("   ✗ ERROR: data source scores outside valid range")
+        print("   ERROR: data source scores outside valid range")
         exit(1)
     
-    print(f"   ✓ guardian (2010-2016): {len(guardian_df)} records")
-    print(f"   ✓ gdelt (2017-2023): {len(gdelt_df)} records")
-    print(f"   ✓ both sources have valid scores\n")
+    print(f"   OK: guardian (2010-2016): {len(guardian_df)} records")
+    print(f"   OK: gdelt (2017-2023): {len(gdelt_df)} records")
+    print(f"   OK: both sources have valid scores\n")
     
     # 8. check that results directories exist (for when notebook is run)
     print("8. checking results directories...")
@@ -229,25 +229,25 @@ try:
     if not os.path.exists(tables_dir):
         os.makedirs(tables_dir, exist_ok=True)
     
-    print(f"   ✓ results directory: {results_dir}")
-    print(f"   ✓ figures directory: {figures_dir}")
-    print(f"   ✓ tables directory: {tables_dir}\n")
+    print(f"   OK: results directory: {results_dir}")
+    print(f"   OK: figures directory: {figures_dir}")
+    print(f"   OK: tables directory: {tables_dir}\n")
     
     # 9. summary validation
     print("9. validation summary...")
-    print("   ✓ sentiment and labeled data loaded successfully")
-    print("   ✓ datasets merged correctly")
-    print("   ✓ sentiment scores in valid range [-1, 1]")
-    print("   ✓ risk category sentiment analysis completed")
-    print("   ✓ case study countries validated")
-    print("   ✓ country-level analysis completed")
-    print("   ✓ data sources validated")
-    print("   ✓ results directories ready\n")
+    print("   OK: sentiment and labeled data loaded successfully")
+    print("   OK: datasets merged correctly")
+    print("   OK: sentiment scores in valid range [-1, 1]")
+    print("   OK: risk category sentiment analysis completed")
+    print("   OK: case study countries validated")
+    print("   OK: country-level analysis completed")
+    print("   OK: data sources validated")
+    print("   OK: results directories ready\n")
     
-    print("=== ✓ All validation tests passed! ===")
+    print("=== All validation tests passed! ===")
     
 except Exception as e:
-    print(f"\n✗ ERROR: {e}")
+    print(f"\nERROR: {e}")
     import traceback
     traceback.print_exc()
     exit(1)

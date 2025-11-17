@@ -39,14 +39,14 @@ try:
     print("1. checking expanded dataset file...")
     expanded_path = os.path.join(project_root, 'data', 'raw', 'corruption_data_expanded.csv')
     if not os.path.exists(expanded_path):
-        print(f"   ✗ ERROR: expanded dataset not found at {expanded_path}")
+        print(f"   ERROR: expanded dataset not found at {expanded_path}")
         exit(1)
-    print(f"   ✓ file exists: {expanded_path}\n")
+    print(f"   file exists: {expanded_path}\n")
     
     # 2. load expanded dataset
     print("2. loading expanded dataset...")
     df_expanded = pd.read_csv(expanded_path)
-    print(f"   ✓ loaded: {df_expanded.shape[0]} rows, {df_expanded.shape[1]} columns")
+    print(f"   loaded: {df_expanded.shape[0]} rows, {df_expanded.shape[1]} columns")
     print(f"   years: {df_expanded['Year'].min()} to {df_expanded['Year'].max()}\n")
     
     # 3. verify no 2024 data
@@ -54,9 +54,9 @@ try:
     # check both string and numeric 2024
     has_2024 = (df_expanded['Year'] == '2024').any() or (df_expanded['Year'] == 2024).any()
     if has_2024:
-        print(f"   ✗ ERROR: dataset contains 2024 data (should be excluded)")
+        print(f"   ERROR: dataset contains 2024 data (should be excluded)")
         exit(1)
-    print(f"   ✓ no 2024 data present\n")
+    print(f"   no 2024 data present\n")
     
     # 4. check countries present
     print("4. checking countries in dataset...")
@@ -76,17 +76,17 @@ try:
             for variation in variations:
                 if variation in countries_in_data:
                     found = True
-                    print(f"   ℹ {country} found as '{variation}' in dataset")
+                    print(f"   INFO: {country} found as '{variation}' in dataset")
                     break
         
         if not found:
             missing_countries.append(country)
     
     if missing_countries:
-        print(f"   ✗ ERROR: missing countries: {missing_countries}")
+        print(f"   ERROR: missing countries: {missing_countries}")
         print(f"   available countries: {countries_in_data}")
         exit(1)
-    print(f"   ✓ all expected countries present")
+    print(f"   all expected countries present")
     print(f"   countries: {countries_in_data}\n")
     
     # 5. verify data structure matches baseline
@@ -96,9 +96,9 @@ try:
                      'Control_of_Corruption']
     missing_cols = [col for col in expected_cols if col not in df_expanded.columns]
     if missing_cols:
-        print(f"   ✗ ERROR: missing columns: {missing_cols}")
+        print(f"   ERROR: missing columns: {missing_cols}")
         exit(1)
-    print(f"   ✓ all expected columns present\n")
+    print(f"   all expected columns present\n")
     
     # 6. check data completeness by country
     print("6. checking data completeness by country...")
@@ -111,11 +111,11 @@ try:
             incomplete_countries.append((country, count))
     
     if incomplete_countries:
-        print(f"   ⚠ WARNING: some countries have incomplete data:")
+        print(f"   WARNING: some countries have incomplete data:")
         for country, count in incomplete_countries:
             print(f"      {country}: {count} rows (expected {expected_rows_per_country})")
     else:
-        print(f"   ✓ all countries have complete data (14 rows each)")
+        print(f"   all countries have complete data (14 rows each)")
     print(f"   total rows: {df_expanded.shape[0]} (expected: ~{len(all_expected_countries) * expected_rows_per_country})\n")
     
     # 7. check governance indicators quality
@@ -126,15 +126,15 @@ try:
     # check for missing governance data
     missing_gov = df_expanded[df_expanded[governance_cols].isnull().any(axis=1)]
     if len(missing_gov) > 0:
-        print(f"   ⚠ WARNING: {len(missing_gov)} rows with missing governance indicators")
+        print(f"   WARNING: {len(missing_gov)} rows with missing governance indicators")
         print(f"      countries affected: {missing_gov['Country'].unique()}")
     else:
-        print(f"   ✓ no missing governance indicators")
+        print(f"   no missing governance indicators")
     
     # check governance scores are reasonable (should be between -2.5 and 2.5 typically)
     for col in governance_cols:
         if df_expanded[col].min() < -3 or df_expanded[col].max() > 3:
-            print(f"   ⚠ WARNING: {col} has unusual values (min: {df_expanded[col].min():.2f}, max: {df_expanded[col].max():.2f})")
+            print(f"   WARNING: {col} has unusual values (min: {df_expanded[col].min():.2f}, max: {df_expanded[col].max():.2f})")
     print()
     
     # 8. verify risk categories make sense (sample check)
@@ -144,23 +144,23 @@ try:
     if 'Angola' in countries_in_data:
         angola_avg = df_expanded[df_expanded['Country'] == 'Angola'][governance_cols].mean()
         if angola_avg['Control_of_Corruption'].mean() > 0:
-            print(f"   ⚠ WARNING: Angola (high-risk) has positive corruption control score")
+            print(f"   WARNING: Angola (high-risk) has positive corruption control score")
         else:
-            print(f"   ✓ Angola (high-risk): Control_of_Corruption = {angola_avg['Control_of_Corruption']:.2f}")
+            print(f"   Angola (high-risk): Control_of_Corruption = {angola_avg['Control_of_Corruption']:.2f}")
     
     # check a low-risk country (should have high governance scores)
     if 'Norway' in countries_in_data:
         norway_avg = df_expanded[df_expanded['Country'] == 'Norway'][governance_cols].mean()
         if norway_avg['Control_of_Corruption'].mean() < 1.0:
-            print(f"   ⚠ WARNING: Norway (low-risk) has low corruption control score")
+            print(f"   WARNING: Norway (low-risk) has low corruption control score")
         else:
-            print(f"   ✓ Norway (low-risk): Control_of_Corruption = {norway_avg['Control_of_Corruption']:.2f}")
+            print(f"   Norway (low-risk): Control_of_Corruption = {norway_avg['Control_of_Corruption']:.2f}")
     
     # check baseline countries still present
     for country in baseline_countries:
         if country in countries_in_data:
             country_data = df_expanded[df_expanded['Country'] == country]
-            print(f"   ✓ {country}: {len(country_data)} rows")
+            print(f"   {country}: {len(country_data)} rows")
     print()
     
     # 9. compare with baseline dataset
@@ -180,11 +180,11 @@ try:
             baseline_count = len(df_baseline[(df_baseline['Country'] == country) & (df_baseline['Year'] != '2024')])
             expanded_count = len(df_expanded[df_expanded['Country'] == country])
             if baseline_count != expanded_count:
-                print(f"   ⚠ WARNING: {country} row count mismatch (baseline: {baseline_count}, expanded: {expanded_count})")
+                print(f"   WARNING: {country} row count mismatch (baseline: {baseline_count}, expanded: {expanded_count})")
             else:
-                print(f"   ✓ {country}: consistent row count ({baseline_count})")
+                print(f"   {country}: consistent row count ({baseline_count})")
     else:
-        print(f"   ⚠ baseline file not found, skipping comparison")
+        print(f"   WARNING: baseline file not found, skipping comparison")
     print()
     
     # 10. summary statistics
@@ -200,10 +200,10 @@ try:
         print(f"      {col}: {df_expanded[col].min():.2f} to {df_expanded[col].max():.2f}")
     print()
     
-    print("=== ✓ All tests passed! ===")
+    print("=== All tests passed! ===")
     
 except Exception as e:
-    print(f"\n✗ ERROR: {e}")
+    print(f"\nERROR: {e}")
     import traceback
     traceback.print_exc()
     exit(1)

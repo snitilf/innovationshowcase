@@ -18,10 +18,10 @@ def test_import(package_name, import_statement):
     """test if a package can be imported"""
     try:
         exec(import_statement)
-        print(f"✓ {package_name:<20} - SUCCESS")
+        print(f"OK: {package_name:<20} - SUCCESS")
         return True
     except ImportError as e:
-        print(f"✗ {package_name:<20} - FAILED: {str(e)}")
+        print(f"FAILED: {package_name:<20} - {str(e)}")
         return False
 
 print("Testing Package Imports...")

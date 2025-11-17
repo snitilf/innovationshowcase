@@ -49,7 +49,7 @@ try:
                               country=countries, 
                               date=data_range,
                               parse_dates=False)
-    print("   ✓ data fetched successfully\n")
+    print("   data fetched successfully\n")
     
     # data processing
     df = df.reset_index()
@@ -70,9 +70,9 @@ try:
     
     if os.path.exists(output_path):
         file_size = os.path.getsize(output_path)
-        print(f"3. ✓ file saved: {output_path} ({file_size} bytes)\n")
+        print(f"3. file saved: {output_path} ({file_size} bytes)\n")
     else:
-        print(f"3. ✗ ERROR: file not created\n")
+        print(f"3. ERROR: file not created\n")
         exit(1)
     
     # governance check
@@ -82,10 +82,10 @@ try:
         print(f"   Control_of_Corruption: {canada_2023['Control_of_Corruption'].values[0]:.2f}")
         print(f"   Rule_of_Law: {canada_2023['Rule_of_Law'].values[0]:.2f}")
     
-    print("\n=== ✓ All tests passed! ===")
+    print("\n=== All tests passed! ===")
     
 except Exception as e:
-    print(f"\n✗ ERROR: {e}")
+    print(f"\nERROR: {e}")
     import traceback
     traceback.print_exc()
     exit(1)

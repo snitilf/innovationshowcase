@@ -58,20 +58,20 @@ def test_guardian_client():
         missing_fields = [f for f in required_fields if f not in article]
         
         if missing_fields:
-            print(f"  ✗ FAILED: missing fields: {missing_fields}")
+            print(f"  FAILED: missing fields: {missing_fields}")
             return False
         else:
-            print(f"  ✓ article structure valid")
+            print(f"  OK: article structure valid")
             print(f"  sample headline: {article['headline'][:60]}...")
     
     # check that articles are from 2013
     if articles:
         dates = [a.get("date", "") for a in articles if a.get("date")]
         if dates:
-            print(f"  ✓ articles have dates: {len(dates)} with dates")
+            print(f"  OK: articles have dates: {len(dates)} with dates")
     
     success = len(articles) > 0
-    print(f"  {'✓ PASSED' if success else '✗ FAILED'}: guardian client test")
+    print(f"  {'PASSED' if success else 'FAILED'}: guardian client test")
     return success
 
 
@@ -105,10 +105,10 @@ def test_gdelt_client():
         missing_fields = [f for f in required_fields if f not in article]
         
         if missing_fields:
-            print(f"  ✗ FAILED: missing fields: {missing_fields}")
+            print(f"  FAILED: missing fields: {missing_fields}")
             return False
         else:
-            print(f"  ✓ article structure valid")
+            print(f"  OK: article structure valid")
             print(f"  sample headline: {article['headline'][:60]}...")
     
     # check that gdelt rejects pre-2017 dates
@@ -122,13 +122,13 @@ def test_gdelt_client():
         max_records=10
     )
     if len(old_articles) == 0:
-        print(f"  ✓ correctly rejected pre-2017 dates")
+        print(f"  OK: correctly rejected pre-2017 dates")
     else:
-        print(f"  ✗ FAILED: should reject pre-2017 dates")
+        print(f"  FAILED: should reject pre-2017 dates")
         return False
     
     success = len(articles) > 0
-    print(f"  {'✓ PASSED' if success else '✗ FAILED'}: gdelt client test")
+    print(f"  {'PASSED' if success else 'FAILED'}: gdelt client test")
     return success
 
 
@@ -173,7 +173,7 @@ def test_auto_provider_selection():
     print(f"  fetched {len(articles_2017)} articles for 2017")
     
     success = len(articles_2013) > 0 or len(articles_2017) > 0
-    print(f"  {'✓ PASSED' if success else '✗ FAILED'}: auto-provider selection test")
+    print(f"  {'PASSED' if success else 'FAILED'}: auto-provider selection test")
     return success
 
 
@@ -194,10 +194,10 @@ def test_sentiment_calculation():
     print(f"  average score: {avg_score:.3f}")
     
     if avg_score < 0:
-        print(f"  ✓ correctly identified negative sentiment")
+        print(f"  OK: correctly identified negative sentiment")
         negative_passed = True
     else:
-        print(f"  ✗ FAILED: should be negative")
+        print(f"  FAILED: should be negative")
         negative_passed = False
     
     # test with neutral text
@@ -209,14 +209,14 @@ def test_sentiment_calculation():
     print(f"  average score: {avg_score:.3f}")
     
     if abs(avg_score) < 0.2:
-        print(f"  ✓ correctly identified neutral sentiment")
+        print(f"  OK: correctly identified neutral sentiment")
         neutral_passed = True
     else:
-        print(f"  ⚠ warning: neutral text scored {avg_score:.3f} (expected near 0)")
+        print(f"  WARNING: neutral text scored {avg_score:.3f} (expected near 0)")
         neutral_passed = True  # not a failure, just a warning
     
     success = negative_passed and neutral_passed
-    print(f"  {'✓ PASSED' if success else '✗ FAILED'}: sentiment calculation test")
+    print(f"  {'PASSED' if success else 'FAILED'}: sentiment calculation test")
     return success
 
 
@@ -242,10 +242,10 @@ def test_full_pipeline():
     )
     
     if articles_df.empty:
-        print("  ✗ FAILED: no articles fetched")
+        print("  FAILED: no articles fetched")
         return False
     
-    print(f"  ✓ fetched {len(articles_df)} articles")
+    print(f"  OK: fetched {len(articles_df)} articles")
     
     # process sentiment
     print("step 2: processing sentiment...")
@@ -255,10 +255,10 @@ def test_full_pipeline():
     missing_cols = [c for c in required_cols if c not in articles_df.columns]
     
     if missing_cols:
-        print(f"  ✗ FAILED: missing columns: {missing_cols}")
+        print(f"  FAILED: missing columns: {missing_cols}")
         return False
     
-    print(f"  ✓ calculated sentiment scores")
+    print(f"  OK: calculated sentiment scores")
     print(f"  mean sentiment: {articles_df['sentiment_score'].mean():.3f}")
     
     # aggregate by year
@@ -266,15 +266,15 @@ def test_full_pipeline():
     sentiment_df = aggregate_sentiment_by_year(articles_df)
     
     if sentiment_df.empty:
-        print("  ✗ FAILED: no aggregated sentiment")
+        print("  FAILED: no aggregated sentiment")
         return False
     
-    print(f"  ✓ aggregated sentiment")
+    print(f"  OK: aggregated sentiment")
     print(f"  country-year combinations: {len(sentiment_df)}")
     print(f"  columns: {list(sentiment_df.columns)}")
     
     success = True
-    print(f"  {'✓ PASSED' if success else '✗ FAILED'}: full pipeline test")
+    print(f"  {'PASSED' if success else 'FAILED'}: full pipeline test")
     return success
 
 
@@ -306,10 +306,10 @@ def test_cross_source_consistency():
             guardian_score = guardian_agg.iloc[0]['sentiment_score']
             print(f"  guardian 2016 sentiment: {guardian_score:.3f}")
         else:
-            print(f"  ⚠ no guardian data to compare")
+            print(f"  WARNING: no guardian data to compare")
             return True  # not a failure, just no data
     else:
-        print(f"  ⚠ no guardian articles fetched")
+        print(f"  WARNING: no guardian articles fetched")
         return True  # not a failure, just no data
     
     # fetch gdelt data for 2017
@@ -336,20 +336,20 @@ def test_cross_source_consistency():
             
             # both should be negative (corruption news)
             if guardian_score < 0 and gdelt_score < 0:
-                print(f"  ✓ both sources produce negative sentiment (as expected)")
-                print(f"  ✓ scores are in similar range (both negative)")
+                print(f"  OK: both sources produce negative sentiment (as expected)")
+                print(f"  OK: scores are in similar range (both negative)")
                 return True
             else:
-                print(f"  ⚠ warning: one or both scores are not negative")
+                print(f"  WARNING: one or both scores are not negative")
                 return True  # not a failure, just different data
         else:
-            print(f"  ⚠ no gdelt data to compare")
+            print(f"  WARNING: no gdelt data to compare")
             return True
     else:
-        print(f"  ⚠ no gdelt articles fetched")
+        print(f"  WARNING: no gdelt articles fetched")
         return True
     
-    print(f"  ✓ PASSED: cross-source consistency test (limited data)")
+    print(f"  PASSED: cross-source consistency test (limited data)")
     return True
 
 
@@ -380,17 +380,17 @@ def main():
     total = len(results)
     
     for test_name, result in results:
-        status = "✓ PASSED" if result else "✗ FAILED"
+        status = "PASSED" if result else "FAILED"
         print(f"  {status}: {test_name}")
     
     print("-" * 60)
     print(f"total: {passed}/{total} tests passed")
     
     if passed == total:
-        print("\n✓ ALL TESTS PASSED - system is ready for full data collection!")
+        print("\nALL TESTS PASSED - system is ready for full data collection!")
         return 0
     else:
-        print(f"\n⚠ {total - passed} test(s) failed - review before full data collection")
+        print(f"\nWARNING: {total - passed} test(s) failed - review before full data collection")
         return 1
 
 
