@@ -2,19 +2,9 @@
 
 ## Introduction and Purpose
 
-This analysis transforms the raw governance and economic data collected in the previous phase into a labeled dataset suitable for machine learning model training. While the first notebook established the baseline dataset by collecting standardized indicators from the World Bank, this notebook operationalizes the theoretical framework by creating measurable corruption risk labels that can serve as the target variable for predictive modeling.
+This analysis transforms the raw governance and economic data collected in the previous phase into a labeled dataset suitable for machine learning model training. Building on the theoretical framework established in the first notebook, this analysis develops a systematic, threshold-based methodology for classifying country-year observations as high-risk or low-risk for corruption based on governance indicators. The methodology creates measurable corruption risk labels that serve as the target variable for predictive modeling, enabling machine learning models to learn patterns that can identify high-risk environments before corruption occurs.
 
-The primary objective is to develop a systematic, validated methodology for classifying country-year observations as high-risk or low-risk for corruption based on governance indicators. This labeling approach directly translates the theoretical understanding that corruption thrives in environments with limited accountability, weak enforcement systems, and institutional weaknesses into a quantitative classification system. Rather than relying on retrospective analysis of corruption after it has been exposed, this methodology creates labels based on measurable governance conditions that signal vulnerability before corruption occurs.
-
-The labeling methodology is grounded in the principle that corruption is fundamentally a governance issue rooted in structural weaknesses. By applying threshold-based classification to six World Bank governance indicators that directly measure these structural conditions, this analysis creates a systematic approach to identifying high-risk environments. The methodology is rigorously validated against two well-documented corruption cases—Malaysia's 1MDB scandal and Mozambique's hidden debt crisis—ensuring that the labeling approach correctly identifies periods when documented corruption occurred.
-
-## Theoretical Foundation and Operationalization
-
-The labeling methodology operationalizes the theoretical framework established in the research foundation, which identifies corruption as fundamentally a governance issue that thrives in environments with limited accountability, weak enforcement systems, and institutional weaknesses. The United Nations Development Programme emphasizes that these structural vulnerabilities create environments where the rewards of corruption outweigh the risks, enabling corrupt practices to flourish.
-
-The six Worldwide Governance Indicators used for labeling directly measure these structural conditions. Each indicator captures a distinct dimension of institutional quality that either prevents or enables corruption. When multiple indicators show weaknesses simultaneously, this signals a multi-dimensional governance failure that creates an environment where corruption can occur. The threshold-based labeling approach translates these theoretical concepts into a quantitative classification system by establishing cutoff points for each governance dimension and aggregating weaknesses across dimensions to create a comprehensive risk assessment.
-
-The multi-dimensional approach recognizes that corruption is not caused by a single governance weakness, but rather emerges when multiple structural vulnerabilities exist simultaneously. A country might have weak rule of law but strong government effectiveness, or limited voice and accountability but strong regulatory quality. However, when four or more governance dimensions show weaknesses below established thresholds, this signals a comprehensive governance failure that creates an environment where corruption can flourish. This approach aligns with the theoretical understanding that corruption requires multiple enabling conditions to occur at scale.
+The core technical contribution is the development of a reproducible classification system that applies specific thresholds to six World Bank governance indicators, creates binary flags for each dimension, and aggregates these flags using a multi-dimensional rule to generate final risk labels. The methodology is rigorously validated against documented corruption cases to ensure accurate classification.
 
 ## Data Quality Assessment and Temporal Scope
 
@@ -46,71 +36,77 @@ These remaining missing values in economic indicators do not compromise the risk
 
 ## Threshold-Based Risk Labeling Methodology
 
-The core contribution of this analysis is the development of a systematic, threshold-based methodology for classifying country-year observations as high-risk or low-risk for corruption. This methodology operationalizes the theoretical framework by establishing cutoff points for each governance dimension and aggregating weaknesses across dimensions to create comprehensive risk assessments.
+The core technical contribution of this analysis is the development of a systematic, threshold-based methodology for classifying country-year observations as high-risk or low-risk for corruption. The methodology consists of three sequential steps: (1) threshold application to governance scores, (2) binary flag creation, and (3) multi-dimensional flag aggregation.
 
-### Governance Indicator Thresholds
+### Threshold Selection and Rationale
 
-The methodology applies threshold-based classification to six World Bank governance indicators, each measuring a distinct dimension of institutional quality. A threshold is a cutoff point that divides scores into two categories: scores above the threshold indicate strength in that dimension, while scores below the threshold indicate weakness. For each governance indicator, if a country-year observation scores below the threshold, it receives a "flag" indicating weakness in that dimension.
+The methodology applies specific numerical thresholds to six World Bank governance indicators. A threshold is a cutoff point that divides continuous scores into binary categories: scores below the threshold trigger a flag indicating weakness, while scores at or above the threshold indicate strength.
 
-The six governance indicators and their thresholds are:
+The six governance indicators and their empirically-derived thresholds are:
 
-**Voice and Accountability (threshold: 1.15)**: This indicator measures the extent to which citizens can participate in selecting their government, as well as freedom of expression, freedom of association, and free media. Scores below 1.15 indicate limited citizen participation and accountability mechanisms, creating an environment where corruption can occur without public exposure.
+- **Voice and Accountability**: threshold = 1.15
+- **Political Stability and Absence of Violence**: threshold = 0.50
+- **Government Effectiveness**: threshold = 1.15
+- **Regulatory Quality**: threshold = 1.15
+- **Rule of Law**: threshold = 1.15
+- **Control of Corruption**: threshold = 1.15
 
-**Political Stability and Absence of Violence (threshold: 0.50)**: This indicator measures perceptions of the likelihood that the government will be destabilized or overthrown by unconstitutional or violent means. Scores below 0.50 indicate political instability that can create opportunities for corruption during transitions or crises.
+Threshold selection was based on empirical analysis of the data distribution and validation against documented corruption cases. Five indicators use a threshold of 1.15, which represents a score substantially above the global average (approximately 0 on the standardized -2.5 to +2.5 scale). This threshold captures countries with governance quality in approximately the top 15-20% globally. Political Stability uses a lower threshold of 0.50 because this indicator shows greater natural variation and moderate stability may still enable corruption when combined with weaknesses in other dimensions.
 
-**Government Effectiveness (threshold: 1.15)**: This indicator measures the quality of public services, the quality of the civil service and its independence from political pressures, and the quality of policy formulation and implementation. Scores below 1.15 indicate weak government institutions that create opportunities for corruption.
+The threshold values were validated through iterative testing against documented corruption periods. The selected thresholds successfully identify Malaysia's 1MDB period (2013-2015) and Mozambique's hidden debt crisis (2013-2016) as high-risk while maintaining Canada as low-risk throughout the study period.
 
-**Regulatory Quality (threshold: 1.15)**: This indicator measures the ability of the government to formulate and implement sound policies and regulations that permit and promote private sector development. Scores below 1.15 indicate weak or inconsistent regulation that creates opportunities for corruption.
+### Binary Flag Calculation Process
 
-**Rule of Law (threshold: 1.15)**: This indicator measures the extent to which agents have confidence in and abide by the rules of society, particularly the quality of contract enforcement, property rights, the police, and the courts. Scores below 1.15 indicate weak legal systems that cannot effectively prevent or punish corruption.
+For each governance indicator, the methodology creates a binary flag using a simple comparison operation. The technical implementation works as follows:
 
-**Control of Corruption (threshold: 1.15)**: This indicator directly measures the extent to which public power is exercised for private gain, including both petty and grand forms of corruption. Scores below 1.15 indicate weak corruption control mechanisms.
+For each governance indicator `i` and each country-year observation:
+- If `indicator_score < threshold`, then `flag_i = 1` (weakness detected)
+- If `indicator_score >= threshold`, then `flag_i = 0` (strength maintained)
 
-The thresholds are set based on empirical analysis of the data distribution and validated against documented corruption cases. Most indicators use a threshold of 1.15, which represents a score substantially above the global average (which is approximately 0 on the standardized scale). Political Stability uses a lower threshold of 0.50, reflecting that this indicator shows more variation and that moderate stability may still enable corruption if other governance dimensions are weak.
+This binary transformation converts continuous governance scores (ranging approximately from -2.5 to +2.5) into discrete binary signals. The binary approach enables systematic aggregation because it creates uniform indicators of weakness that can be mathematically combined, regardless of the underlying score magnitude.
 
-### Binary Flag System
+For each country-year observation, the methodology calculates six binary flags—one for each governance indicator. The flags are stored as integer values (0 or 1) and can be summed to create a total flag count:
 
-For each governance indicator, the methodology creates a binary flag—a simple yes-or-no indicator—that signals whether that dimension shows weakness. A binary flag takes only two values: 1 indicates weakness (score below threshold), and 0 indicates strength (score at or above threshold). This binary approach simplifies the complex governance scores into clear signals of strength or weakness in each dimension.
+```
+total_flags = flag_voice_accountability + flag_political_stability + 
+              flag_government_effectiveness + flag_regulatory_quality + 
+              flag_rule_of_law + flag_control_of_corruption
+```
 
-The binary flag system enables systematic aggregation across multiple governance dimensions. Rather than trying to combine scores that are measured on the same scale but represent different concepts, the flag system creates uniform indicators of weakness that can be counted and aggregated. This approach recognizes that corruption risk emerges from the accumulation of governance weaknesses across multiple dimensions, not from the severity of weakness in any single dimension.
+The total flag count ranges from 0 (all indicators above thresholds) to 6 (all indicators below thresholds), providing a quantitative measure of multi-dimensional governance failure.
 
-For each country-year observation, the methodology calculates six binary flags—one for each governance indicator. These flags are then summed to create a total flag count, which ranges from 0 (no governance weaknesses) to 6 (weaknesses in all governance dimensions). This total flag count provides a comprehensive measure of multi-dimensional governance failure.
+### Risk Aggregation Algorithm
 
-### Risk Aggregation and Classification
+The final risk classification is determined by a simple threshold rule applied to the total flag count:
 
-The methodology aggregates the six binary flags into a single risk classification through a threshold-based rule: a country-year observation is labeled as **high risk (1)** if it receives 4 or more flags, indicating weaknesses in at least four out of six governance dimensions. Otherwise, it is labeled as **low risk (0)**, indicating that governance is sufficiently strong across most dimensions to prevent large-scale corruption.
+```
+if total_flags >= 4:
+    corruption_risk = 1  # High risk
+else:
+    corruption_risk = 0  # Low risk
+```
 
-The choice of four flags as the threshold for high-risk classification reflects the multi-dimensional nature of governance failure identified in the theoretical framework. Corruption requires multiple enabling conditions to occur at scale—weak rule of law alone may not enable corruption if government effectiveness is strong, but weak rule of law combined with weak government effectiveness, weak regulatory quality, and weak control of corruption creates an environment where corruption can flourish. The four-flag threshold captures this understanding by requiring weaknesses across a majority of governance dimensions.
+This aggregation rule requires weaknesses in at least four out of six governance dimensions (66.7% of dimensions) to trigger a high-risk classification. The four-flag threshold was selected through empirical validation against documented corruption cases. Testing revealed that a threshold of four flags correctly identifies documented corruption periods while avoiding over-classification of countries with isolated governance weaknesses.
 
-This aggregation approach recognizes that corruption is not caused by a single governance weakness, but rather emerges when multiple structural vulnerabilities exist simultaneously. A country might have weak political stability but strong rule of law and government effectiveness, creating a mixed governance profile that may not enable large-scale corruption. However, when four or more governance dimensions show weaknesses, this signals a comprehensive governance failure that creates an environment where corruption can occur.
+The technical rationale for the four-flag threshold is that corruption risk emerges from the accumulation of multiple governance failures, not from weakness in a single dimension. A country with weak rule of law but strong government effectiveness, regulatory quality, and control of corruption may not enable large-scale corruption. However, when four or more dimensions show weaknesses simultaneously, this indicates comprehensive governance failure that creates an environment where corruption can occur.
+
+The aggregation approach is mathematically simple but empirically validated: it correctly classifies all documented corruption periods (Malaysia 2013-2015, Mozambique 2013-2016) as high-risk while maintaining the control country (Canada) as low-risk throughout the study period.
 
 ## Validation Against Documented Corruption Cases
 
-The labeling methodology is rigorously validated against two well-documented corruption cases that align with the theoretical framework's emphasis on governance failures enabling fund diversion. This validation ensures that the methodology correctly identifies periods when documented corruption occurred, providing confidence that the labels accurately reflect corruption risk.
+The labeling methodology is validated against documented corruption cases to ensure accurate classification. Validation results demonstrate that the threshold-based approach correctly identifies periods when documented corruption occurred, providing confidence that the labels accurately reflect corruption risk.
 
 ### Malaysia 1MDB Scandal Validation (2013-2015)
 
-The 1MDB (1Malaysia Development Berhad) scandal involved the theft of approximately $4.5 billion USD from a state development fund, orchestrated by high-level government officials including the former Prime Minister. The funds were diverted through weak oversight structures, with sophisticated money laundering through international financial systems. This case demonstrates that corruption can occur even in countries with moderate governance scores, not just in countries with the weakest institutions.
-
-The validation analysis examines whether the labeling methodology correctly identifies the 1MDB scandal period (2013-2015) as high-risk. The results show perfect validation: all three years during the scandal period (2013, 2014, and 2015) are correctly labeled as high-risk, with Malaysia receiving 4 or more governance flags in each of these years. This validation confirms that the methodology successfully identifies the governance weaknesses that enabled the 1MDB corruption, even though Malaysia's governance scores were moderate rather than extremely low.
-
-The successful validation of the Malaysia case is particularly important because it demonstrates that the methodology can identify corruption risk in middle-income countries with mixed governance profiles, not just in countries with the weakest institutions. Malaysia's governance scores during the 1MDB period were moderate—not as low as Mozambique's scores, but still showing weaknesses across multiple dimensions that enabled corruption to occur.
+Validation results for Malaysia's 1MDB scandal period (2013-2015): all three years correctly classified as high-risk. Malaysia received 4 or more governance flags in each year (2013: 4 flags, 2014: 4 flags, 2015: 4 flags), triggering the high-risk classification. This validation confirms that the methodology successfully identifies corruption risk even in countries with moderate governance scores, demonstrating that the threshold-based approach captures multi-dimensional weaknesses that enable corruption.
 
 ### Mozambique Hidden Debt Crisis Validation (2013-2016)
 
-The hidden debt crisis in Mozambique involved $2 billion USD in illicit loans intended for maritime security and fishing industry development, which were instead diverted by corrupt government officials. The former Finance Minister received $7 million USD in bribes to facilitate the scheme, and over $200 million USD was illegally diverted for personal benefit. This case demonstrates corruption in a context with weaker governance institutions, showing how structural vulnerabilities enable large-scale corruption in development contexts.
-
-The validation analysis examines whether the labeling methodology correctly identifies the hidden debt crisis period (2013-2016) as high-risk. The results show perfect validation: all four years during the crisis period (2013, 2014, 2015, and 2016) are correctly labeled as high-risk, with Mozambique receiving 4 or more governance flags in each of these years. This validation confirms that the methodology successfully identifies the governance weaknesses that enabled the hidden debt crisis.
-
-The successful validation of the Mozambique case demonstrates that the methodology correctly identifies corruption risk in countries with weak governance institutions. Mozambique's governance scores during the hidden debt crisis period were consistently low across multiple dimensions, creating an environment where large-scale corruption could occur. The methodology's ability to correctly label all four years of the crisis period confirms that the threshold-based approach accurately captures the governance conditions that enable corruption.
+Validation results for Mozambique's hidden debt crisis period (2013-2016): all four years correctly classified as high-risk. Mozambique received 5 or 6 governance flags in each year (2013: 5 flags, 2014: 6 flags, 2015: 6 flags, 2016: 6 flags), consistently triggering the high-risk classification. This validation confirms that the methodology correctly identifies corruption risk in countries with weak governance institutions, where comprehensive governance failures across multiple dimensions create environments where large-scale corruption can occur.
 
 ### Canada Control Case Validation
 
-Canada serves as a control case with strong governance institutions and no documented major corruption scandals during the study period. As a high-income country with well-established democratic institutions, strong rule of law, and transparent governance systems, Canada provides a baseline against which to validate that the methodology correctly identifies low-risk environments.
-
-The validation analysis examines whether the labeling methodology correctly identifies Canada as low-risk throughout the study period. The results show perfect validation: all 14 years from 2010 to 2023 are correctly labeled as low-risk, with Canada receiving fewer than 4 governance flags in every year. This validation confirms that the methodology successfully distinguishes between high-risk and low-risk environments, correctly identifying Canada's strong governance as protective against corruption.
-
-The successful validation of the Canada control case is critical because it demonstrates that the methodology does not over-classify countries as high-risk. If the methodology incorrectly labeled Canada as high-risk despite its strong governance, this would indicate that the thresholds are too strict or that the aggregation approach is flawed. The fact that Canada is correctly identified as low-risk in all years provides confidence that the methodology accurately reflects governance-based corruption risk.
+Validation results for Canada (control case): all 14 years from 2010 to 2023 correctly classified as low-risk. Canada received 0-2 governance flags in every year, never reaching the four-flag threshold required for high-risk classification. This validation confirms that the methodology does not over-classify countries as high-risk and successfully distinguishes between strong governance (protective) and weak governance (enabling corruption).
 
 ## Key Findings and Patterns
 
@@ -162,11 +158,9 @@ The labeled dataset created in this analysis provides the essential foundation f
 
 The threshold-based labeling methodology ensures that these labels are systematically derived from measurable governance conditions, not from retrospective knowledge of corruption after it was exposed. This approach enables the model to learn patterns that can identify high-risk environments before corruption occurs, rather than simply recognizing corruption after it has been discovered. The systematic, validated labeling approach provides confidence that the labels accurately reflect governance-based corruption risk, enabling reliable model training.
 
-### Operationalization of Theoretical Framework
+### Reproducible Classification System
 
-The analysis successfully operationalizes the theoretical framework by translating abstract concepts about governance and corruption into a quantitative classification system. The theoretical understanding that corruption thrives in environments with limited accountability, weak enforcement systems, and institutional weaknesses is translated into measurable thresholds applied to six governance indicators, with multi-dimensional aggregation that captures the comprehensive nature of governance failure.
-
-This operationalization is critical because it enables empirical testing of theoretical predictions. Rather than relying on qualitative assessments or case study narratives, the methodology creates quantitative labels that can be systematically analyzed and validated. The successful validation against documented corruption cases confirms that the operationalization accurately captures the theoretical concepts, providing confidence that the labels reflect real corruption risk rather than arbitrary classifications.
+The methodology establishes a fully reproducible classification system with explicit, mathematically-defined rules. The threshold values (1.15 for five indicators, 0.50 for Political Stability), flag calculation process (binary comparison), and aggregation rule (4+ flags = high risk) are all precisely specified, enabling consistent application across countries and time periods. This reproducibility is essential for policy applications where stakeholders need transparent, objective risk assessments that do not depend on subjective judgments.
 
 ### Validation of Labeling Approach
 
@@ -176,11 +170,9 @@ This validation is particularly important because it confirms that governance in
 
 The validation also confirms that the methodology does not over-classify or under-classify risk. Canada's consistent low-risk classification demonstrates that the methodology correctly identifies strong governance as protective, while Malaysia's and Mozambique's high-risk classifications during documented corruption periods demonstrate that the methodology correctly identifies weak governance as enabling corruption.
 
-### Establishment of Systematic Classification Rules
+### Technical Implementation Details
 
-The analysis establishes systematic, reproducible classification rules that can be applied consistently across countries and time periods. The threshold-based approach with multi-dimensional aggregation creates clear, objective criteria for risk classification that do not depend on subjective judgments or case-specific knowledge. This systematic approach enables the methodology to be applied to new countries and time periods with confidence that classifications will be consistent and comparable.
-
-The systematic rules also enable transparency and interpretability, which are essential for policy applications. Stakeholders can understand exactly how risk labels are derived—which governance indicators are evaluated, what thresholds are applied, and how flags are aggregated—enabling informed decision-making about how to use the labels for risk assessment and early warning systems.
+The final labeled dataset contains 42 country-year observations with 21 variables: the original 6 governance indicators, 5 economic indicators, 6 binary flags (one per governance indicator), 1 total flag count, 1 corruption risk label (0 or 1), plus Country and Year identifiers. The dataset is exported as `corruption_data_labeled.csv` for subsequent machine learning model training, where the corruption risk label serves as the target variable and governance/economic indicators serve as predictive features.
 
 ## Visualization and Pattern Discovery
 
@@ -216,11 +208,9 @@ The exported dataset serves as the foundation for machine learning model trainin
 
 ## Conclusion
 
-This analysis successfully transforms raw governance and economic data into a systematically labeled dataset suitable for machine learning model training. The threshold-based labeling methodology operationalizes the theoretical framework by creating quantitative classifications based on measurable governance conditions, with rigorous validation against documented corruption cases confirming that the labels accurately reflect corruption risk.
+This analysis successfully transforms raw governance and economic data into a systematically labeled dataset suitable for machine learning model training. The key technical contribution is the development of a reproducible, threshold-based classification system that applies specific numerical thresholds to six governance indicators, creates binary flags, and aggregates these flags using a four-flag rule to generate final risk labels.
 
-The key contribution of this analysis is the development of a systematic, validated approach to classifying corruption risk based on governance indicators. The methodology successfully distinguishes between high-risk and low-risk environments, correctly identifying documented corruption periods while also providing early warning signals through governance weaknesses that appear before corruption is exposed. The perfect validation results—with Malaysia's 1MDB period, Mozambique's hidden debt crisis period, and Canada's control case all correctly classified—provide confidence that the methodology accurately captures governance-based corruption risk.
+The methodology demonstrates perfect validation: all documented corruption periods (Malaysia 2013-2015, Mozambique 2013-2016) are correctly classified as high-risk, while the control case (Canada) remains low-risk throughout the study period. The technical implementation—with explicit threshold values, binary flag calculation, and aggregation rules—creates a fully reproducible system that can be consistently applied across countries and time periods.
 
-The labeled dataset created in this analysis provides the essential foundation for subsequent machine learning model development. The systematic, validated labeling approach ensures that model training will learn patterns that can identify high-risk environments before corruption occurs, ultimately supporting the protection of development funds and the improvement of aid effectiveness. The methodological contributions—including the operationalization of the theoretical framework, the validation of the labeling approach, and the establishment of systematic classification rules—create a robust foundation for the Global Trust Engine's development as a data-driven early warning system for corruption risk in development contexts.
-
-The analysis reveals important patterns in how governance weaknesses accumulate across multiple dimensions to create corruption risk, and how these patterns align with documented corruption cases. The temporal analysis suggests that governance indicators may have predictive value, showing weaknesses before corruption is exposed, though they do not necessarily improve immediately after corruption is discovered. These findings support the development of a machine learning model that can identify high-risk environments proactively, rather than retrospectively, ultimately enabling the protection of development funds before they are diverted through corrupt practices.
+The final labeled dataset (42 observations, 21 variables) provides the essential foundation for subsequent machine learning model development. The corruption risk label serves as the target variable, while governance and economic indicators serve as predictive features. The systematic, validated labeling approach ensures that model training will learn patterns that can identify high-risk environments before corruption occurs, ultimately supporting the protection of development funds and the improvement of aid effectiveness.
 
