@@ -66,5 +66,5 @@ The final labeled dataset contains 42 observations with 21 variables: 6 governan
 
 ## Conclusion
 
-This analysis develops a reproducible, threshold-based classification system that transforms governance indicators into corruption risk labels. The methodology demonstrates perfect validation (100% accuracy) and creates a labeled dataset (42 observations, 21 variables) that serves as the foundation for machine learning model training. The technical implementation—with explicit threshold values, binary flag calculation, and aggregation rules—creates a fully reproducible system for identifying high-risk environments before corruption occurs.
+This analysis develops a reproducible, threshold-based classification system that transforms governance indicators into corruption risk labels. The methodology demonstrates perfect validation (100% accuracy) and creates a labeled dataset (42 observations, 21 variables) that serves as the foundation for machine learning model training. The technical implementation—with explicit threshold values, binary flag calculation, and aggregation rules—creates a fully reproducible system for identifying high-risk environments where corruption vulnerabilities exist.
 
