@@ -1,4 +1,4 @@
-# The Global Trust Engine: The Creation of a ML4DI (Machine Learning for Development Integrity) Model Capable of Detecting and Combatting Fraud in the Development Arena
+# The Global Trust Engine: Predicting Governance Risk Using Economic Warning Signs
 
 This project was developed as an optional assignment for the Student Innovation Showcase in **ECON 302: Money, Banking and Government Policy** at McGill University. The Student Innovation Showcase provides students with an opportunity to apply concepts from money, banking, and financial markets to real-world challenges, with the option to incorporate machine learning approaches.
 
