@@ -2,9 +2,11 @@
 
 ## Introduction and Purpose
 
-This analysis validates sentiment analysis of corruption-related news articles as a qualitative early warning indicator that complements quantitative governance indicators. Sentiment analysis measures the emotional tone of written text, assigning numerical scores from -1 (extremely negative) to +1 (extremely positive). For corruption-related news, sentiment scores are expected to be negative because corruption events generate critical media coverage.
+This analysis validates sentiment analysis of corruption-related news articles as a potential qualitative early warning indicator that may complement quantitative governance indicators in machine learning model training. Sentiment analysis measures the emotional tone of written text, assigning numerical scores from -1 (extremely negative) to +1 (extremely positive). For corruption-related news, sentiment scores are expected to be negative because corruption events generate critical media coverage.
 
-The validation tests three hypotheses: (1) sentiment analysis captures corruption-related news content, (2) sentiment patterns align with documented corruption cases, and (3) sentiment reveals transparency and media freedom patterns. The analysis integrates sentiment scores with the labeled corruption risk dataset (266 country-year observations across 19 countries from 2010-2023).
+The validation tests three hypotheses: (1) sentiment analysis captures corruption-related news content, (2) sentiment patterns align with documented corruption cases, and (3) sentiment reveals transparency and media freedom patterns. The analysis integrates sentiment scores with the labeled corruption risk dataset (266 country-year observations across 19 countries from 2010-2023) to prepare sentiment as a potential predictive feature.
+
+**Context for Model Training**: Since governance indicators are used to create corruption risk labels through a threshold-based system, using these same indicators as predictive features would cause circular reasoning—the model would simply memorize the labeling rule rather than discover whether other indicators can predict corruption risk. This validation prepares sentiment scores as a potential alternative feature that may function as a leading indicator, testing whether shifts in public sentiment can signal corruption risk before governance metrics reflect institutional weaknesses.
 
 ## Data Collection Methodology
 
@@ -64,15 +66,19 @@ Cross-source comparison ensures consistency across Guardian API (2010-2016) and 
 
 ## Technical Implementation
 
-The sentiment analysis pipeline integrates sentiment scores with the labeled corruption risk dataset through a merge operation matching on Country and Year. Missing sentiment values (32 country-years, 12% of dataset) are filled with neutral values (0.0) to ensure all 266 observations have sentiment values for analysis. The final merged dataset contains 266 country-year observations with sentiment scores as an additional feature alongside governance and economic indicators.
+The sentiment analysis pipeline integrates sentiment scores with the labeled corruption risk dataset through a merge operation matching on Country and Year. Missing sentiment values (32 country-years, 12% of dataset) are filled with neutral values (0.0) to ensure all 266 observations have sentiment values for analysis. The final merged dataset contains 266 country-year observations with sentiment scores prepared as a potential predictive feature alongside economic indicators.
+
+**Preparation for Model Training**: Sentiment scores are prepared alongside five economic indicators as potential predictive features. Governance indicators are excluded from the predictive feature set to avoid circular reasoning, where the model would learn the labeling rule rather than identify leading indicators. The validation establishes that sentiment captures meaningful patterns (corruption visibility, transparency mechanisms) that may enable the model to predict governance-based risk labels using economic and sentiment indicators alone.
 
 ## Key Technical Contributions
 
 1. **Two-source data collection strategy**: Guardian API (2010-2016) and GDELT API (2017-2023) provide comprehensive temporal coverage with 88% coverage rate (234 of 266 country-years).
 
-2. **Sentiment aggregation methodology**: Article-level sentiment scores are averaged to create country-year level sentiment scores, enabling integration with the labeled corruption risk dataset.
+2. **Sentiment aggregation methodology**: Article-level sentiment scores are averaged to create country-year level sentiment scores, enabling integration with the labeled corruption risk dataset as a potential predictive feature.
 
-3. **Pattern-based interpretation**: Sentiment analysis requires interpretation in context with governance indicators. The counterintuitive finding (low-risk countries show more negative sentiment) demonstrates that sentiment captures transparency mechanisms, not just corruption severity.
+3. **Pattern-based interpretation**: Sentiment analysis requires interpretation in context with governance indicators. The counterintuitive finding (low-risk countries show more negative sentiment) demonstrates that sentiment captures transparency mechanisms, not just corruption severity. This pattern suggests sentiment may provide complementary information that enables prediction of governance-based risk labels using alternative indicators.
+
+4. **Preparation for leading indicator testing**: The validation establishes sentiment as a potential leading indicator that may signal corruption risk before governance metrics reflect institutional weaknesses. By demonstrating that sentiment captures meaningful patterns (corruption visibility, transparency) distinct from governance indicators, the analysis prepares sentiment for inclusion in a predictive feature set that avoids circular reasoning.
 
 ## Limitations
 
@@ -84,6 +90,8 @@ The sentiment analysis pipeline integrates sentiment scores with the labeled cor
 
 ## Conclusion
 
-This validation establishes sentiment analysis as a qualitative early warning indicator that complements quantitative governance indicators. The three key findings—sentiment captures corruption-related news, aligns with documented cases, and reveals transparency patterns—demonstrate valuable complementary information for corruption risk assessment.
+This validation establishes sentiment analysis as a potential qualitative early warning indicator that may complement quantitative governance indicators in machine learning model training. The three key findings—sentiment captures corruption-related news, aligns with documented cases, and reveals transparency patterns—demonstrate valuable complementary information for corruption risk assessment.
 
-The validation provides the foundation for integrating sentiment analysis into the Global Trust Engine's machine learning model, where sentiment scores will serve as an additional predictive feature alongside governance and economic indicators. The comprehensive validation across 234 country-years, 19 countries, and 14 years (2010-2023) demonstrates that sentiment analysis is a reliable and meaningful indicator that enriches the Global Trust Engine's capacity as a data-driven early warning system for corruption risk in development contexts.
+The validation provides the foundation for testing whether sentiment scores can function as a predictive feature in the Global Trust Engine's machine learning model. Since governance indicators are used to create risk labels, they must be excluded from the predictive feature set to avoid circular reasoning. Sentiment scores, alongside economic indicators, are prepared as alternative features that may enable the model to predict governance-based risk labels using leading indicators that signal corruption risk before governance metrics reflect institutional weaknesses.
+
+The comprehensive validation across 234 country-years, 19 countries, and 14 years (2010-2023) demonstrates that sentiment analysis captures meaningful patterns (corruption visibility, transparency mechanisms) that are distinct from governance indicators. This establishes sentiment as a candidate predictive feature that may enrich the Global Trust Engine's capacity as a data-driven early warning system for corruption risk in development contexts, pending model training evaluation to determine whether sentiment contributes to predictive performance.
