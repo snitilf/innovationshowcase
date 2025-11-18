@@ -8,7 +8,7 @@ The model uses economic indicators and sentiment analysis from news coverage to 
 
 ## What We're Building
 
-The theoretical framework explains that corruption thrives in environments with limited accountability, weak enforcement systems, and institutional weaknesses. Traditional methods struggle with the complexity and scale of corruption detection, which is why machine learning approaches are needed.
+The theoretical framework (docs/InnovationShowcase.pdf) explains that corruption thrives in environments with limited accountability, weak enforcement systems, and institutional weaknesses. Traditional methods struggle with the complexity and scale of corruption detection, which is why machine learning approaches are needed.
 
 Our "Global Trust Engine" model aims to:
 - Identify high-risk environments before corruption scandals occur
