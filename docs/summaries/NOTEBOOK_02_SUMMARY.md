@@ -33,36 +33,13 @@ Threshold selection was based on empirical analysis and validation against docum
 
 ### Binary Flag Calculation Process
 
-For each governance indicator, the methodology creates a binary flag using a simple comparison operation. The technical implementation works as follows:
+For each governance indicator, the methodology creates a binary flag using a simple comparison operation. If an indicator score is below its threshold, the flag is set to 1 (weakness detected); if the score is at or above the threshold, the flag is set to 0 (strength maintained). This binary transformation converts continuous governance scores (ranging approximately from -2.5 to +2.5) into discrete binary signals that can be mathematically combined.
 
-For each governance indicator `i` and each country-year observation:
-- If `indicator_score < threshold`, then `flag_i = 1` (weakness detected)
-- If `indicator_score >= threshold`, then `flag_i = 0` (strength maintained)
-
-This binary transformation converts continuous governance scores (ranging approximately from -2.5 to +2.5) into discrete binary signals. The binary approach enables systematic aggregation because it creates uniform indicators of weakness that can be mathematically combined, regardless of the underlying score magnitude.
-
-For each country-year observation, the methodology calculates six binary flags—one for each governance indicator. The flags are stored as integer values (0 or 1) and can be summed to create a total flag count:
-
-```
-total_flags = flag_voice_accountability + flag_political_stability + 
-              flag_government_effectiveness + flag_regulatory_quality + 
-              flag_rule_of_law + flag_control_of_corruption
-```
-
-The total flag count ranges from 0 (all indicators above thresholds) to 6 (all indicators below thresholds), providing a quantitative measure of multi-dimensional governance failure.
+For each country-year observation, the methodology calculates six binary flags—one for each governance indicator. These flags are summed to create a total flag count, which ranges from 0 (all indicators above thresholds) to 6 (all indicators below thresholds), providing a quantitative measure of multi-dimensional governance failure.
 
 ### Risk Aggregation Algorithm
 
-The final risk classification is determined by a simple threshold rule applied to the total flag count:
-
-```
-if total_flags >= 4:
-    corruption_risk = 1  # High risk
-else:
-    corruption_risk = 0  # Low risk
-```
-
-The four-flag threshold (66.7% of dimensions) was selected through empirical validation. It correctly identifies documented corruption periods while avoiding over-classification of countries with isolated governance weaknesses. The rule is empirically validated: it correctly classifies all documented corruption periods (Malaysia 2013-2015, Mozambique 2013-2016) as high-risk while maintaining Canada as low-risk throughout.
+The final risk classification is determined by a simple threshold rule: if the total flag count is 4 or greater, the observation is classified as high-risk (corruption_risk = 1); otherwise, it is classified as low-risk (corruption_risk = 0). The four-flag threshold (66.7% of dimensions) was selected through empirical validation. It correctly identifies documented corruption periods while avoiding over-classification of countries with isolated governance weaknesses. The rule is empirically validated: it correctly classifies all documented corruption periods (Malaysia 2013-2015, Mozambique 2013-2016) as high-risk while maintaining Canada as low-risk throughout.
 
 ## Validation Results
 
