@@ -36,6 +36,8 @@ This feature reduction is a positive finding: the model identified that three co
 
 The decision tree visualization provides a complete visual representation of how the model makes predictions, creating a transparent flowchart that enables stakeholders to understand and trust the model's decision-making process. Each box in the tree represents a decision point or final prediction, showing the specific feature being evaluated, the threshold value, the gini impurity score (measuring class separation), the sample count, the class distribution, and the predicted class.
 
+![Decision Tree Diagram](../../results/figures/decision_tree_diagram.png)
+
 Starting from the top (root node), the tree asks a series of yes/no questions about the economic indicators. Each answer leads to the next question, creating a path through the tree until reaching a leaf node (a box at the bottom with no further splits), which provides the final prediction. The tree structure reveals feature importance (features near the top are more important), decision thresholds (exact economic conditions where risk changes), and progressive refinement (gini scores decrease as we move down the tree, creating purer groups).
 
 For example, a typical path might be: Is poverty rate above a certain threshold? If yes, go left; if no, go right. Is external debt above a certain threshold? Continue based on the answer. Is government spending above a certain threshold? Continue based on the answer. Reach a final prediction (leaf node). The specific threshold values show exactly where the model draws the line between high-risk and low-risk, providing clear, actionable criteria for risk assessment.
