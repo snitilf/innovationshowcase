@@ -104,7 +104,7 @@ The economic indicators show variable levels of data completeness, reflecting di
 
 ### Implications for Analysis
 
-The variable completeness of economic indicators has important implications for subsequent analysis. While governance indicators provide complete coverage for risk labeling, economic indicators will require careful handling of missing data in downstream analysis. The missing data patterns suggest that some economic indicators may be more reliable than others for predictive modeling, and that missing data strategies (such as forward-filling within countries or median imputation) will be necessary.
+The variable completeness of economic indicators has important implications for subsequent analysis. While governance indicators provide complete coverage for risk labeling, economic indicators will require careful handling of missing data in downstream analysis. The missing data patterns suggest that some economic indicators may be more reliable than others for predictive modeling, and that missing data strategies (such as forward-filling within countries or median imputation) are necessary.
 
 However, the complete coverage of governance indicators ensures that the foundational risk labels can be calculated reliably, and the partial coverage of economic indicators still provides substantial data for analysis. The dataset contains sufficient information to proceed with comparative analysis and risk assessment.
 
