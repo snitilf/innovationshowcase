@@ -6,7 +6,7 @@ This analysis establishes the foundational dataset for the Global Trust Engine b
 
 ## Case Study Selection
 
-Three countries were selected to represent distinct governance profiles: **Canada** (control country with consistently strong governance institutions), **Malaysia** (middle-income country with documented 1MDB corruption scandal, 2015), and **Mozambique** (lower-income country with documented hidden debt crisis, 2013-2016). This selection creates a comparative framework spanning the spectrum from strong governance to moderate and weak governance with documented corruption.
+Three countries were selected to represent distinct governance profiles: **Canada** (control country with consistently strong governance institutions), **Malaysia** (middle-income country with documented 1MDB corruption scandal, 2013-2015), and **Mozambique** (lower-income country with documented hidden debt crisis, 2013-2016). This selection creates a comparative framework spanning the spectrum from strong governance to moderate and weak governance with documented corruption.
 
 ## Data Collection Methodology
 
