@@ -2,7 +2,9 @@
 
 ## Introduction and Purpose
 
-This analysis integrates governance indicators, economic indicators, and sentiment scores into a unified dataset for machine learning model training. The core methodological contribution addresses circular reasoning: governance indicators were used to create corruption risk labels, so they are excluded from the predictive feature set. Instead, the model must learn to predict risk labels using only economic and sentiment indicators, testing whether these measures can function as leading indicators that signal corruption risk before governance metrics reflect institutional weaknesses.
+This analysis integrates governance indicators, economic indicators, and sentiment scores into a unified dataset for machine learning model training. 
+
+**Methodological Refinement**: During data preparation, a critical methodological issue was identified: since governance indicators were used to create corruption risk labels through the threshold-based system (4+ indicators below thresholds = high-risk), using these same indicators as predictive features would create circular reasoning—the model would simply memorize the labeling rule rather than discover whether other indicators can predict corruption risk. This refinement represents an important methodological decision: governance indicators are excluded from the predictive feature set, and instead, the model must learn to predict risk labels using only economic and sentiment indicators. This separation creates a rigorous test of whether economic conditions and public sentiment can function as leading indicators that signal corruption risk before governance metrics reflect institutional weaknesses.
 
 The analysis transforms the expanded labeled dataset (266 country-year observations across 19 countries from 2010-2023) into a structure suitable for supervised machine learning, where the model learns patterns from economic and sentiment indicators to predict governance-based risk labels.
 
@@ -64,7 +66,7 @@ The final dataset is exported in four formats:
 
 ## Methodological Contributions
 
-The separation of labeling features (governance indicators) from predictive features (economic and sentiment indicators) creates a rigorous test of whether economic conditions and public sentiment can predict corruption risk before governance metrics reflect institutional weaknesses. The analysis establishes a reproducible data preparation pipeline: data integration, missing data imputation, feature selection, and train-test split.
+The separation of labeling features (governance indicators) from predictive features (economic and sentiment indicators) creates a rigorous test of whether economic conditions and public sentiment can predict corruption risk before governance metrics reflect institutional weaknesses. This methodological refinement is critical for the research question: if economic and sentiment indicators can successfully predict governance-based risk labels, it demonstrates that these measures capture early warning signals that precede institutional deterioration, validating their value as leading indicators. The analysis establishes a reproducible data preparation pipeline: data integration, missing data imputation, feature selection, and train-test split.
 
 ## Conclusion
 

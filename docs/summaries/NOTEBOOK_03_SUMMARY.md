@@ -56,12 +56,12 @@ The expansion from 42 to 266 observations provides sufficient sample size for tr
 
 ### Dataset Structure
 
-The final dataset contains 266 country-year observations with 23 variables: 6 governance indicators, 5 economic indicators, 6 binary flags, total flag count, risk category classification, and the corruption risk label (target variable). This structure provides both predictive features and the target variable needed for supervised machine learning model training.
+The final dataset contains 266 country-year observations with 23 variables: 6 governance indicators, 5 economic indicators, 6 binary flags, total flag count, risk category classification, and the corruption risk label (target variable). This structure provides both the target variable and candidate predictive features needed for supervised machine learning model training. The final feature selection will be determined during data preparation to ensure methodological rigor.
 
 ## Dataset Export
 
-The final dataset is exported as `corruption_data_expanded_labeled.csv` containing 266 country-year observations with 23 variables. This dataset provides the foundation for machine learning model training with both predictive features and the target variable.
+The final dataset is exported as `corruption_data_expanded_labeled.csv` containing 266 country-year observations with 23 variables. This dataset provides the foundation for machine learning model training with both candidate predictive features and the target variable.
 
 ## Conclusion
 
-This dataset expansion successfully transforms the baseline 3-country dataset into a 19-country dataset with 266 observations suitable for machine learning model training. The key technical achievements are: (1) sufficient sample size (266 observations) for training a decision tree classifier, (2) diversity across the full spectrum of governance quality preventing overfitting, and (3) perfect validation results confirming methodology robustness across diverse contexts. The expanded dataset provides the essential foundation for subsequent machine learning model development, with both predictive features (governance and economic indicators) and the target variable (corruption risk labels) needed for supervised learning.
+This dataset expansion successfully transforms the baseline 3-country dataset into a 19-country dataset with 266 observations suitable for machine learning model training. The key technical achievements are: (1) sufficient sample size (266 observations) for training a decision tree classifier, (2) diversity across the full spectrum of governance quality preventing overfitting, and (3) perfect validation results confirming methodology robustness across diverse contexts. The expanded dataset provides the essential foundation for subsequent machine learning model development, with both candidate predictive features (governance and economic indicators) and the target variable (corruption risk labels) needed for supervised learning. The final feature selection will be determined during data preparation to ensure methodological rigor.

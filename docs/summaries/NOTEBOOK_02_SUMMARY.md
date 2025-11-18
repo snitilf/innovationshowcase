@@ -61,7 +61,7 @@ Perfect validation: 100% accuracy across all documented corruption periods and c
 
 The methodology establishes a fully reproducible classification system with explicit rules: threshold values (1.15 for five indicators, 0.50 for Political Stability), binary flag calculation, and aggregation rule (4+ flags = high risk). All rules are precisely specified, enabling consistent application across countries and time periods.
 
-The final labeled dataset contains 42 observations with 21 variables: 6 governance indicators, 5 economic indicators, 6 binary flags, 1 total flag count, 1 corruption risk label (0 or 1), plus Country and Year identifiers. The dataset is exported as `corruption_data_labeled.csv` for machine learning model training, where the corruption risk label serves as the target variable and governance/economic indicators serve as predictive features.
+The final labeled dataset contains 42 observations with 21 variables: 6 governance indicators, 5 economic indicators, 6 binary flags, 1 total flag count, 1 corruption risk label (0 or 1), plus Country and Year identifiers. The dataset is exported as `corruption_data_labeled.csv` for machine learning model training, where the corruption risk label serves as the target variable. The governance and economic indicators are available as potential predictive features, though the final feature selection will be determined during data preparation to ensure methodological rigor.
 
 
 ## Conclusion
