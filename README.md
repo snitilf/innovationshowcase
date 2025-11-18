@@ -77,8 +77,7 @@ innovationshowcase/
 │   ├── raw/                    # Raw data from APIs
 │   ├── processed/              # Cleaned and labeled datasets
 │   └── sentiment/              # News sentiment scores
-├── docs/
-│   └── theory.txt              # Theoretical framework
+├── docs/                        # Documentation and reports
 ├── models/
 │   ├── decision_tree_model.pkl # Trained model
 │   └── feature_names.txt       # Feature definitions
