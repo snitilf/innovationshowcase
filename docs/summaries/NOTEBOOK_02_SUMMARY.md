@@ -55,7 +55,7 @@ Perfect validation: 100% accuracy across all documented corruption periods and c
 
 **Label Distribution**: 42 observations total: 14 low-risk (33.3%), 28 high-risk (66.7%). Canada: 0 high-risk years. Malaysia: high-risk during 1MDB period (2013-2015) and other years. Mozambique: high-risk in all 14 years (2010-2023).
 
-**Temporal Patterns**: Governance indicators show early warning signals—Malaysia and Mozambique received high-risk labels in years before documented corruption was exposed, suggesting predictive value. Canada maintains low-risk throughout, demonstrating stability of strong governance.
+**Temporal Patterns**: Governance indicators correctly identified high-risk conditions in Malaysia and Mozambique during their documented scandal periods (Malaysia 2013-2015, Mozambique 2013-2016), validating the labeling methodology. Canada maintains low-risk throughout all 14 years, demonstrating the stability of strong governance institutions.
 
 ## Technical Implementation and Output
 

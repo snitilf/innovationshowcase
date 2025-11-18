@@ -58,7 +58,7 @@ The variable completeness reflects differences in data collection practices and 
 
 Comparative analysis of governance scores reveals clear and consistent patterns. Average governance scores across the entire study period (2010-2023) show stark differences: Canada demonstrates consistently high scores across all six dimensions (averages ranging from 1.04 to 1.81), Malaysia shows moderate scores (averages ranging from 0.14 to 0.96, with Control of Corruption averaging 0.19), and Mozambique shows the lowest scores (averages ranging from -0.62 to -0.78, with Control of Corruption averaging -0.73).
 
-Temporal analysis at key time points (2013 pre-scandal baseline, 2018 post-scandal period, 2023 most recent data) reveals that governance scores showed clear distinctions between countries even before corruption was exposed, suggesting predictive value. Governance scores align with the severity of documented corruption cases, and governance weaknesses can persist or worsen following corruption scandals. Canada maintains consistently high scores across all time periods, validating its selection as a control case.
+Temporal analysis at key time points (2013 pre-scandal baseline, 2018 post-scandal period, 2023 most recent data) reveals that governance scores showed clear distinctions between countries throughout the study period, demonstrating that governance weaknesses existed during documented scandal periods. Governance scores align with the severity of documented corruption cases, and governance weaknesses can persist or worsen following corruption scandals. Canada maintains consistently high scores across all time periods, validating its selection as a control case.
 
 ## Technical Implementation
 
