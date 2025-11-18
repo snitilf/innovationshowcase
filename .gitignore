@@ -53,5 +53,3 @@ results/tables/*.csv
 *.log
 temp/
 tmp/
-
-theory.txt
