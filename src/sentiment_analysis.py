@@ -3,6 +3,7 @@
 import argparse
 import json
 import logging
+import os
 import re
 import time
 from abc import ABC, abstractmethod
@@ -12,8 +13,12 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 import pandas as pd
 import requests
+from dotenv import load_dotenv
 from textblob import TextBlob
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+
+# load environment variables from .env file
+load_dotenv()
 
 # set up logging
 logging.basicConfig(
@@ -245,17 +250,39 @@ def increment_api_usage(api_key: str) -> None:
     logger.debug(f"api key {key_id}...: {today_requests} requests today")
 
 
+def get_guardian_api_keys() -> List[str]:
+    """get guardian api keys from environment variables.
+    
+    looks for GUARDIAN_API_KEY_1, GUARDIAN_API_KEY_2, etc.
+    returns list of all found keys, or empty list if none found.
+    """
+    keys = []
+    i = 1
+    while True:
+        key = os.getenv(f"GUARDIAN_API_KEY_{i}")
+        if not key:
+            break
+        keys.append(key.strip())
+        i += 1
+    
+    # also check for a single GUARDIAN_API_KEY (for backward compatibility)
+    single_key = os.getenv("GUARDIAN_API_KEY")
+    if single_key and single_key not in keys:
+        keys.insert(0, single_key.strip())
+    
+    if not keys:
+        logger.warning(
+            "no guardian api keys found in environment variables. "
+            "set GUARDIAN_API_KEY_1, GUARDIAN_API_KEY_2, etc. in .env file"
+        )
+    
+    return keys
+
+
 class GuardianClient(BaseNewsClient):
     """client for guardian api with multi-key support."""
 
     base_url = "https://content.guardianapis.com/search"
-    default_api_keys = [
-        "93c1ada7-8c9d-4b38-aa03-20b53f43a1cb",  # primary key
-        "c1bb1584-e60d-4d7a-b019-276f96dd0a53",  # key 2
-        "ea1edef5-f57f-4f1d-80fe-92b9a81b4db4",  # key 3
-        "54917b96-22e5-4b8c-8c5b-faae17840526",  # key 4
-        "7f5c4bbf-6d72-445a-85f4-399aef09861d",  # key 5
-    ]
     
     # corruption keywords for relevance filtering
     corruption_keywords = [
@@ -267,10 +294,19 @@ class GuardianClient(BaseNewsClient):
         """initialize guardian client with optional api keys.
         
         args:
-            api_keys: list of api keys to use (rotates automatically)
+            api_keys: list of api keys to use (rotates automatically).
+                     if none provided, loads from environment variables.
             max_requests_per_key: max requests per key per day (default 500)
         """
-        self.api_keys = api_keys or self.default_api_keys
+        if api_keys is None:
+            api_keys = get_guardian_api_keys()
+            if not api_keys:
+                raise ValueError(
+                    "no guardian api keys provided. "
+                    "set GUARDIAN_API_KEY_1, GUARDIAN_API_KEY_2, etc. in .env file "
+                    "or pass api_keys parameter"
+                )
+        self.api_keys = api_keys
         self.max_requests_per_key = max_requests_per_key
         self.current_api_key = None
     
@@ -488,7 +524,8 @@ def fetch_news_articles(
     pause_seconds: float,
     max_records: int,
     overwrite: bool = False,
-    auto_provider: bool = True
+    auto_provider: bool = True,
+    guardian_api_keys: Optional[List[str]] = None
 ) -> pd.DataFrame:
     """fetch news articles for each country/year window.
     
@@ -513,8 +550,8 @@ def fetch_news_articles(
             if auto_provider:
                 if year <= 2016:
                     # use guardian for historical data
-                    # use default api keys (may have been updated in main())
-                    year_client = GuardianClient()
+                    # use api keys from command line if provided, otherwise from env vars
+                    year_client = GuardianClient(api_keys=guardian_api_keys)
                     logger.info(f"using guardian api for {country} {year}")
                 else:
                     # use gdelt for modern data
@@ -775,11 +812,8 @@ def main():
         )
     elif args.provider == "auto":
         # client will be selected per-year in fetch_news_articles
-        # but we need to update GuardianClient instances to use the api keys
-        # we'll do this by modifying the class default or passing through a global
-        if guardian_api_keys:
-            # update default api keys for all GuardianClient instances
-            GuardianClient.default_api_keys = guardian_api_keys
+        # if guardian_api_keys are provided via command line, they'll be used
+        # otherwise, GuardianClient will load from environment variables
         client = GDELTClient()  # placeholder, won't be used if auto_provider=True
     else:
         raise ValueError(f"unsupported provider: {args.provider}")
@@ -808,7 +842,8 @@ def main():
             pause_seconds=args.pause,
             max_records=args.gdelt_max_records,
             overwrite=args.overwrite,
-            auto_provider=auto_provider
+            auto_provider=auto_provider,
+            guardian_api_keys=guardian_api_keys
         )
         
         if articles_df.empty:
